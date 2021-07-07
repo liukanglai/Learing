@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>2020-2021学年春季学期12周（含12周）之后结课课程考试安排_石油大学教务处</title>
+<link rel="stylesheet" href="../../css/gb20191031/style.css">
+<link rel="stylesheet" href="../../css/gb20191031/subCon.css">
+<!--[if lt IE 9]>
+<script src="../../js/gb20191031/html5.js"  type="text/javascript"></script>
+<![endif]-->
+</head>
+<style>
+.article table{margin:0 auto;}
+</style>
+<body>
+<!--header开始-->
+
+<header class="header">
+	<div class="wrapTop">
+		<div class="top">
+			<div class="logo">
+				<a id="logo1" class="logo1" href="../../index.htm"><img src="../../images/gb20191031/logo_01.png" alt=""></a>			</div>
+			<div class="top_nav">
+<a href="http://www.cup.edu.cn/jwc/2019gb" target="_blank">旧版</a>	
+				<a href="http://www.cup.edu.cn">学校主页</a>			</div> 
+			<div class="ser" >
+				<form name="dataForm" class="search" action="/cms/web/search/index.jsp" target="_blank" method="post" accept-charset="utf-8" onSubmit="document.charset='utf-8';">
+					<input name="siteID" value="85" type ="hidden">
+					<input class="notxt" value="Search" name="query" type="text" id="keywords" onFocus="if(value==defaultValue){value='';}" onBlur="if(!value){value=defaultValue;}"
+					onclick="if(this.value==''){this.value='';this.form.keywords.style.color='#FFF'}">
+					<input class="notxt1" name="Submit" type="submit" value="" />
+				</form>
+			</div>
+		</div>
+	</div>
+	<nav class="nav samePadding" id="nav">
+		<ul>
+		
+		
+			<li><a href="../../index.htm">首页</a></li>
+						
+			<li><a href="../../jggk/jgzn/index.htm">机构概况</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../jggk/jgzn/index.htm">机构简介</a></dd>
+       <dd><a href="../../jggk/jgszgb/index.htm">机构设置</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			
+			<li><a href="http://bkzs.cup.edu.cn/f">本科招生</a></li>
+			
+									
+			<li><a href="../gbkkyl/index.htm">教学运行</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../gbkkyl/index.htm">开课一览</a></dd>
+       <dd><a href="../gbjfkb/index.htm">机房课表</a></dd>
+       <dd><a href="index.htm">考试安排</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../gbsjjx/gbsyjx/index.htm">实践教学</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../gbsjjx/gbsyjx/index.htm">实验教学</a></dd>
+       <dd><a href="../../gbsjjx/gbsxsx/index.htm">实习实训</a></dd>
+       <dd><a href="../../gbsjjx/kfyy/index.htm">开放预约</a></dd>
+       <dd><a href="../../gbsjjx/gbbysj/index.htm">毕业设计</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../gbjxyj/gbjglx/index.htm">教学研究</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../gbjxyj/gbjglx/index.htm">教学改革</a></dd>
+       <dd><a href="../../gbjxyj/gbjxcg/index.htm">教学成果</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../gbjxjs/gbzyjs/index.htm">教学建设</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../gbjxjs/gbzyjs/index.htm">专业建设</a></dd>
+       <dd><a href="../../gbjxjs/gbkcjs/index.htm">课程建设</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../gjjylink/gjhzxm/index.htm">国际教育</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../gjjylink/gjhzxm/index.htm">合作项目</a></dd>
+       <dd><a href="../../gjjylink/gjhzyx/index.htm">合作院校</a></dd>
+       <dd><a href="../../gjjylink/gjsqzn/index.htm">申请指南</a></dd>
+       <dd><a href="../../gjjylink/gjfxxd/index.htm">访学心得</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../jsfzgb/gbjspx/index.htm">教师发展</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../jsfzgb/gbjspx/index.htm">技能培训</a></dd>
+       <dd><a href="../../jsfzgb/gbnlts/index.htm">能力提升</a></dd>
+       <dd><a href="../../jsfzgb/gbkhpj/index.htm">能力评估</a></dd>
+       <dd><a href="../../jsfzgb/gbpypj/index.htm">发展激励</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../zljd/zljk/index.htm">质量监督</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../zljd/zljk/index.htm">质量监控</a></dd>
+       <dd><a href="../../zljd/jxpj/index.htm">教学评价</a></dd>
+       <dd><a href="../../zljd/zlxx/index.htm">质量信息</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../gzzd/zdxjgl/index.blk.htm">规章制度</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../gzzd/zdxjgl/index.blk.htm">学籍管理</a></dd>
+       <dd><a href="../../gzzd/jdjxyx/index.blk.htm">教学运行</a></dd>
+       <dd><a href="../../gzzd/jdsjjx/index.blk.htm">实践教学</a></dd>
+       <dd><a href="../../gzzd/zdjxyj/index.blk.htm">教学研究</a></dd>
+       <dd><a href="../../gzzd/jdjxjs/index.blk.htm">教学建设</a></dd>
+       <dd><a href="../../gzzd/zdgjjy/index.blk.htm">国际教育</a></dd>
+       <dd><a href="../../gzzd/jdzljd/index.blk.htm">教师发展</a></dd>
+       <dd><a href="../../gzzd/zdzljd/index.blk.htm">质量监督</a></dd>
+    					</dl>
+				</div>
+			</li>
+									
+			<li><a href="../../cyxzgb/dlxjgl/index.htm">常用下载</a>
+							<div class="subNav">
+					<dl>
+						   <dd><a href="../../cyxzgb/dlxjgl/index.htm">学籍管理</a></dd>
+       <dd><a href="../../cyxzgb/xzjxyx/index.htm">教学运行</a></dd>
+       <dd><a href="../../cyxzgb/xzsjjx/index.htm">实践教学</a></dd>
+       <dd><a href="../../cyxzgb/xzjxyj/index.htm">教学研究</a></dd>
+       <dd><a href="../../cyxzgb/dljxjs/index.htm">教学建设</a></dd>
+       <dd><a href="../../cyxzgb/dlgjjy/index.htm">国际教育</a></dd>
+       <dd><a href="../../cyxzgb/xzjsfz/index.htm">教师发展</a></dd>
+       <dd><a href="../../cyxzgb/dlzljd/index.htm">质量监督</a></dd>
+    					</dl>
+				</div>
+			</li>
+								</ul>
+	</nav>
+    <!-- 移动端主导航 -->
+    <section class="mobile">
+        <div class="mobile-inner-header">
+            <div class="mobile-inner-header-icon mobile-inner-header-icon-out">
+            <span></span><span></span><span></span></div>
+          </div>
+          <div class="mobile-inner-nav">
+            <ul>
+                <li><a href="../../index.htm">首页</a></li>
+				                <li><a>机构概况</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../jggk/jgzn/index.htm">机构简介</a></dd>
+       <dd><a href="../../jggk/jgszgb/index.htm">机构设置</a></dd>
+                        </dl>
+                </li>
+								                <li><a href="http://bkzs.cup.edu.cn/f">本科招生</a></li>
+                				                <li><a>教学运行</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../gbkkyl/index.htm">开课一览</a></dd>
+       <dd><a href="../gbjfkb/index.htm">机房课表</a></dd>
+       <dd><a href="index.htm">考试安排</a></dd>
+                        </dl>
+                </li>
+								                <li><a>实践教学</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../gbsjjx/gbsyjx/index.htm">实验教学</a></dd>
+       <dd><a href="../../gbsjjx/gbsxsx/index.htm">实习实训</a></dd>
+       <dd><a href="../../gbsjjx/kfyy/index.htm">开放预约</a></dd>
+       <dd><a href="../../gbsjjx/gbbysj/index.htm">毕业设计</a></dd>
+                        </dl>
+                </li>
+								                <li><a>教学研究</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../gbjxyj/gbjglx/index.htm">教学改革</a></dd>
+       <dd><a href="../../gbjxyj/gbjxcg/index.htm">教学成果</a></dd>
+                        </dl>
+                </li>
+								                <li><a>教学建设</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../gbjxjs/gbzyjs/index.htm">专业建设</a></dd>
+       <dd><a href="../../gbjxjs/gbkcjs/index.htm">课程建设</a></dd>
+                        </dl>
+                </li>
+								                <li><a>国际教育</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../gjjylink/gjhzxm/index.htm">合作项目</a></dd>
+       <dd><a href="../../gjjylink/gjhzyx/index.htm">合作院校</a></dd>
+       <dd><a href="../../gjjylink/gjsqzn/index.htm">申请指南</a></dd>
+       <dd><a href="../../gjjylink/gjfxxd/index.htm">访学心得</a></dd>
+                        </dl>
+                </li>
+								                <li><a>教师发展</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../jsfzgb/gbjspx/index.htm">技能培训</a></dd>
+       <dd><a href="../../jsfzgb/gbnlts/index.htm">能力提升</a></dd>
+       <dd><a href="../../jsfzgb/gbkhpj/index.htm">能力评估</a></dd>
+       <dd><a href="../../jsfzgb/gbpypj/index.htm">发展激励</a></dd>
+                        </dl>
+                </li>
+								                <li><a>质量监督</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../zljd/zljk/index.htm">质量监控</a></dd>
+       <dd><a href="../../zljd/jxpj/index.htm">教学评价</a></dd>
+       <dd><a href="../../zljd/zlxx/index.htm">质量信息</a></dd>
+                        </dl>
+                </li>
+								                <li><a>规章制度</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../gzzd/zdxjgl/index.blk.htm">学籍管理</a></dd>
+       <dd><a href="../../gzzd/jdjxyx/index.blk.htm">教学运行</a></dd>
+       <dd><a href="../../gzzd/jdsjjx/index.blk.htm">实践教学</a></dd>
+       <dd><a href="../../gzzd/zdjxyj/index.blk.htm">教学研究</a></dd>
+       <dd><a href="../../gzzd/jdjxjs/index.blk.htm">教学建设</a></dd>
+       <dd><a href="../../gzzd/zdgjjy/index.blk.htm">国际教育</a></dd>
+       <dd><a href="../../gzzd/jdzljd/index.blk.htm">教师发展</a></dd>
+       <dd><a href="../../gzzd/zdzljd/index.blk.htm">质量监督</a></dd>
+                        </dl>
+                </li>
+								                <li><a>常用下载</a><strong>+</strong>
+                    <dl class="mobile_subNav">
+                          <dd><a href="../../cyxzgb/dlxjgl/index.htm">学籍管理</a></dd>
+       <dd><a href="../../cyxzgb/xzjxyx/index.htm">教学运行</a></dd>
+       <dd><a href="../../cyxzgb/xzsjjx/index.htm">实践教学</a></dd>
+       <dd><a href="../../cyxzgb/xzjxyj/index.htm">教学研究</a></dd>
+       <dd><a href="../../cyxzgb/dljxjs/index.htm">教学建设</a></dd>
+       <dd><a href="../../cyxzgb/dlgjjy/index.htm">国际教育</a></dd>
+       <dd><a href="../../cyxzgb/xzjsfz/index.htm">教师发展</a></dd>
+       <dd><a href="../../cyxzgb/dlzljd/index.htm">质量监督</a></dd>
+                        </dl>
+                </li>
+								            </ul>
+            <div class="mobile_search">
+                <form name="dataForm" class="search" action="/cms/web/search/index.jsp" target="_blank" method="post" accept-charset="utf-8" onSubmit="document.charset='utf-8';">
+                    <input name="siteID" value="85" type ="hidden">
+                    <input class="notxt1" name="Submit" type="submit" value="" />
+                    <input class="notxt" value="search" name="query" type="text" id="keywords" onFocus="if(value==defaultValue){value='';}" onBlur="if(!value){value=defaultValue;}"
+                     onclick="if(this.value==''){this.value='';this.form.keywords.style.color='#666'}">
+                </form>
+            </div>
+          </div>
+    </section>       
+</header><!--header结束 -->
+<section class="subBanner">
+    <img src="../../images/gb20191031/subBanner.jpg" alt="">
+    <!-- <span class="subBannerTop"><img src="../../images/logo3.png" alt=""></span> -->
+    
+</section>
+<!--subPage开始-->
+<div class="articlePage">
+<section class="subPage">
+  <div class="bread"><span>您所在的位置：                 <a href="../../index.htm">首页</a>&raquo;
+                 <a href="../index.htm">教学运行</a>&raquo;
+        考试安排
+</span></div> 
+   <div class="articleList03 articleList04">
+          
+            <div class="articleTitle">
+                    <h3>2020-2021学年春季学期12周（含12周）之后结课课程考试安排</h3>
+                </div>
+                <div class="articleAuthor">
+                    <span> </span>     
+                    <span> </span>     
+                    <span class="article_date">2021-05-13</span>
+<span>阅读次数：<script src="/cms/web/writeLog.jsp?siteID=85&channelID=3480&contentID=e3da1a3f369d4b47a0e020edbeb6f87f"></script> </span> 
+                </div>
+            <div class="pageArticle">
+              
+                <div class="article">
+                    
+                    <html>
+ <head></head>
+ <body>
+  <p><span style="color: rgb(50, 50, 50); font-family: " microsoft="" stheiti="" lucida="" font-size:="" background-color:="">2020-2021学年春季学期12周（含12周）之后结课课程考试安排，请注意查看。结业生（未选课）直接参加结课考试的，请于考试前至少</span><span style="color: rgb(50, 50, 50); font-family: " microsoft="" stheiti="" lucida="" font-size:="" background-color:="">一周向开课学院提出申请。</span></p>
+  <p><span style="color:#323232">考试时间调整：</span></p>
+  <p><span style="color:#323232">《C语言程序设计（A）》100514C066，考试地点调整：06-润杰公寓六层机房，04-润杰公寓五层机房。</span></p>
+  <p><span style="color:#323232">《计算机网络原理》1005S2E002，考试时间调整：6月18日，16周，周五，18:30-20:30，考试地点调整：三教206。</span></p>
+  <p><span style="color:#323232">《流体力学》100203E006，考试时间补充：6月7日，15周，周一，13:15-15:15，三教106。</span></p>
+  <p><span style="color:#323232">《综合英语（Ⅱ）》1009S5T154，考试时间调整：6月26日，17周，周六，10:05-12:05，考试地点调整：三教106&nbsp;。</span></p>
+  <p><span style="color:#323232">《</span><span style="color:#323232">过程装备控制基础</span><span style="color:#323232">》</span><span style="color:#323232">100306C004</span><span style="color:#323232">，考试时间调整：5月25日，13周，周二，7:45-9:45，考试地点调整：三教208。</span></p>
+  <p><span style="color:#323232">《国际能源市场分析方法及应用》100726T010，考试时间补充：6月15日，16周，周二，15:35-17:35，考试地点：三教503机房。</span></p>
+  <p><span style="color:#323232"></span><span style="color:#323232">《过程控制工程》</span><span style="color:#323232">100512D003，考</span><span style="color:#323232">试时间为：6月23日，17周，周三，13:15-15:15。考试地点：01-三教103，02-三教104。</span></p>
+  <p><span style="color:#323232">《油藏数值模拟基础》100203C001，考试时间补充：5月21日，12周，周五，15:35-17:35，考试地点：01-四教503，02-三教314。</span></p>
+  <p><span style="color:#323232">《渗流力学（全英文授课）》100203E032，考试时间调整</span><span style="color:#323232">：6月21日，17周，周一，15:35-17:35，考试地点：三教104。</span></p>
+  <p><span style="color:#323232">《流体力学》10020</span><span style="color:#323232">3E023，考试时间调整：5月29日，13周，周六，18:30-20:30，考试地点：01-三教111，03-三教205，04-三教205，05-三教207，06-三教207。</span></p>
+  <p><span style="color:#323232">《高等数学A（II）》100616M017，考试时间调整：6月29日，18周，周二，10:05-12:05，考试地点：01-三教213、214、215，02-三教303、304，03-三教312、313，04-三教211、212，05-三教413、414，06-三教416、417，07-三教306、307，08-三教207、208，09-三教103、104。请学生前往本人教务系统查询具体地点。</span></p>
+  <p><span style="color:#323232">《采油工程》100203E022-02，考试时间调整：6月19日，16周，周六，13:15-15:15，考试地点：三教108。</span></p>
+  <p><span style="color:#323232">《材料力学》100408E030，考试时间调整：6月16日，16周，周三，15:35-17:35，考试地点：01-三教205，02-三教206，03-三教207。</span></p>
+  <p><span style="color:#323232">《沉积岩石学》100101E041，考试时间补充：5月26日，13周，周三，10:05-12:05，考试地点：三教205。</span></p>
+  <p><span style="color:#323232">《岩相古地理》100101E024，考试时间调整：5月26日，13周，周三，10:05-12:05，考试地点：02-三教109，03-三教111，04-三教107，05-三教208。</span></p>
+  <p><span style="color:#323232">《<span style="font-family: Arial, sans-serif; font-size: 12px; background-color: rgb(255, 255, 255);">油藏数值模拟基础（全英授课）</span>》</span><span style="color:#323232">100203C004，考试时间调整：6月3日，14周，周四，13:15-15:15，考试地点：三教107。</span></p>
+ </body>
+</html>  
+                </div>
+                
+                
+				                <div class="Annex">
+                    <h3>相关附件</h3>
+                    <ul>
+					                    <li><a href="../../docs//2021-05/718ab03962144c2ea11e36df935d97e2.xlsx">2020-2021学年春季学期12周（含12周）之后结课课程考试安排一览表-网站.xlsx</a></li>
+                                        </ul>
+                </div>
+				
+<div class="share">
+                    <div class="share_btn"><strong>分享</strong></div>
+                    <div class="bdsharebuttonbox">
+						
+						<!-- <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a> -->
+						
+						<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+						<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+						<a href="#" class="bds_more" data-cmd="more"></a>
+					</div>
+					<script>
+                    window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                    </script>
+                </div>
+            </div>
+
+        </div>    
+</section>
+</div>
+<!--content结束-->
+<!--footer开始-->
+
+<footer class="footerWrap">  
+	<div class="footer">
+		<div class="footerRight">
+			<div class="title">相关链接</div>
+			<div class="detail">
+			 				<a target="_blank" href="http://www.moe.gov.cn/">教育部</a>
+								<a target="_blank" href="http://jw.beijing.gov.cn/gjc/">北京市教育委员会</a>
+								<a target="_blank" href="http://www.hie.edu.cn/">中国高等教育学会</a>
+								<a target="_blank" href="https://www.chsi.com.cn/">学信网</a>
+								<a target="_blank" href="http://www.cdgdc.edu.cn/">学位网</a>
+						</div>
+		</div>
+		<div class="codeBox">
+			<div class="footerLeft">
+				<div class="img">
+					<img src="../../images/gb20191031/code1.png" >				</div>
+				<span>石大教务处</span>			</div>
+			<div class="footerMid">
+				<div class="img">
+					<img src="../../images/gb20191031/code2.png" >				</div>
+				<span>石大企业号</span>			</div>
+		</div>
+	</div>
+	<address class="copyRight">
+		
+		<span >办公地点：主楼A座11层、主楼B座2层</span>
+              <span>业务咨询办理邮箱：jiaowu@cup.edu.cn</span></br>
+<span style="border-left: none;">中国石油大学(北京)教务处 版权所有</span>
+		<span>地址：北京市昌平区府学路18号</span>
+		<span>邮编：102249</span>
+<a class="login" href="http://cms.cup.edu.cn/cms/" target="_blank"><img src="../../images/gb20191031/login.png"></a>
+	</address>
+</footer><!--footer结束-->
+<!-- 通用JS -->
+<!-- 通用JS -->
+<script type="text/javascript" src="../../js/gb20191031/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="../../js/gb20191031/script.js"></script>
+<script type="text/javascript">
+$(function() {
+    Nav('#nav')//导航
+    mobideMenu()// 移动端主导航
+     subBanner()
+}); 
+
+</script>
+
+<script src="/cms/web/writeLog.jsp?articl.id=e3da1a3f369d4b47a0e020edbeb6f87f"></script>
+</body></html>

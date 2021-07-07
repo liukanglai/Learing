@@ -1,0 +1,203 @@
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: /opt/cuda/bin/nvcc 
+Build flags: 
+Id flags: --keep;--keep-dir;tmp -v
+
+The output was:
+1
+#$ _NVVM_BRANCH_=nvvm
+#$ _SPACE_= 
+#$ _CUDART_=cudart
+#$ _HERE_=/opt/cuda/bin
+#$ _THERE_=/opt/cuda/bin
+#$ _TARGET_SIZE_=
+#$ _TARGET_DIR_=
+#$ _TARGET_DIR_=targets/x86_64-linux
+#$ TOP=/opt/cuda/bin/..
+#$ NVVMIR_LIBRARY_DIR=/opt/cuda/bin/../nvvm/libdevice
+#$ LD_LIBRARY_PATH=/opt/cuda/bin/../lib:
+#$ PATH=/opt/cuda/bin/../nvvm/bin:/opt/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+#$ INCLUDES="-I/opt/cuda/bin/../targets/x86_64-linux/include"  
+#$ LIBRARIES=  "-L/opt/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/opt/cuda/bin/../targets/x86_64-linux/lib"
+#$ CUDAFE_FLAGS=
+#$ PTXAS_FLAGS=
+#$ rm tmp/a_dlink.reg.c
+#$ gcc -D__CUDA_ARCH__=520 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/opt/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=11 -D__CUDACC_VER_MINOR__=3 -D__CUDACC_VER_BUILD__=58 -D__CUDA_API_VER_MAJOR__=11 -D__CUDA_API_VER_MINOR__=3 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" 
+#$ cicc --c++14 --gnu_version=110100 --orig_src_file_name "CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: argument list for class template "std::pair" is missing
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ")"
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: template parameter "_T1" may not be redeclared in this scope
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ";"
+
+4 errors detected in the compilation of "CMakeCUDACompilerId.cu".
+# --error 0x1 --
+
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: /opt/cuda/bin/nvcc 
+Build flags: 
+Id flags:  -v
+
+The output was:
+1
+#$ _NVVM_BRANCH_=nvvm
+#$ _SPACE_= 
+#$ _CUDART_=cudart
+#$ _HERE_=/opt/cuda/bin
+#$ _THERE_=/opt/cuda/bin
+#$ _TARGET_SIZE_=
+#$ _TARGET_DIR_=
+#$ _TARGET_DIR_=targets/x86_64-linux
+#$ TOP=/opt/cuda/bin/..
+#$ NVVMIR_LIBRARY_DIR=/opt/cuda/bin/../nvvm/libdevice
+#$ LD_LIBRARY_PATH=/opt/cuda/bin/../lib:
+#$ PATH=/opt/cuda/bin/../nvvm/bin:/opt/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+#$ INCLUDES="-I/opt/cuda/bin/../targets/x86_64-linux/include"  
+#$ LIBRARIES=  "-L/opt/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/opt/cuda/bin/../targets/x86_64-linux/lib"
+#$ CUDAFE_FLAGS=
+#$ PTXAS_FLAGS=
+#$ gcc -D__CUDA_ARCH__=520 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/opt/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=11 -D__CUDACC_VER_MINOR__=3 -D__CUDACC_VER_BUILD__=58 -D__CUDA_API_VER_MAJOR__=11 -D__CUDA_API_VER_MINOR__=3 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "/tmp/tmpxft_00001513_00000000-9_CMakeCUDACompilerId.cpp1.ii" 
+#$ cicc --c++14 --gnu_version=110100 --orig_src_file_name "CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "tmpxft_00001513_00000000-3_CMakeCUDACompilerId.fatbin.c" -tused --gen_module_id_file --module_id_file_name "/tmp/tmpxft_00001513_00000000-4_CMakeCUDACompilerId.module_id" --gen_c_file_name "/tmp/tmpxft_00001513_00000000-6_CMakeCUDACompilerId.cudafe1.c" --stub_file_name "/tmp/tmpxft_00001513_00000000-6_CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "/tmp/tmpxft_00001513_00000000-6_CMakeCUDACompilerId.cudafe1.gpu"  "/tmp/tmpxft_00001513_00000000-9_CMakeCUDACompilerId.cpp1.ii" -o "/tmp/tmpxft_00001513_00000000-6_CMakeCUDACompilerId.ptx"
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: argument list for class template "std::pair" is missing
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ")"
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: template parameter "_T1" may not be redeclared in this scope
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ";"
+
+4 errors detected in the compilation of "CMakeCUDACompilerId.cu".
+# --error 0x1 --
+
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: /opt/cuda/bin/nvcc 
+Build flags: 
+Id flags: --keep;--keep-dir;tmp -v
+
+The output was:
+1
+#$ _NVVM_BRANCH_=nvvm
+#$ _SPACE_= 
+#$ _CUDART_=cudart
+#$ _HERE_=/opt/cuda/bin
+#$ _THERE_=/opt/cuda/bin
+#$ _TARGET_SIZE_=
+#$ _TARGET_DIR_=
+#$ _TARGET_DIR_=targets/x86_64-linux
+#$ TOP=/opt/cuda/bin/..
+#$ NVVMIR_LIBRARY_DIR=/opt/cuda/bin/../nvvm/libdevice
+#$ LD_LIBRARY_PATH=/opt/cuda/bin/../lib:
+#$ PATH=/opt/cuda/bin/../nvvm/bin:/opt/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+#$ INCLUDES="-I/opt/cuda/bin/../targets/x86_64-linux/include"  
+#$ LIBRARIES=  "-L/opt/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/opt/cuda/bin/../targets/x86_64-linux/lib"
+#$ CUDAFE_FLAGS=
+#$ PTXAS_FLAGS=
+#$ rm tmp/a_dlink.reg.c
+#$ gcc -D__CUDA_ARCH__=520 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/opt/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=11 -D__CUDACC_VER_MINOR__=3 -D__CUDACC_VER_BUILD__=58 -D__CUDA_API_VER_MAJOR__=11 -D__CUDA_API_VER_MINOR__=3 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "tmp/CMakeCUDACompilerId.cpp1.ii" 
+#$ cicc --c++14 --gnu_version=110100 --orig_src_file_name "CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "CMakeCUDACompilerId.fatbin.c" -tused --gen_module_id_file --module_id_file_name "tmp/CMakeCUDACompilerId.module_id" --gen_c_file_name "tmp/CMakeCUDACompilerId.cudafe1.c" --stub_file_name "tmp/CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "tmp/CMakeCUDACompilerId.cudafe1.gpu"  "tmp/CMakeCUDACompilerId.cpp1.ii" -o "tmp/CMakeCUDACompilerId.ptx"
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: argument list for class template "std::pair" is missing
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ")"
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: template parameter "_T1" may not be redeclared in this scope
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ";"
+
+4 errors detected in the compilation of "CMakeCUDACompilerId.cu".
+# --error 0x1 --
+
+
+Compiling the CUDA compiler identification source file "CMakeCUDACompilerId.cu" failed.
+Compiler: /opt/cuda/bin/nvcc 
+Build flags: 
+Id flags:  -v
+
+The output was:
+1
+#$ _NVVM_BRANCH_=nvvm
+#$ _SPACE_= 
+#$ _CUDART_=cudart
+#$ _HERE_=/opt/cuda/bin
+#$ _THERE_=/opt/cuda/bin
+#$ _TARGET_SIZE_=
+#$ _TARGET_DIR_=
+#$ _TARGET_DIR_=targets/x86_64-linux
+#$ TOP=/opt/cuda/bin/..
+#$ NVVMIR_LIBRARY_DIR=/opt/cuda/bin/../nvvm/libdevice
+#$ LD_LIBRARY_PATH=/opt/cuda/bin/../lib:
+#$ PATH=/opt/cuda/bin/../nvvm/bin:/opt/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+#$ INCLUDES="-I/opt/cuda/bin/../targets/x86_64-linux/include"  
+#$ LIBRARIES=  "-L/opt/cuda/bin/../targets/x86_64-linux/lib/stubs" "-L/opt/cuda/bin/../targets/x86_64-linux/lib"
+#$ CUDAFE_FLAGS=
+#$ PTXAS_FLAGS=
+#$ gcc -D__CUDA_ARCH__=520 -E -x c++  -DCUDA_DOUBLE_MATH_FUNCTIONS -D__CUDACC__ -D__NVCC__  "-I/opt/cuda/bin/../targets/x86_64-linux/include"    -D__CUDACC_VER_MAJOR__=11 -D__CUDACC_VER_MINOR__=3 -D__CUDACC_VER_BUILD__=58 -D__CUDA_API_VER_MAJOR__=11 -D__CUDA_API_VER_MINOR__=3 -include "cuda_runtime.h" -m64 "CMakeCUDACompilerId.cu" -o "/tmp/tmpxft_0000151f_00000000-9_CMakeCUDACompilerId.cpp1.ii" 
+#$ cicc --c++14 --gnu_version=110100 --orig_src_file_name "CMakeCUDACompilerId.cu" --allow_managed   -arch compute_52 -m64 --no-version-ident -ftz=0 -prec_div=1 -prec_sqrt=1 -fmad=1 --include_file_name "tmpxft_0000151f_00000000-3_CMakeCUDACompilerId.fatbin.c" -tused --gen_module_id_file --module_id_file_name "/tmp/tmpxft_0000151f_00000000-4_CMakeCUDACompilerId.module_id" --gen_c_file_name "/tmp/tmpxft_0000151f_00000000-6_CMakeCUDACompilerId.cudafe1.c" --stub_file_name "/tmp/tmpxft_0000151f_00000000-6_CMakeCUDACompilerId.cudafe1.stub.c" --gen_device_file_name "/tmp/tmpxft_0000151f_00000000-6_CMakeCUDACompilerId.cudafe1.gpu"  "/tmp/tmpxft_0000151f_00000000-9_CMakeCUDACompilerId.cpp1.ii" -o "/tmp/tmpxft_0000151f_00000000-6_CMakeCUDACompilerId.ptx"
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: argument list for class template "std::pair" is missing
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ")"
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: template parameter "_T1" may not be redeclared in this scope
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ";"
+
+4 errors detected in the compilation of "CMakeCUDACompilerId.cu".
+# --error 0x1 --
+
+
+Checking whether the CUDA compiler is NVIDIA using "" did not match "nvcc: NVIDIA \(R\) Cuda compiler driver":
+nvcc fatal   : No input files specified; use option --help for more information
+Checking whether the CUDA compiler is Clang using "" did not match "(clang version)":
+nvcc fatal   : No input files specified; use option --help for more information
+Checking whether the CUDA compiler is NVIDIA using "" did not match "nvcc: NVIDIA \(R\) Cuda compiler driver":
+nvcc fatal   : No input files specified; use option --help for more information
+Checking whether the CUDA compiler is Clang using "" did not match "(clang version)":
+nvcc fatal   : No input files specified; use option --help for more information
+Detecting CUDA compiler ABI info failed to compile with the following output:
+Change Dir: /home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e0b2d/fast && /usr/bin/make  -f CMakeFiles/cmTC_e0b2d.dir/build.make CMakeFiles/cmTC_e0b2d.dir/build
+make[1]: Entering directory '/home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp'
+Building CUDA object CMakeFiles/cmTC_e0b2d.dir/CMakeCUDACompilerABI.cu.o
+/opt/cuda/bin/nvcc      -c /usr/share/cmake-3.20/Modules/CMakeCUDACompilerABI.cu -o CMakeFiles/cmTC_e0b2d.dir/CMakeCUDACompilerABI.cu.o
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: argument list for class template "std::pair" is missing
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ")"
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: template parameter "_T1" may not be redeclared in this scope
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ";"
+
+4 errors detected in the compilation of "/usr/share/cmake-3.20/Modules/CMakeCUDACompilerABI.cu".
+make[1]: *** [CMakeFiles/cmTC_e0b2d.dir/build.make:78: CMakeFiles/cmTC_e0b2d.dir/CMakeCUDACompilerABI.cu.o] Error 1
+make[1]: Leaving directory '/home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:127: cmTC_e0b2d/fast] Error 2
+
+
+
+
+Determining if the CUDA compiler works failed with the following output:
+Change Dir: /home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_041cb/fast && /usr/bin/make  -f CMakeFiles/cmTC_041cb.dir/build.make CMakeFiles/cmTC_041cb.dir/build
+make[1]: 进入目录“/home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp”
+Building CUDA object CMakeFiles/cmTC_041cb.dir/main.cu.o
+/opt/cuda/bin/nvcc      -c /home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp/main.cu -o CMakeFiles/cmTC_041cb.dir/main.cu.o
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: argument list for class template "std::pair" is missing
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ")"
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: template parameter "_T1" may not be redeclared in this scope
+
+/usr/include/c++/11.1.0/bits/stl_pair.h(460): error: expected a ";"
+
+4 errors detected in the compilation of "/home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp/main.cu".
+make[1]: *** [CMakeFiles/cmTC_041cb.dir/build.make:78：CMakeFiles/cmTC_041cb.dir/main.cu.o] 错误 1
+make[1]: 离开目录“/home/liukanglai/Learning-diary/Parallel/homework3-cuda_gemm/cmakeVer/my_build/CMakeFiles/CMakeTmp”
+make: *** [Makefile:127：cmTC_041cb/fast] 错误 2
+
+
+

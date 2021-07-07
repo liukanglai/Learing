@@ -1,0 +1,72 @@
+Sorting 10 number(s) costs 0.00200 ms by qsort in C library. 5000.00000 element(s) per second
+qsort in C library passed.
+
+Sorting 10 number(s) costs 0.00100 ms by a quicksort reference code. 10000.00000 element(s) per second
+quicksort reference code passed.
+
+Sorting 10 number(s) costs 0.00200 ms by a mergesort reference code. 5000.00000 element(s) per second
+mergesort reference code passed.
+
+Sorting 100 number(s) costs 0.01200 ms by qsort in C library. 8333.33333 element(s) per second
+qsort in C library passed.
+
+Sorting 100 number(s) costs 0.00500 ms by a quicksort reference code. 20000.00000 element(s) per second
+quicksort reference code passed.
+
+Sorting 100 number(s) costs 0.01100 ms by a mergesort reference code. 9090.90909 element(s) per second
+mergesort reference code passed.
+
+Sorting 1000 number(s) costs 0.14800 ms by qsort in C library. 6756.75676 element(s) per second
+qsort in C library passed.
+
+Sorting 1000 number(s) costs 0.08500 ms by a quicksort reference code. 11764.70588 element(s) per second
+quicksort reference code passed.
+
+Sorting 1000 number(s) costs 0.11800 ms by a mergesort reference code. 8474.57627 element(s) per second
+mergesort reference code passed.
+
+Sorting 10000 number(s) costs 1.93400 ms by qsort in C library. 5170.63082 element(s) per second
+qsort in C library passed.
+
+Sorting 10000 number(s) costs 1.18100 ms by a quicksort reference code. 8467.40051 element(s) per second
+quicksort reference code passed.
+
+Sorting 10000 number(s) costs 1.53600 ms by a mergesort reference code. 6510.41667 element(s) per second
+mergesort reference code passed.
+
+Sorting 100000 number(s) costs 25.19200 ms by qsort in C library. 3969.51413 element(s) per second
+qsort in C library passed.
+
+Sorting 100000 number(s) costs 20.83600 ms by a quicksort reference code. 4799.38568 element(s) per second
+quicksort reference code passed.
+
+Sorting 100000 number(s) costs 27.92400 ms by a mergesort reference code. 3581.14883 element(s) per second
+mergesort reference code passed.
+
+Sorting 1000000 number(s) costs 177.89700 ms by qsort in C library. 5621.23026 element(s) per second
+qsort in C library passed.
+
+Sorting 1000000 number(s) costs 104.67600 ms by a quicksort reference code. 9553.28824 element(s) per second
+quicksort reference code passed.
+
+Sorting 1000000 number(s) costs 147.30300 ms by a mergesort reference code. 6788.72800 element(s) per second
+mergesort reference code passed.
+
+Sorting 10000000 number(s) costs 1969.10700 ms by qsort in C library. 5078.44419 element(s) per second
+qsort in C library passed.
+
+Sorting 10000000 number(s) costs 1158.48200 ms by a quicksort reference code. 8631.98565 element(s) per second
+quicksort reference code passed.
+
+Sorting 10000000 number(s) costs 1706.52700 ms by a mergesort reference code. 5859.85455 element(s) per second
+mergesort reference code passed.
+
+Sorting 100000000 number(s) costs 22948.90000 ms by qsort in C library. 4357.50733 element(s) per second
+qsort in C library passed.
+
+Sorting 100000000 number(s) costs 13038.44200 ms by a quicksort reference code. 7669.62801 element(s) per second
+quicksort reference code passed.
+
+Sorting 100000000 number(s) costs 18980.15300 ms by a mergesort reference code. 5268.66143 element(s) per second
+mergesort reference code passed.
+

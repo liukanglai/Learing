@@ -1,0 +1,314 @@
+Matrix A is 2100 x 2100, matrix B is 2100 x 2100
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.02560 s, 723.37 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.02794 s for 10 bench(s) in average, 662.83 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.01915 s for 10 bench(s) in average, 967.06 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.00476 s for 10 bench(s) in average, 3889.63 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00048 s for 10 bench(s) in average, 38839.23 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2200 x 2200, matrix B is 2200 x 2200
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.02840 s, 749.94 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.02833 s for 10 bench(s) in average, 751.80 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.02214 s for 10 bench(s) in average, 961.70 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.00649 s for 10 bench(s) in average, 3283.22 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00065 s for 10 bench(s) in average, 32796.83 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2300 x 2300, matrix B is 2300 x 2300
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.03234 s, 752.51 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.03590 s for 10 bench(s) in average, 677.88 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.02504 s for 10 bench(s) in average, 971.72 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.00570 s for 10 bench(s) in average, 4266.86 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00057 s for 10 bench(s) in average, 42616.31 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2400 x 2400, matrix B is 2400 x 2400
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.03343 s, 827.07 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.04363 s for 10 bench(s) in average, 633.65 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.02846 s for 10 bench(s) in average, 971.33 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.00659 s for 10 bench(s) in average, 4193.28 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00066 s for 10 bench(s) in average, 41888.31 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2500 x 2500, matrix B is 2500 x 2500
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.03618 s, 863.71 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.04601 s for 10 bench(s) in average, 679.15 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.03281 s for 10 bench(s) in average, 952.42 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01080 s for 10 bench(s) in average, 2892.97 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00108 s for 10 bench(s) in average, 28913.69 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2600 x 2600, matrix B is 2600 x 2600
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.04644 s, 756.90 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.04686 s for 10 bench(s) in average, 750.09 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.03626 s for 10 bench(s) in average, 969.44 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01160 s for 10 bench(s) in average, 3030.87 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00116 s for 10 bench(s) in average, 30290.39 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2700 x 2700, matrix B is 2700 x 2700
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.05171 s, 761.36 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.05775 s for 10 bench(s) in average, 681.63 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.04074 s for 10 bench(s) in average, 966.23 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01328 s for 10 bench(s) in average, 2964.49 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00133 s for 10 bench(s) in average, 29629.28 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2800 x 2800, matrix B is 2800 x 2800
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.05570 s, 788.29 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.05717 s for 10 bench(s) in average, 768.01 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.04370 s for 10 bench(s) in average, 1004.76 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01379 s for 10 bench(s) in average, 3182.86 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00138 s for 10 bench(s) in average, 31812.42 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 2900 x 2900, matrix B is 2900 x 2900
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.06004 s, 812.41 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.07203 s for 10 bench(s) in average, 677.22 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.05103 s for 10 bench(s) in average, 955.94 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01647 s for 10 bench(s) in average, 2962.18 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00165 s for 10 bench(s) in average, 29611.06 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 3000 x 3000, matrix B is 3000 x 3000
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.06379 s, 846.54 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.07156 s for 10 bench(s) in average, 754.64 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.05614 s for 10 bench(s) in average, 961.91 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01279 s for 10 bench(s) in average, 4220.88 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00128 s for 10 bench(s) in average, 42192.31 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 3100 x 3100, matrix B is 3100 x 3100
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.06792 s, 877.29 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.08824 s for 10 bench(s) in average, 675.19 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.06267 s for 10 bench(s) in average, 950.72 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01452 s for 10 bench(s) in average, 4102.59 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00145 s for 10 bench(s) in average, 41006.11 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 3200 x 3200, matrix B is 3200 x 3200
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.07265 s, 902.12 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.10261 s for 10 bench(s) in average, 638.67 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.06978 s for 10 bench(s) in average, 939.18 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01556 s for 10 bench(s) in average, 4212.04 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00156 s for 10 bench(s) in average, 42101.45 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 3300 x 3300, matrix B is 3300 x 3300
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.08514 s, 844.18 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.10671 s for 10 bench(s) in average, 673.56 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.07582 s for 10 bench(s) in average, 948.01 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01691 s for 10 bench(s) in average, 4250.86 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00169 s for 10 bench(s) in average, 42491.05 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 3400 x 3400, matrix B is 3400 x 3400
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.09762 s, 805.23 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.10618 s for 10 bench(s) in average, 740.35 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.08139 s for 10 bench(s) in average, 965.81 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.01849 s for 10 bench(s) in average, 4251.80 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00185 s for 10 bench(s) in average, 42501.95 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!
+
+Matrix A is 3500 x 3500, matrix B is 3500 x 3500
+
+GEMM (OpenBLAS)(row-col, A and B are in row-major)) used 0.10322 s, 830.73 GFlop/s
+GEMM (OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_global)(row-col, A and B are in row-major)) used 0.12779 s for 10 bench(s) in average, 671.01 GFlop/s
+GEMM (cuda_global)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_shared)(row-col, A and B are in row-major)) used 0.08871 s for 10 bench(s) in average, 966.64 GFlop/s
+GEMM (cuda_shared)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cublas)(row-col, A and B are in row-major)) used 0.02061 s for 10 bench(s) in average, 4161.27 GFlop/s
+GEMM (cublas)(row-col, A and B are in row-major) PASS!
+
+
+GEMM (cuda_yours)(row-col, A and B are in row-major)) used 0.00206 s for 10 bench(s) in average, 41600.59 GFlop/s
+GEMM (cuda_yours)(row-col, A and B are in row-major) NOT PASS!

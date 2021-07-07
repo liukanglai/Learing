@@ -1,0 +1,409 @@
+let mapleader=' '
+
+map <LEADER>0  $
+map <LEADER>f  <C-f>
+map <LEADER>b  <C-b>
+map <LEADER>w  <C-w>
+map <LEADER>t :tabnew 
+map <LEADER>e :Ex<CR> 
+map <LEADER>h :noh<CR> 
+noremap tn :NERDTree<CR>
+"noremap tt :Tagbar<CR>
+noremap tt :LLPStartPreview<CR>
+"noremap tr :source %<CR>
+"noremap tc :w<CR>:so %<CR>
+noremap tm :MarkdownPreview<CR>
+noremap <leader>] :YcmCompleter GoTo<cr> " 函数跳转
+
+" config
+
+set ttimeoutlen=100
+filetype on
+filetype plugin on
+filetype indent on
+filetype plugin indent on 
+
+
+" UI
+
+set termguicolors " 真彩色
+set laststatus=2 " always show status bar
+set showcmd " last command
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")} " status line
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" set undofile "持久性撤销
+set nu
+syntax on
+exec "nohlsearch"
+set nofoldenable
+set foldmethod=indent " use indent to fold
+"autocmd BUfRead * normal zR " open a file, open all fold.
+set smartcase
+set ci
+set sm
+" set relativenumber
+"光标不同显示
+let &t_ut=''
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+set expandtab " tab 展开为空格
+set tabstop=2
+set shiftwidth=4
+set softtabstop=2
+set clipboard=unnamed
+set si
+
+" edit
+
+" move
+
+" search
+
+set autoread
+
+set report=0 "通过使用: commands命令，告诉我们文件的哪一行被改变过"
+
+"被分割的窗口间显示空白，便于阅读"
+set fillchars=vert:\ ,stl:\ ,stlnc:\
+set smarttab
+set autoindent
+
+set spell " 拼写检查 (c-x, than s)
+
+set wrap "自动换行”
+
+set wildmenu "增强模式中的命令行自动完成操作"
+
+set ruler "显示标尺"
+
+set backspace=eol,start,indent "使回格键（backspace）正常处理indent, eol, start等"
+
+"set whichwrap+=<,>,h,l  "允许空格键和光标键跨越行边界
+
+set showmatch "高亮显示匹配的括号([{和}])
+
+set scrolloff=5 "光标移动到buffer的顶部和底部时保持5行距离
+highlight Search ctermbg=black ctermfg=white guifg=white guibg=black
+set hlsearch
+set incsearch
+
+set ignorecase "忽略大小写
+set wildignorecase
+
+"用浅色高亮显示当前行"
+set nocursorcolumn "竖
+set cursorline "横
+autocmd InsertLeave * se cul
+autocmd InsertEnter * se nocul
+
+"highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+"highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+
+"cterm 表示为原生vim设置样式，设置为NONE表示可以自定义设置。
+"ctermbg 设置终端vim的背景色
+"ctermfg 设置终端vim的前景色
+"guibg 和 guifg 分别是设置gvim的背景色和前景色
+
+"开启新行时使用智能自动缩进"
+set smartindent
+set cin
+set showmatch
+
+" tags父目录递归查找 ;表示持续查找
+"set tags=tags;
+" Regenerate tags when saving Python files.
+"autocmd BufWritePost *.py silent! !ctags -R &
+"autocmd BufWritePost *.c silent! !ctags -R &
+"autocmd BufWritePost *.cpp silent! !ctags -R &
+
+"文件类型自动检测，代码智能补全"
+set completeopt=longest,preview,menu
+
+set encoding=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+set fileencodings=utf-8 "设置文件编码"
+set termencoding=utf-8 "设置终端编码"
+set langmenu=zh_CN.UTF-8 "设置语言编码"
+set helplang=cn
+"显示中文帮助"
+
+if version >= 603
+        set helplang=cn
+            set encoding=utf-8
+endif
+
+
+" <f5> 编译和运行C map <LEADER>r :call CompileRunGcc()<cr>
+map <LEADER>r :call CompileRunGcc()<cr>
+func! CompileRunGcc()
+exec "w"
+exec "!gcc % -o %<"
+exec "! ./%<"
+endfunc
+
+"< F5> 编译和运行C++
+map <f5> :call CompileRunGpp()<cr>
+func! CompileRunGpp()
+exec "w"
+exec "!g++ % -o %<"
+exec "! ./%<"
+exec "! rm %<"
+endfunc
+
+" <f5> 运行python程序
+map <f5> :w<cr>:!python %<cr>
+
+" <f5> 运行shell程序
+map <f5> :call CompileRunSH()<cr>
+func! CompileRunSH()
+exec "w"
+exec "!chmod a+x %"
+exec "!./%"
+endfunc
+
+"<f9>  gdb调试
+map <LEADER>d :call Debug()<cr>
+func!  Debug()
+exec "w"
+exec "!gcc -g -o %< %"
+exec ":Termdebug %<"
+exec "! rm %<"
+endfunc
+"</cr></f9></f9></cr></f5></f5></cr></cr></f5></f5></cr></f5></cr></f5></f5>
+
+
+
+autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
+func SetTitle()
+    if expand ("%:e") == 'sh'
+        call setline(1, "#!/bin/bash")
+        call setline(2, "#Author:bert")
+        call setline(3, "#Blog:https://blog.51cto.com/zpf666")
+        call setline(4, "#Time:".strftime("%F %T"))
+        call setline(5, "#Name:".expand("%"))
+        call setline(6, "#Version:V1.0")
+        call setline(7, "#Description:This is a production script.")
+    endif
+endfunc
+
+
+" install plug
+        if empty(glob('~/.vim/autoload/plug.vim'))
+          silent ! curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim 
+          autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+        endif
+
+call plug#begin('~/.vim/plugged')
+
+" theme
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" use
+Plug 'morhetz/gruvbox'
+
+" ()color
+" Plug 'luochen1990/rainbow'
+
+" search
+" Plug 'mileszs/ack.vim'  
+" Plug 'ctrlpvim/ctrlp.vim'
+
+" comment
+" in <space>cc to comment a line
+Plug 'scrooloose/nerdcommenter' 
+
+" File navigation
+"Plug 'preservim/nerdtree'
+
+" Taglist
+ Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }                    
+
+" 项目文件，跳转 
+"Plug 'ludovicchabant/vim-gutentags'
+
+
+" Error checking
+Plug 'w0rp/ale'
+" Plug 'scrooloose/syntastic'
+
+" Auto Complete
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'raimondi/delimitmate'
+
+" snippets
+" Track the engine.
+Plug 'SirVer/ultisnips'
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+" 键映射
+" [f [b
+Plug 'tpope/vim-unimpaired'
+" <leader><leader>+
+Plug 'easymotion/vim-easymotion'
+
+" assignment promot
+" Plug 'Shougo/echodoc.vim'
+
+" debug
+"Plug 'puremourning/vimspector'
+
+" Undo Tree 修改历史
+"noremap <f5> :GundoToggle<cr>
+" Plug 'sjl/gundo.vim'
+
+" Other visual enhancement
+" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
+" 相同字符串下划线
+Plug 'itchyny/vim-cursorword'
+
+" highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+
+" Git
+" Plug 'rhysd/conflict-marker.vim'
+" Plug 'tpope/vim-fugitive'
+" Plug 'mhinz/vim-signify'
+" Plug 'gisphm/vim-gitignore', { 'for': ['gitignore', 'vim-plug'] }
+
+
+" Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for': ['markdown', 'vim-plug'] }
+" 补全
+Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }  
+" 格式
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown'}
+" 自定义
+"Plug 'vimwiki/vimwiki'
+
+
+" Latex
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
+call plug#end()
+
+"let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+colorscheme gruvbox
+set background=dark
+let g:gruvbox_italic=1
+
+
+let g:rainbow_conf = {
+	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+	\	'operators': '_,_',
+	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+	\	'separately': {
+	\		'*': {},
+	\		'tex': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+	\		},
+	\		'lisp': {
+	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+	\		},
+	\		'vim': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+	\		},
+	\		'html': {
+	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+	\		},
+	\		'css': 0,
+	\	}
+	\}
+
+"NERDTree
+"autocmd vimenter * NERDTree
+"let NERDTreeShowBookmarks = 1
+
+"let g:airline_theme='luna'
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
+
+"syntastic"
+
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+"Youcompleteme"
+
+"nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+"nnoremap <leader>gi :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+
+set completeopt=menu,menuone
+let g:ycm_add_preview_to_completeopt = 0
+ let g:ycm_show_diagnostics_ui = 0
+let g:ycm_server_log_level = 'info'
+let g:ycm_min_num_identifier_candidate_chars = 2
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
+let g:ycm_complete_in_strings=1
+let g:ycm_key_invoke_completion = '<c-z>'
+noremap <c-z> <NOP>
+
+let g:ycm_semantic_triggers =  {
+			\ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
+			\ 'cs,lua,javascript': ['re!\w{2}'],
+			\ }
+let g:ycm_filetype_whitelist = { 
+			\ "c":1,
+			\ "cpp":1, 
+			\ "objc":1,
+			\ "sh":1,
+			\ "zsh":1,
+			\ "zimbu":1,
+      \ "markdown":1,
+			\ }
+
+"vimspector
+
+"let g:vimspector_enable_mappings = 'HUMAN'
+"packadd! vimspector
+
+"debug
+packadd termdebug
+
+" colorscheme desert
+
+let g:indentLine_enabled = 1
+"let g:indentLine_char_list = ['┆']
+let g:indentLine_char_list = ['¦']
+
+" Snippets
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" latex
+ let g:livepreview_engine = 'xelatex'

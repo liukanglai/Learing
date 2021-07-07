@@ -1,0 +1,2519 @@
+Matrix A is 100 x 100, matrix B is 100 x 16
+Matrix A has a sparsity of 10.560%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.00224 ms, 0.14273 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00051 ms, 0.62378 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00020 ms, 1.61616 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00030 ms, 1.08475 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00027 ms, 1.19403 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00001 ms, 4.82743 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00001 ms, 4.82743 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00004 ms, 0.78586 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00001 ms, 2.81600 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00001 ms, 2.48471 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 200 x 200, matrix B is 200 x 16
+Matrix A has a sparsity of 9.568%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.00893 ms, 0.14332 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00035 ms, 3.61582 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00046 ms, 2.77056 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00075 ms, 1.70895 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00073 ms, 1.76066 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00002 ms, 5.27862 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00002 ms, 5.14555 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00013 ms, 0.97503 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00003 ms, 4.67420 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00002 ms, 4.97821 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 300 x 300, matrix B is 300 x 16
+Matrix A has a sparsity of 10.083%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.01994 ms, 0.14446 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00103 ms, 2.79340 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00101 ms, 2.85714 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00147 ms, 1.95918 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00140 ms, 2.05567 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00006 ms, 5.25136 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00005 ms, 5.32844 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00028 ms, 1.02979 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00005 ms, 5.57390 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00004 ms, 7.42711 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 400 x 400, matrix B is 400 x 16
+Matrix A has a sparsity of 10.482%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.03673 ms, 0.13939 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00179 ms, 2.86034 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00194 ms, 2.64463 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00253 ms, 2.02292 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00236 ms, 2.16490 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00010 ms, 5.24637 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00010 ms, 5.22594 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00051 ms, 1.05880 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00009 ms, 6.02361 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00005 ms, 10.10742 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 500 x 500, matrix B is 500 x 16
+Matrix A has a sparsity of 10.322%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.05159 ms, 0.15506 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00244 ms, 3.27466 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00284 ms, 2.82087 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00376 ms, 2.12653 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00327 ms, 2.44873 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00016 ms, 5.13852 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00016 ms, 5.20000 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00077 ms, 1.06646 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00013 ms, 6.24629 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00008 ms, 10.89393 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 600 x 600, matrix B is 600 x 16
+Matrix A has a sparsity of 10.245%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.08035 ms, 0.14337 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00330 ms, 3.49197 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00384 ms, 3.00000 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00531 ms, 2.16908 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00487 ms, 2.36356 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00024 ms, 4.98840 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00023 ms, 5.16297 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00119 ms, 0.99541 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00022 ms, 5.34536 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00011 ms, 11.24053 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 700 x 700, matrix B is 700 x 16
+Matrix A has a sparsity of 9.761%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.08753 ms, 0.17914 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00683 ms, 2.29676 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00483 ms, 3.24570 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00706 ms, 2.22191 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00616 ms, 2.54545 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00031 ms, 5.00653 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00030 ms, 5.03618 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00154 ms, 0.99648 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00026 ms, 5.90925 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00013 ms, 11.57713 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 800 x 800, matrix B is 800 x 16
+Matrix A has a sparsity of 9.806%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.10628 ms, 0.19271 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00784 ms, 2.61091 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00680 ms, 3.01221 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00933 ms, 2.19507 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00793 ms, 2.58195 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00041 ms, 4.86755 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00041 ms, 4.94181 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00200 ms, 1.00609 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00034 ms, 5.91388 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00021 ms, 9.78252 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 900 x 900, matrix B is 900 x 16
+Matrix A has a sparsity of 10.233%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.13136 ms, 0.19732 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00930 ms, 2.78680 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00867 ms, 2.98824 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.01178 ms, 2.19978 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00957 ms, 2.70903 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00053 ms, 5.01592 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00053 ms, 5.00267 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00262 ms, 1.01415 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00047 ms, 5.58521 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00032 ms, 8.28104 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1000 x 1000, matrix B is 1000 x 16
+Matrix A has a sparsity of 10.192%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.16462 ms, 0.19439 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01136 ms, 2.81740 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01032 ms, 3.09957 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.01432 ms, 2.23417 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01215 ms, 2.63461 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00065 ms, 5.02528 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00066 ms, 4.96409 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00320 ms, 1.01903 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00057 ms, 5.71976 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00039 ms, 8.27769 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1100 x 1100, matrix B is 1100 x 16
+Matrix A has a sparsity of 9.807%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.19861 ms, 0.19496 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01439 ms, 2.69132 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01175 ms, 3.29616 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.01665 ms, 2.32553 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01403 ms, 2.75921 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00076 ms, 5.02012 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00076 ms, 5.00490 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00372 ms, 1.01977 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00063 ms, 6.02159 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00037 ms, 10.21306 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1200 x 1200, matrix B is 1200 x 16
+Matrix A has a sparsity of 10.256%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.23799 ms, 0.19362 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01581 ms, 2.91369 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01480 ms, 3.11309 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.02040 ms, 2.25860 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01710 ms, 2.69458 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00099 ms, 4.77520 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00096 ms, 4.93888 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00443 ms, 1.06624 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00075 ms, 6.32412 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00046 ms, 10.16785 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1300 x 1300, matrix B is 1300 x 16
+Matrix A has a sparsity of 10.160%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.30179 ms, 0.17920 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.02410 ms, 2.24398 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01752 ms, 3.08623 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.02409 ms, 2.24473 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01746 ms, 3.09754 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00125 ms, 4.41237 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00127 ms, 4.33851 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00499 ms, 1.10088 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00091 ms, 6.04081 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00048 ms, 11.34569 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1400 x 1400, matrix B is 1400 x 16
+Matrix A has a sparsity of 10.217%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.33589 ms, 0.18673 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.02407 ms, 2.60541 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01942 ms, 3.22999 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.02770 ms, 2.26459 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.02092 ms, 2.99766 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00136 ms, 4.71565 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00138 ms, 4.62745 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00581 ms, 1.10342 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00103 ms, 6.21301 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00053 ms, 11.99120 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1500 x 1500, matrix B is 1500 x 16
+Matrix A has a sparsity of 10.048%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.39248 ms, 0.18345 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.02752 ms, 2.61618 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.02172 ms, 3.31507 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.03150 ms, 2.28579 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.02293 ms, 3.14013 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00153 ms, 4.74296 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00155 ms, 4.66197 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00656 ms, 1.10340 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00109 ms, 6.64851 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00059 ms, 12.34205 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1600 x 1600, matrix B is 1600 x 16
+Matrix A has a sparsity of 10.140%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.43842 ms, 0.18685 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.03318 ms, 2.46859 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.02606 ms, 3.14327 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.03565 ms, 2.29815 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.02719 ms, 3.01287 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00177 ms, 4.68431 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00175 ms, 4.75401 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00734 ms, 1.13141 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00125 ms, 6.63156 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00064 ms, 12.93071 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1700 x 1700, matrix B is 1700 x 16
+Matrix A has a sparsity of 10.048%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.50213 ms, 0.18418 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.04221 ms, 2.19111 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.02927 ms, 3.15966 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.03972 ms, 2.32812 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.02973 ms, 3.11098 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00203 ms, 4.58245 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00205 ms, 4.52774 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00840 ms, 1.10654 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00153 ms, 6.07141 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00070 ms, 13.24065 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1800 x 1800, matrix B is 1800 x 16
+Matrix A has a sparsity of 9.984%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.57545 ms, 0.18017 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.04522 ms, 2.29264 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.03157 ms, 3.28382 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.04380 ms, 2.36712 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.03404 ms, 3.04574 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00227 ms, 4.55405 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00218 ms, 4.74354 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00937 ms, 1.10420 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00166 ms, 6.23764 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00077 ms, 13.52235 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1900 x 1900, matrix B is 1900 x 16
+Matrix A has a sparsity of 10.046%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.66707 ms, 0.17317 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.05049 ms, 2.28784 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.03410 ms, 3.38748 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.04666 ms, 2.47557 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.03674 ms, 3.14383 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00281 ms, 4.13064 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00257 ms, 4.51152 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01040 ms, 1.11574 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00176 ms, 6.59250 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00084 ms, 13.86386 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 2000 x 2000, matrix B is 2000 x 16
+Matrix A has a sparsity of 10.170%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.85283 ms, 0.15009 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.04758 ms, 2.69038 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.03947 ms, 3.24330 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.05182 ms, 2.46995 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.04182 ms, 3.06088 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00304 ms, 4.27973 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00322 ms, 4.04728 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01155 ms, 1.12677 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00200 ms, 6.52503 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00091 ms, 14.27578 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 100 x 100, matrix B is 100 x 32
+Matrix A has a sparsity of 10.560%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.00504 ms, 0.12711 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00019 ms, 3.33333 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00027 ms, 2.39700 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00044 ms, 1.43820 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00048 ms, 1.32780 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00001 ms, 5.49463 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00001 ms, 5.49463 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00008 ms, 0.86646 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00002 ms, 3.81831 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00002 ms, 3.14344 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 200 x 200, matrix B is 200 x 32
+Matrix A has a sparsity of 9.568%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.02004 ms, 0.12776 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00047 ms, 5.49356 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00091 ms, 2.81319 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00134 ms, 1.91617 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00109 ms, 2.34218 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00004 ms, 5.55392 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00004 ms, 5.69600 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00024 ms, 1.00918 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00004 ms, 5.46714 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00004 ms, 5.90188 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 300 x 300, matrix B is 300 x 32
+Matrix A has a sparsity of 10.083%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.04578 ms, 0.12581 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00113 ms, 5.07489 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00188 ms, 3.06383 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00265 ms, 2.17358 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00240 ms, 2.40000 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00010 ms, 5.66082 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00010 ms, 5.76190 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00055 ms, 1.05065 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00009 ms, 6.23176 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00007 ms, 8.15730 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 400 x 400, matrix B is 400 x 32
+Matrix A has a sparsity of 10.482%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.08037 ms, 0.12741 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00376 ms, 2.72340 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00331 ms, 3.09740 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00460 ms, 2.22802 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00395 ms, 2.59569 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00019 ms, 5.57904 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00021 ms, 5.17305 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00100 ms, 1.06988 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00016 ms, 6.74675 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00010 ms, 10.93084 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 500 x 500, matrix B is 500 x 32
+Matrix A has a sparsity of 10.322%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.08731 ms, 0.18325 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01417 ms, 1.12891 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00497 ms, 3.21867 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00744 ms, 2.15025 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00599 ms, 2.67112 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00031 ms, 5.26129 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00031 ms, 5.25293 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00154 ms, 1.07158 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00025 ms, 6.55625 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00015 ms, 11.36628 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 600 x 600, matrix B is 600 x 32
+Matrix A has a sparsity of 10.245%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.14333 ms, 0.16075 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01926 ms, 1.19645 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00710 ms, 3.24416 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.01047 ms, 2.19973 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01793 ms, 1.28500 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00041 ms, 5.70723 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00042 ms, 5.64311 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00235 ms, 1.00298 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00039 ms, 6.00792 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00018 ms, 13.25386 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 700 x 700, matrix B is 700 x 32
+Matrix A has a sparsity of 9.761%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.17453 ms, 0.17968 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00648 ms, 4.83727 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00928 ms, 3.37858 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.01384 ms, 2.26655 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.02080 ms, 1.50762 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00053 ms, 5.74080 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00057 ms, 5.35794 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00306 ms, 1.00078 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00050 ms, 6.07701 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00025 ms, 12.47857 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 800 x 800, matrix B is 800 x 32
+Matrix A has a sparsity of 9.806%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.24616 ms, 0.16640 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01116 ms, 3.66861 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01237 ms, 3.31231 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.01794 ms, 2.28368 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.03544 ms, 1.15585 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00071 ms, 5.66611 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00072 ms, 5.60992 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00398 ms, 1.00981 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00067 ms, 5.98436 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00033 ms, 12.22741 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 900 x 900, matrix B is 900 x 32
+Matrix A has a sparsity of 10.233%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.31204 ms, 0.16613 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01132 ms, 4.58112 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01507 ms, 3.44109 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.02284 ms, 2.27000 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.03747 ms, 1.38365 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00096 ms, 5.53221 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00093 ms, 5.68883 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00488 ms, 1.08663 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00082 ms, 6.46694 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00057 ms, 9.23704 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1000 x 1000, matrix B is 1000 x 32
+Matrix A has a sparsity of 10.192%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.35590 ms, 0.17983 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01404 ms, 4.55808 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01894 ms, 3.37963 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.02816 ms, 2.27305 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.04408 ms, 1.45204 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00116 ms, 5.60476 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00119 ms, 5.48320 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00597 ms, 1.09214 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00104 ms, 6.24432 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00065 ms, 10.04283 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1100 x 1100, matrix B is 1100 x 32
+Matrix A has a sparsity of 9.807%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.45129 ms, 0.17160 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01696 ms, 4.56577 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.02234 ms, 3.46581 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.03358 ms, 2.30579 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.05302 ms, 1.46064 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00142 ms, 5.33954 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00135 ms, 5.61635 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00690 ms, 1.10136 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00113 ms, 6.74641 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00072 ms, 10.52298 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1200 x 1200, matrix B is 1200 x 32
+Matrix A has a sparsity of 10.256%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.56933 ms, 0.16188 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.02124 ms, 4.33817 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.02724 ms, 3.38326 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.04063 ms, 2.26850 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.06334 ms, 1.45491 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00178 ms, 5.32389 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00169 ms, 5.58763 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00832 ms, 1.13545 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00141 ms, 6.70404 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00083 ms, 11.33473 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1300 x 1300, matrix B is 1300 x 32
+Matrix A has a sparsity of 10.160%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.76516 ms, 0.14136 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.02630 ms, 4.11255 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.03089 ms, 3.50100 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.04723 ms, 2.29022 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.06884 ms, 1.57123 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00208 ms, 5.27628 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00210 ms, 5.23531 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00961 ms, 1.14335 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00164 ms, 6.71439 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00093 ms, 11.75467 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1400 x 1400, matrix B is 1400 x 32
+Matrix A has a sparsity of 10.217%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.89728 ms, 0.13980 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.03596 ms, 3.48793 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.03672 ms, 3.41612 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.05442 ms, 2.30508 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.04148 ms, 3.02418 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00242 ms, 5.29332 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00241 ms, 5.31572 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01122 ms, 1.14246 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00194 ms, 6.59337 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00103 ms, 12.39237 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1500 x 1500, matrix B is 1500 x 32
+Matrix A has a sparsity of 10.048%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.10283 ms, 0.13057 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.03350 ms, 4.29902 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.04107 ms, 3.50655 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.05840 ms, 2.46584 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.04782 ms, 3.01142 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00290 ms, 4.99493 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00312 ms, 4.63242 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01290 ms, 1.12160 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00216 ms, 6.71111 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00114 ms, 12.72296 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1600 x 1600, matrix B is 1600 x 32
+Matrix A has a sparsity of 10.140%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.19134 ms, 0.13753 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.04154 ms, 3.94406 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.04765 ms, 3.43812 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.06800 ms, 2.40934 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.05275 ms, 3.10603 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00322 ms, 5.15399 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00323 ms, 5.14028 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01472 ms, 1.12839 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00251 ms, 6.62838 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00127 ms, 13.09068 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1700 x 1700, matrix B is 1700 x 32
+Matrix A has a sparsity of 10.048%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.34280 ms, 0.13774 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.05751 ms, 3.21608 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.05262 ms, 3.51508 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.07729 ms, 2.39300 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.06083 ms, 3.04055 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00385 ms, 4.82766 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00410 ms, 4.53659 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01621 ms, 1.14676 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00279 ms, 6.67286 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00142 ms, 13.07300 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1800 x 1800, matrix B is 1800 x 32
+Matrix A has a sparsity of 9.984%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.70434 ms, 0.12167 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.06004 ms, 3.45347 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.05987 ms, 3.46379 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.08116 ms, 2.55498 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.06462 ms, 3.20872 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00432 ms, 4.79585 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00459 ms, 4.51236 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01817 ms, 1.13945 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00319 ms, 6.49640 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00164 ms, 12.63825 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1900 x 1900, matrix B is 1900 x 32
+Matrix A has a sparsity of 10.046%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.85700 ms, 0.12442 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.06160 ms, 3.75053 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.06583 ms, 3.50981 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.08964 ms, 2.57736 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.07172 ms, 3.22124 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00494 ms, 4.69514 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00522 ms, 4.44363 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.02038 ms, 1.13900 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00352 ms, 6.60056 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00189 ms, 12.25689 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 2000 x 2000, matrix B is 2000 x 32
+Matrix A has a sparsity of 10.170%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.93911 ms, 0.13202 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.07931 ms, 3.22800 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.07331 ms, 3.49202 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.09991 ms, 2.56233 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.07950 ms, 3.22009 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00563 ms, 4.62594 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00579 ms, 4.49760 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.02285 ms, 1.13932 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00397 ms, 6.56567 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00221 ms, 11.77627 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 100 x 100, matrix B is 100 x 64
+Matrix A has a sparsity of 10.560%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.01056 ms, 0.12124 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00026 ms, 5.00000 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00049 ms, 2.58586 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00081 ms, 1.58612 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00068 ms, 1.87683 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00003 ms, 4.91520 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00003 ms, 4.77625 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00015 ms, 0.89634 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00003 ms, 4.62904 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00004 ms, 3.59489 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 200 x 200, matrix B is 200 x 64
+Matrix A has a sparsity of 9.568%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.04147 ms, 0.12345 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00170 ms, 3.01354 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00167 ms, 3.07323 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00253 ms, 2.02692 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00208 ms, 2.46272 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00010 ms, 4.92813 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00010 ms, 5.02416 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00048 ms, 1.02674 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00008 ms, 5.81777 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00008 ms, 6.45397 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 300 x 300, matrix B is 300 x 64
+Matrix A has a sparsity of 10.083%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.07072 ms, 0.16291 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00153 ms, 7.54420 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00360 ms, 3.19556 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00524 ms, 2.19973 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00467 ms, 2.46787 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00023 ms, 5.05483 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00024 ms, 4.93458 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00110 ms, 1.05629 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00018 ms, 6.62635 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00013 ms, 8.74041 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 400 x 400, matrix B is 400 x 64
+Matrix A has a sparsity of 10.482%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.13466 ms, 0.15209 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00288 ms, 7.10371 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00624 ms, 3.27995 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.00899 ms, 2.27682 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.00752 ms, 2.72232 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00044 ms, 4.84171 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00046 ms, 4.65283 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00200 ms, 1.07266 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00032 ms, 6.60966 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00020 ms, 10.88649 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 500 x 500, matrix B is 500 x 64
+Matrix A has a sparsity of 10.322%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.19457 ms, 0.16446 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00399 ms, 8.01603 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.00968 ms, 3.30647 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.01456 ms, 2.19780 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01173 ms, 2.72851 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00066 ms, 5.02440 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00066 ms, 5.03819 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00307 ms, 1.07426 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00051 ms, 6.52775 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00028 ms, 11.80500 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 600 x 600, matrix B is 600 x 64
+Matrix A has a sparsity of 10.245%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.30878 ms, 0.14923 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00604 ms, 7.62914 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01382 ms, 3.33502 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.02062 ms, 2.23451 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01748 ms, 2.63646 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00101 ms, 4.65860 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00104 ms, 4.55653 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00461 ms, 1.02408 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00074 ms, 6.35315 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00032 ms, 14.65701 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 700 x 700, matrix B is 700 x 64
+Matrix A has a sparsity of 9.761%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.43072 ms, 0.14562 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.00759 ms, 8.26786 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.01873 ms, 3.34810 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.02728 ms, 2.29937 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.01879 ms, 3.33724 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00124 ms, 4.93669 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00123 ms, 4.96632 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00569 ms, 1.07554 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00092 ms, 6.63342 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00041 ms, 15.04912 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 800 x 800, matrix B is 800 x 64
+Matrix A has a sparsity of 9.806%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.59574 ms, 0.13751 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01134 ms, 7.22462 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.02417 ms, 3.38919 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.03517 ms, 2.32939 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.02685 ms, 3.05080 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00176 ms, 4.56859 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00180 ms, 4.46276 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00739 ms, 1.08633 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00121 ms, 6.61567 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00066 ms, 12.21068 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 900 x 900, matrix B is 900 x 64
+Matrix A has a sparsity of 10.233%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.79760 ms, 0.12999 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01575 ms, 6.58328 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.03050 ms, 3.39979 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.04575 ms, 2.26648 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.03715 ms, 2.79100 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00231 ms, 4.58499 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00234 ms, 4.52901 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.00961 ms, 1.10354 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00155 ms, 6.83040 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00114 ms, 9.26932 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1000 x 1000, matrix B is 1000 x 64
+Matrix A has a sparsity of 10.192%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 0.97855 ms, 0.13081 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.01973 ms, 6.48594 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.03743 ms, 3.41944 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.05536 ms, 2.31206 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.04231 ms, 3.02536 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00263 ms, 4.95485 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00264 ms, 4.93293 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01153 ms, 1.13166 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00191 ms, 6.81946 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00137 ms, 9.50432 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1100 x 1100, matrix B is 1100 x 64
+Matrix A has a sparsity of 9.807%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.20508 ms, 0.12852 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.02070 ms, 7.48357 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.04475 ms, 3.46101 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.06352 ms, 2.43813 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.05541 ms, 2.79506 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00329 ms, 4.61991 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00333 ms, 4.56067 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01366 ms, 1.11196 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00224 ms, 6.79287 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00164 ms, 9.27621 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1200 x 1200, matrix B is 1200 x 64
+Matrix A has a sparsity of 10.256%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.45900 ms, 0.12633 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.02747 ms, 6.71035 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.05274 ms, 3.49468 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.07565 ms, 2.43639 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.06334 ms, 2.91001 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00414 ms, 4.56807 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00419 ms, 4.51300 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01666 ms, 1.13478 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00277 ms, 6.83494 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00222 ms, 8.52802 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1300 x 1300, matrix B is 1300 x 64
+Matrix A has a sparsity of 10.160%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 1.72403 ms, 0.12547 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.03315 ms, 6.52647 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.06192 ms, 3.49360 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.08550 ms, 2.53018 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.06573 ms, 3.29114 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00452 ms, 4.86452 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00455 ms, 4.83382 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.01933 ms, 1.13710 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00325 ms, 6.75816 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00294 ms, 7.47149 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1400 x 1400, matrix B is 1400 x 64
+Matrix A has a sparsity of 10.217%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 2.06175 ms, 0.12168 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.03889 ms, 6.45118 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.07134 ms, 3.51668 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.09771 ms, 2.56757 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.07055 ms, 3.55616 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00540 ms, 4.74964 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00555 ms, 4.61995 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.02254 ms, 1.13727 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00380 ms, 6.74164 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00355 ms, 7.22405 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1500 x 1500, matrix B is 1500 x 64
+Matrix A has a sparsity of 10.048%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 2.40824 ms, 0.11959 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.10491 ms, 2.74516 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.07908 ms, 3.64207 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.10997 ms, 2.61892 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.07578 ms, 3.80068 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00637 ms, 4.54333 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00644 ms, 4.49541 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.02542 ms, 1.13854 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00429 ms, 6.73846 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00431 ms, 6.72140 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1600 x 1600, matrix B is 1600 x 64
+Matrix A has a sparsity of 10.140%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 2.67166 ms, 0.12265 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.05440 ms, 6.02408 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.09100 ms, 3.60100 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.12384 ms, 2.64608 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.10074 ms, 3.25273 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00668 ms, 4.97228 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00665 ms, 4.99538 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.02916 ms, 1.13940 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00494 ms, 6.72974 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00526 ms, 6.31699 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1700 x 1700, matrix B is 1700 x 64
+Matrix A has a sparsity of 10.048%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 3.10690 ms, 0.11906 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.06489 ms, 5.70055 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.09924 ms, 3.72764 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.13908 ms, 2.65980 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.11364 ms, 3.25534 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00757 ms, 4.90941 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00744 ms, 4.99290 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.03261 ms, 1.13978 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00555 ms, 6.69485 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00619 ms, 6.00229 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1800 x 1800, matrix B is 1800 x 64
+Matrix A has a sparsity of 9.984%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 3.63395 ms, 0.11412 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.06881 ms, 6.02703 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.11083 ms, 3.74205 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.15408 ms, 2.69164 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.12912 ms, 3.21202 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00883 ms, 4.68774 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00903 ms, 4.58522 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.03638 ms, 1.13810 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00623 ms, 6.64849 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00721 ms, 5.73944 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 1900 x 1900, matrix B is 1900 x 64
+Matrix A has a sparsity of 10.046%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 3.81517 ms, 0.12112 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.07900 ms, 5.84882 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.12192 ms, 3.78993 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.17012 ms, 2.71622 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.14128 ms, 3.27060 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.00951 ms, 4.88126 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.00932 ms, 4.98184 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.04076 ms, 1.13889 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00695 ms, 6.67564 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00853 ms, 5.44269 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!
+
+Matrix A is 2000 x 2000, matrix B is 2000 x 64
+Matrix A has a sparsity of 10.170%
+
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) used 4.31107 ms, 0.11876 gflops
+((a) GEMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) used 0.08732 ms, 5.86362 gflops
+((b) GEMM_OpenBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) used 0.13411 ms, 3.81768 gflops
+((c) GEMM_CUDA_global_memory)(row-col, A and B are in row-major) PASS!
+
+
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) used 0.18775 ms, 2.72707 gflops
+((d) GEMM_CUDA_shared_memory)(row-col, A and B are in row-major) PASS!
+
+
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) used 0.15082 ms, 3.39489 gflops
+((e) GEMM_cuBLAS)(row-col, A and B are in row-major) PASS!
+
+
+((f) csrSpMM_serial)(row-col, A and B are in row-major) used 0.01150 ms, 4.52870 gflops
+((f) csrSpMM_serial)(row-col, A and B are in row-major) PASS!
+
+
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) used 0.01157 ms, 4.50164 gflops
+((g) csrSpMM_OpenMP)(row-col, A and B are in row-major) PASS!
+
+
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) used 0.04569 ms, 1.13974 gflops
+((h) csrSpMM_CUDA_scalar)(row-col, A and B are in row-major) PASS!
+
+
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) used 0.00786 ms, 6.62801 gflops
+((i) csrSpMM_CUDA_vector)(row-col, A and B are in row-major) PASS!
+
+
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) used 0.00980 ms, 5.31345 gflops
+((j) csrSpMM_cuSPARSE)(row-col, A and B are in row-major) PASS!

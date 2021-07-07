@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/liukanglai/Downloads/Learning-diary/Code/CLionProjects/democ/mosaic2.c
+stdarg.h
+-
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+
