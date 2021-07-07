@@ -2,37 +2,53 @@
 
 ## yay
 
- 
-- git clone https://aur.archlinux.org/yay.git
-- cd yay
-- makepkg -si
+1. compiler 
+
+        git clone https://aur.archlinux.org/yay.git 
+        cd yay 
+        makepkg -si
+
+2. pacman -S yay
+
 - 源：yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save (https://aur.archlinux.org)
-
 - 查看：yay -P -g(位于 ~/.config/yay/config.json) 
-
-yay -Syu
+- yay -Syu
 
  
 ## 输入法：安装fcitx
  
-- kcm-fcitx
-- fcitx-table-extra adds Cangjie, Zhengma, Boshiamy support.
-- fcitx-table-other, tables for Latex, Emoji and others.
-
-1. fcitx+fcitx-im+fcitx-sunpinyin(fcitx-qt5 fcitx-configtool)
+1. fcitx+fcitx-im+fcitx-sunpinyin(fcitx-qt5 fcitx-configtool) kcm-fcitx
 2. 
-    - sudo pacman -Rsn fcitx-im fcitx-configtool 
-    - fcitx-lilydjwg-git fcitx-sogoupinyin(yay)
 
-- For vim: vim-fcitx (set ttimeoutlen=100)
+        sudo pacman -Rsn fcitx-im fcitx-configtool 
+        install fcitx-lilydjwg-git fcitx-sogoupinyin(yay)
+        kcm-fcitx
 
-- vim /etc/profile
+> vim /etc/profile
  
-> 开头输入:
-
         export XMODIFIERS="@im=fcitx"
         export GTK_IM_MODULE="fcitx"
         export QT_IM_MODULE="fcitx" 
+
+3. fictx5-im (fictx5+fictx5-gtk/qt+fcitx5-configtool)
+    - fcitx5-chinese-addons
+    - fcitx5-rime
+    - fcitx5-nord(Setting -> Location -> input method -> Configure addons -> Classic user interface -> Theme.)
+
+> Edit /etc/environment and add the following lines:
+
+        GTK_IM_MODULE=fcitx
+        QT_IM_MODULE=fcitx
+        XMODIFIERS=@im=fcitx
+
+-  ~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema_list)
+- use new file(no deffect default.yaml), in build fold, create default.custom.yaml:
+
+- yay -S rime-cloverpinyin (schema_list: - schema: clover)
+
+> https://github.com/fkxxyz/rime-cloverpinyin/wiki/linux
+
+- For vim: vim-fcitx (set ttimeoutlen=100)
 
 
 ## 触控板 
@@ -40,7 +56,6 @@ yay -Syu
 - yay -S kcm-pointing-devices-git
 - sudo pacman -S xf86-input-libinput
 - sudo pacman -S xf86-input-synaptics  #触摸板驱动#
- 
  
 ## 蓝牙耳机
 
@@ -66,7 +81,7 @@ AutoEnable=true
 ## 软件
  
 - libconfig
-- wget curl  exfat-utils p7zip unzip zip unrar ranger
+- wget curl npm exfat-utils p7zip unzip zip unrar ranger
 
 - install deepin-wine firstly.
 
@@ -105,13 +120,10 @@ AutoEnable=true
  
 - neofetch 
 
-- qv2ray
-- electron-ssr
 - openssh 远程连接工具
 - deepin-screenshot  Flameshot 现代、快捷、轻便的截图工具
 - SimpleScreenRecorder 轻量的录屏软件
 - kdenlive shotcut 强大的视频剪辑软件
-- netease-cloud-music 网易云音乐
 - sublime-text-dev 代码编辑器
 - proxychains-ng 终端内科学上网代理工具
 - redshift 显示屏色温调节工具
@@ -124,12 +136,8 @@ AutoEnable=true
 - peek 录制 GIF 动图
 - inkscape 强大的矢量图形编辑软件
 - fontforge 字体设计、编辑软件
-- audacity 简单的音频编辑软件
-- kid3 音频元数据编辑软件
 - aria2 强大的多线程下载工具
 - youtube-dl YouTube 视频下载工具
-- baidupcs-go-git 百度网盘下载工具
-- ncmdump-go 网易云音乐的 .ncm 格式转换工具
 - AppImageLauncher   .appimage文件的启动器 
 
 ## 系统时间与Windows兼容
@@ -152,6 +160,7 @@ sudo hwclock --localtime --systohc
 - sudo chsh -s /bin/zsh username
 - yay -S oh-my-zsh-git
 - cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
+- in .zshrc: export LC_CTYPE=en_US.UTF-8
 
 # pip
 
@@ -169,13 +178,18 @@ sudo hwclock --localtime --systohc
 
 ## 美化
 
-- 设置外观 layan
+- 设置外观 layan yay -S layan-kde-git
 - 窗口管理-任务切换器-主窗口可视化切换
 - 安装lattw-dock
   >布局/
 - 终端,字体
 - 毛玻璃compton
     > .config/compton.conf
+
+# terminal translation
+- sudo npm install fanyi -g
+- yay -S node-fanyi
+> https://github.com/afc163/fanyi
 
 # backup
 

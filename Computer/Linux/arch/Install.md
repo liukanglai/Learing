@@ -69,7 +69,7 @@ swap | |/|linux swap
 
     > /：mkfs.ext4 /dev/..
     >
-    > EFI: mkfs.vfat或mkfs.fat -F32
+    > EFI: mkfs.vfat(systemd-boot)或mkfs.fat -F32
     > 
     > swap: mkswap -f /…
 
@@ -143,8 +143,22 @@ pacman -S networkmanager iw wpa_supplicant dialog dhcpcd netctl
 ## 安装启动加载器
 
 - pacman -S efibootmgr  grub os-prober intel-ucode ntfs-3g
-- grub-install -–target=x86_64-efi -–efi-directory=/boot –-bootloader-id=grub 
-- 生成:grub-mkconfig -o /boot/grub/grub.cfg
+1. grub
+    - grub-install -–target=x86_64-efi -–efi-directory=/boot –-bootloader-id=grub 
+    - 生成:grub-mkconfig -o /boot/grub/grub.cfg
+2. systemd-boot
+    - bootctl install(/boot)
+    - vim /boot/loader/loader.conf: 
+
+        default archlinux
+        timeout 1
+    - vim /boot/loader/entries/arch.conf
+
+        title archlinux
+        linux /vmlinuz-linux
+        initrd /initramfs-linux.img
+        options root=PARTUUID=deba4ba7-0c8f-c64e-a60e-e34e5bb87ab3 rw
+        > :r !blkid to get partuuid
  
 ## 重启:exit
 
@@ -233,14 +247,13 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
 - alsa-utils
 
-
 ## 桌面
 
 - 安装:
  
 - xorg xorg-server xorg-xinit
 - sddm sddm-kcm
-- plasma packagekit-qt5
+- plasma-meta packagekit-qt5
 - 可选：kde-applications (kde-base)
 
 > if you haven't install app,then a terminal needed(yakuake)

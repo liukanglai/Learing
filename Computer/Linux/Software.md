@@ -1,11 +1,3 @@
-1.
-
-- v2ray
-- yay -S v2ray
-- vim /etc/v2ray/config.json
-- systemctl enable v2ray.service
-- systemctl start v2ray.service
-
 # pip
 
 - wget https://bootstrap.pypa.io/get-pip.py
