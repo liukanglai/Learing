@@ -13,7 +13,6 @@
 - 源：yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save (https://aur.archlinux.org)
 - 查看：yay -P -g(位于 ~/.config/yay/config.json) 
 - yay -Syu
-
  
 ## 输入法：安装fcitx
  
@@ -48,8 +47,16 @@
 
 > https://github.com/fkxxyz/rime-cloverpinyin/wiki/linux
 
-- For vim: vim-fcitx (set ttimeoutlen=100)
+- yay -S ttf-apple-emoji
+- 在其它 linux 发行版，可以从这个地址下载到 apple emoji 的字体
+https://git.synh.me/dmitry/AUR/-/raw/master/files/ttf-apple-emoji/apple-color-emoji.ttc
+- 下载好之后，需要复制到 /usr/share/fonts 的某个子目录下，然后更新字体缓存
 
+        cd /usr/share/fonts
+        sudo fonts.dir
+        sudo mkfontdir
+
+- For vim: vim-fcitx (set ttimeoutlen=100)
 
 ## 触控板 
 
@@ -92,16 +99,12 @@ AutoEnable=true
     > deepin-wine-tim
  
 > 办公软件WPS安装软件和缺失字体：
-
-> sudo pacman -S wps-office
-
-> sudo pacman -S ttf-wps-fonts
-
+>
+> sudo pacman -S wps-office ttf-wps-fonts
+>
 > 如果你下载了国际版本缺失中文：
-
+>
 > sudo pacman -S wps-office-mui-zh-cn
-
-> 然后右上角切换
 
 - baidunetdisk-bin (yay)
 
@@ -142,9 +145,9 @@ AutoEnable=true
 
 ## 系统时间与Windows兼容
 
-sudo pacman -S ntpdate
-sudo ntpdate time.windows.com
-sudo hwclock --localtime --systohc
+- sudo pacman -S ntpdate
+- sudo ntpdate time.windows.com
+- sudo hwclock --localtime --systohc
 
 ## 代理
 
@@ -162,16 +165,11 @@ sudo hwclock --localtime --systohc
 - cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
 - in .zshrc: export LC_CTYPE=en_US.UTF-8
 
-# pip
-
-## vim
-
 ## deb安装
 
 - yay -S debtap
 - 也应该安装bash， binutils ，pkgfile 和 fakeroot 依赖包。
 - 创建/更新 pkgfile 和 debtap 数据库。
-
 - sudo debtap -u ..
 - 转换deb包 debtap *.deb
 - 安装 sudo pacman -U <package-name>
@@ -191,14 +189,12 @@ sudo hwclock --localtime --systohc
 - yay -S node-fanyi
 > https://github.com/afc163/fanyi
 
-# backup
-
 # vmbox
 
-sudo pacman -S linux-headers
-sudo pacman -S virtualbox  选择 1 virtualbox-host-dkms
-sudo pacman -S virtualbox-guest-iso
-sudo /sbin/vboxconfig setup
+- sudo pacman -S linux-headers
+- sudo pacman -S virtualbox  选择 1 virtualbox-host-dkms
+- sudo pacman -S virtualbox-guest-iso
+- sudo /sbin/vboxconfig setup
 
 # java
 
