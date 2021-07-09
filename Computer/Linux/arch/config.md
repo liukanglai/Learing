@@ -184,6 +184,10 @@ AutoEnable=true
 - 毛玻璃compton
     > .config/compton.conf
 
+# dolphin
+- https://wiki.archlinux.org/title/Dolphin#File_previews
+- kdegraphics-thumbnailers
+
 # terminal translation
 - sudo npm install fanyi -g
 - yay -S node-fanyi
