@@ -12,6 +12,7 @@
 - pe vmware diskgenius
 - vs code jet sublime text mingw
 
+- balenatecher
 - geek
 
 - avast
