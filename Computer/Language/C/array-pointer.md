@@ -1,8 +1,25 @@
+#
+
+- 二维数组： int (*a)[4];
+- return *(*a+2);
+- function(int a[][4]) 4不能省；
+
+# 
+
+    int a[10][10]
+- a[10] + 1 ???
+
 # 
 
 T *p;
 
 - p1 – p2 = ( 地址 p1 – 地址 p2 ) / sizeof( T)
+- :int * pn = NULL; char * pc = NULL;
+- 所有指针 变量,不论它是什么类型的,其占用的空间都是 4 个字节。
+
+
+
+# memcpy
 
 - void 指针主要用于内存拷贝。源块和目的块的地址就都可以用 void 指针表示。C/C++中有以下标准库函数:
 - void *memcpy(void *dest, const void *src, unsigned int n);
