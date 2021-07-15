@@ -151,6 +151,9 @@ AutoEnable=true
 - hwclock --show
 - hwclock --systohc
 
+24小时：
+- qt5-base-24h
+
 ## 代理
 
 - qv2ray出错，可删除再装，（用pacman装，用yay装，）
