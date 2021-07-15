@@ -45,6 +45,9 @@
 
 ## 配置
 
+- hwclock --show
+- hwclock --systohc
+
 - 时间同步: timedatectl set-ntp true
 
     > 手动: timectl set-time “year-month-date h-minute-s”
@@ -222,13 +225,16 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ## 字体:
  
 - 思源字体:
-- adobe-source-han-serif-cn-fonts - 思源宋体简体中文部分
-- adobe-source-han-serif-tw-fonts - 思源宋体繁体中文部分
-- adobe-source-han-sans-cn-fonts - 思源黑体简体中文部分
-- adobe-source-han-sans-tw-fonts - 思源黑体繁体中文部分
-- ttf-dejavu ttf-liberation wqy-microhei ttf-wps-fonts
-- JetBrains Mono!!!
+- adobe-source-han-sans-cn-fonts - 无衬线体(使用)  adobe-source-han-sans-tw-fonts - 思源黑体繁体中文部分
+- adobe-source-han-serif-cn-fonts - 衬线体(打印) 思源宋体简体中文部分 adobe-source-han-serif-tw-fonts - 思源宋体繁体中文部分
+- noto-fonts-sc(AUR) - Noto CJK-SC fonts for Simplified Chinese
+- noto-fonts-emoji
+- ttf-jetbrains-mono
+- ttf-liberation ttf-wps-fonts
+
  
+- ~/.config/fontconfig
+
 ## 目录:
 
 - 安装xdg-user-dirs

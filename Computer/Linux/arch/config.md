@@ -148,6 +148,8 @@ AutoEnable=true
 - sudo pacman -S ntpdate
 - sudo ntpdate time.windows.com
 - sudo hwclock --localtime --systohc
+- hwclock --show
+- hwclock --systohc
 
 ## 代理
 
