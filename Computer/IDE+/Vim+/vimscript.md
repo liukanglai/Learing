@@ -1,6 +1,6 @@
 # vim 脚本文件
 
-- 使用:去执行命令(单步调试) :source 执行整个脚本文件
+- 使用 : 去执行命令 (单步调试) :source 执行整个脚本文件
 - 后缀.vim
 - :source *.vim (:so %)
 - :echo variable(print it)
@@ -8,7 +8,7 @@
 # grammar
 > 无专门的boolean, 1 is true, 0 is false
 1. variable
-    1. set
+    1. set(inner variable)
 
     2. let 非内部变量的赋值
     - let g:hh='liu' g作用域

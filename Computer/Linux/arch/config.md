@@ -182,6 +182,7 @@ AutoEnable=true
 ## 美化
 
 - 设置外观 layan yay -S layan-kde-git
+- orchis-dark
 - 窗口管理-任务切换器-主窗口可视化切换
 - 安装lattw-dock
   >布局/
