@@ -60,6 +60,15 @@ Host 为 10.0.1.11，即 Pi 的 IP 地址。
 端口为 6300，即 external-controller: 0.0.0.0:6300 所配置的端口。
 密钥即 secret 所配置的口令，上述示例中为 your-secret-passphrase。
 
+        # external-controller 主要是用于 web 端管理页面，必须监听在 0.0.0.0
+        external-controller: 0.0.0.0:9090
+        
+        # secret 是进入管理面板所需要的密码，可填可不填，建议填上
+        secret: "123456"
+        
+        # external-ui 表示管理面板的路径，这个路径就是你前面解压缩的dashboard的路径，根据你实际的改
+        external-ui: /opt/clash-dashboard-gh-pages
+
 # shellclash
 
 - source ~/.bashrc &> /dev/null
