@@ -67,7 +67,7 @@ Host 为 10.0.1.11，即 Pi 的 IP 地址。
         secret: "123456"
         
         # external-ui 表示管理面板的路径，这个路径就是你前面解压缩的dashboard的路径，根据你实际的改
-        external-ui: /opt/clash-dashboard-gh-pages
+        external-ui: /opt/clash-dashboard-gh-pages(/usr/share/yacd)
 
 # shellclash
 
