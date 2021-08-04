@@ -207,15 +207,143 @@
 
 ## classes
 
+        let animal_names = {
+          \ 'cat': 'Miss Cattington',
+          \ 'dog': 'Mr Dogson',
+          \ 'parrot': 'Polly'
+          \ }
+        
+        function! animal_names.GetGreeting(animal)
+          return self[a:animal] . ' says hello'
+        endfunction
+        
+        echo animal_names.GetGreeting('cat')
+        
+        let animals = {
+          \ 'animal_names' : {
+            \ 'cat': 'Miss Cattington',
+            \ 'dog': 'Mr Dogson',
+            \ 'parrot': 'Polly'
+            \ }
+          \ }
+        
+        " 为类加函数
+        function GetGreeting(animal) dict
+          return self.animal_names[a:animal] . ' says hello'
+        endfunction
+        
+        let animals['GetGreeting'] = function('GetGreeting')
+        
+        echo animals.GetGreeting('dog')
+
 ## lambda
 
-## map filter
+    let AnimalGreeting = {animal -> animal . ' says hello'}
+
+    echo AnimalGreeting('cat')
+
+- 清晰函数
+
+## map / filter
+
+        function! IsProperName(name)
+          if a:name =~? '\(Mr\|Miss\) .\+'
+            return 1
+          endif
+          return 0
+        endfunction
+        
+        let animal_names = {
+          \ 'cat': 'Miss Cattington',
+          \ 'dog': 'Mr Dogson',
+          \ 'parrot': 'Polly'
+          \ }
+        
+        call filter(animal_names, 'IsProperName(v:val)')
+        
+        let IsProperName2 = function('IsProperName')
+        
+        echo IsProperName2('Mr Dogson')
+        
+        function! FunctionCaller(func, arg)
+          return a:func(a:arg)
+        endfunction
+        
+        echo FunctionCaller(IsProperName2, 'Miss Catington')
+        
+        function! IsProperNameKeyValue(key, value)
+          if a:value =~? '\(Mr\|Miss\) .\+'
+            return 1
+          endif
+          return 0
+        endfunction
+        
+        call filter(animal_names, function('IsProperNameKeyValue'))
+        
+        echo animal_names
+        
+        let animal_names = ['Miss Cattington', 'Mr Dogson', 'Polly', 'Meowtington']
+        
+        call map(animal_names,
+          \ {key, val -> IsProperName(val) ? val : 'Miss ' .  val})
+        
+        echo animal_names
+        
+        function! MakeProperName(name)
+          if IsProperName(a:name)
+            return a:name
+          endif
+          return 'Miss ' . a:name
+        endfunction
+        call map(animal_names, 'MakeProperName(v:val)')
 
 ## interacting
 
+    echo animal . ' says hello'   execute 'echo ' . animal . ' says hello'
+    
+    execute "normal /cat<cr>dw"  " <cr> is ctrl+v+enter, 要忽略自定义的键映射，use normal!
+    
+    " silent to hide command, add ! to hide external commands
+    silent echo animal . ' says hello'
+    silent execute 'echo ' . animal . ' says hello'
+    silent !echo 'this is running in a shell'
+    
+    if has('python3')
+      echom 'Your Vim was compiled with Python 3 support!'
+    endif
+
+- :help feature-list
+
 ## file
 
+    echom 'Current file extension is ' . expand('%:e')
+    
+    if filereadable(expand('%'))
+      echom 'Current file (' . expand('%:t') . ') is readable!'
+    endif
+    
+    execute 'edit animals.py'
+
 ## prompts
+
+let answer = confirm('Is cat your favorite animal?', "&yes\n&no")
+echo answer
+
+let answer = confirm(
+  \ 'Is cat your favorite animal?', "absolutely &yes\nhell &no")
+
+let animal = input('What is your favorite animal? ')
+echo "\n"
+echo 'What a coincidence! My favorite animal is a ' . animal . ' too!'
+
+function! AskAnimalName()
+  call inputsave()
+  let name = input('What is the animal''s name? ')
+  call inputrestore()
+  return name
+endfunction
+
+nnoremap <leader>a = :let name = AskAnimalName()<cr>:echo name<cr>
 
 
 # style
