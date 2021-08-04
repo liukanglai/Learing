@@ -96,4 +96,18 @@
 - set clipboard=unnamedplus  " 复制到+
 - set clipboard=unamed, unnamedplus  " 同时 
 
+# 快速恢复列表
+
+为了方便的跳转到文件的某个部分, 如:make, :grep等产生的信息
+- :copen to open all 
+- :cclose/:bd
+- :cnext(cn) :cprevious(cp/cN)
+- :cwindow/:cw 只在出错时打开
+
+# 位置列表
+
+- :lgrep :lmake to open
+- :lopne :lclose ...
+
 # diff
+

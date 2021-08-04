@@ -4,10 +4,14 @@
 - gD	跳转到局部变量的定义处
 
 ## easymotion
+
 - <Leader><Leader>+w b e ge/tT/fF/kj/nN to start
 - good operation
 
-        _/$ {/} f+ % zz/zt/zb */#
+        _/$ {/} % zz/zt/zb 
+
+        f+ 
+        */#
         c-o/c-i/''
         cc
         mx/'x

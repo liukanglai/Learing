@@ -6,22 +6,218 @@
 - :echo variable(print it)
 
 # grammar
+
 > 无专门的boolean, 1 is true, 0 is false
-1. variable
-    1. set(inner variable)
 
-    2. let 非内部变量的赋值
+## variables
+
+1. set(inner variable)
+
+2. let 非内部变量的赋值
     - let g:hh='liu' g作用域
-    - g全局（默认的） v（vim定义的全局作用域） l（局部，函数内部默认） b（当前缓冲区） w（当前窗口） t（当前标签页） s(使用:source'd执行的vim脚本文件中的局部文件作用域) a(函数的参数)
-    - let @a='liu'
-    - let &ignorecase = 0 (可用&访问set命令的变量)
-2. 
-3. function
-4. loop
+    - g全局（默认的） v（vim定义的全局作用域） l（局部，函数内部默认） b（当前缓冲区） w（当前窗口） t（当前标签页） s(使用:source'd执行的vim脚本文件中的局部文件作用域)  a(函数的参数)
+    - let @a='liu' (寄存器)
+    - let &ignorecase = 0 (可用&访问set命令的变量，即内部变量)
 
-
-> 整数变量可用+-\*/, 字符串拼接使用.(如: 'h'.'ello'), 字符串内使用'(两个, '')
+> 整数变量可用+ - \* / 运算，字符串拼接使用 . (如: 'h'.'ello'), 字符串内使用 ' (要使用两个 '')
 >> '内为字符串, "内可有非字面量字符, 但注释也使用, 所以有些命令后面不能用注释
+
+3. echo
+    - echo g:animal  (echomsg/echom can keep the msg to log, use :messages can look up)
+    > :help message-history
+
+## conditionals
+
+1. if
+    
+        if animal == 'cat'
+            ...
+        elseif ...
+            ...
+        else
+            ...
+        endif
+
+    - ? : 
+    - if !(cat || dog)  if !cat && !dog
+    - == 比较字符串，==? 忽略大小写, ==# 考虑大小写, =~ 左操作数与右操作数匹配(=~? =~#), !~ 反=~ 
+    - 默认大小写取决于ignorecase
+            
+            echo 'cat' ==? 'CAT'
+            echo 'cat' ==# 'CAT'
+            set ignorecase | echo 'cat' == 'CAT'
+            echo 'cat' =~ 'c.\+'
+            echo 'cat' =~# 'C.\+'
+            echo 'cat' !~ '.at'
+            echo 'cat' !~? 'C.\+'
+
+## lists
+
+- let animals = ['cat', 'dog', 'parrot']
+
+- let cat = animals[0]      " get first element
+- let dog = animals[1]      " get second element
+- let parrot = animals[-1]  " get last element
+- let slice = animals[1:] let slice = animals[0:1]  " include begin and end elements
+
+- call add(animals, 'octopus') or let animals = add(animals, 'octopus')
+> 除非函数是表达式的一部分, 否则单独调用都要call 
+- call insert(animals, 'bobcat')  " at first
+- call insert(animals, 'raven', 2)  " assign index
+
+- unlet animals[2]  " delete
+- call remove(animals, -1)
+- unlet animals[:1]   call remove(animals, 0, 1)
+
+
+- let mammals = ['dog', 'cat']
+- let birds = ['raven', 'parrot']
+
+- let animals = mammals + birds
+- call extend(mammals, birds)
+
+- call sort(animals)   " 按字母排序
+
+- let i = index(animals, 'parrot')  " i is 2
+
+        if empty(animals)
+          echo 'There aren''t any animals!'
+        endif
+
+- echo 'There are ' . len(animals) . ' animals.'    " len get the length of lists
+- echo 'There are ' . count(animals, 'cat') . ' cats here.'    " count can get how much the element in list
+
+> :help list
+
+## dictionaries
+
+    let animal_names = {
+      \ 'cat': 'Miss Cattington',
+      \ 'dog': 'Mr Dogson',
+      \ 'parrot': 'Polly'
+      \ }
+
+- use \ to wrap lines
+
+- let cat_name = animal_names['cat']  or let cat_name = animal_names.cat   " get an element
+> the . 只适用于元素仅包含数字, 字母, 下划线
+
+- let animal_names['raven'] = 'Raven R. Raventon'
+- unlet animal_names['raven']  or  let raven = remove(animal_names, 'raven')
+
+- call extend(animal_names, {'bobcat': 'Sir Meowtington'})  " extend two dictionaries, change the first, if have the same elements, it will cover
+
+        if !empty(animal_names)
+          echo 'We have names for ' . len(animal_names) . ' animals'
+        endif
+
+        if has_key(animal_names, 'cat')  " if have the element
+          echo 'Cat''s name is ' . animal_names['cat']
+        endif
+
+> :help dict
+
+## loop
+
+    for animal in animals
+      echo animal
+    endfor
+
+    for animal in keys(animal_names)
+      echo 'This ' . animal . '''s name is ' . animal_names[animal]
+    endfor
+
+    for [animal, name] in items(animal_names)
+      echo 'This ' . animal . '''s name is ' . name
+    endfor
+
+    for animal in animals
+      if animal == 'cat'
+        echo 'It''s a cat! Breaking!'
+        break
+      endif
+      echo 'Looking at a ' . animal . ', it''s not a cat yet...'
+    endfor
+
+    for animal in animals
+      if animal == 'cat'
+        echo 'Ignoring the cat...'
+        continue
+      endif
+      echo 'Looking at a ' . animal
+    endfor
+
+    while !empty(animals)
+      echo remove(animals, 0)
+    endwhil
+
+    while len(animals) > 0
+      let animal = remove(animals, 0)
+      if animal == 'dog'
+        echo 'Encountered a dog, breaking!'
+        break
+      endif
+      echo 'Looking at a ' . animal
+    endwhile
+
+
+## function
+
+- 定义的函数必须大写开头（除非在脚本作用域或命名空间中）
+- 函数内访问参数需 a: 作用域
+
+        function! AnimalGreeting(animal)
+          echo a:animal . ' says hello!'
+        endfunction
+        
+        call AnimalGreeting('cat')
+
+- vimscript 可能加载多次，重定可能出错，可加! 
+
+        function! AnimalGreeting(animal)
+          return a:animal . ' says hello!'
+        endfunction
+        
+        echo AnimalGreeting('dog')   " 输出函数的返回值
+        
+        function! AnimalGreeting(...)  " 可变参
+          echo a:1 . ' says hi to ' . a:2
+        endfunction
+        
+        call AnimalGreeting('cat', 'dog')
+        
+        function! ListArgs(...)
+          echo a:000  " get all arguments
+        endfunction
+        
+        call ListArgs('cat', 'dog', 'parrot')
+        
+        function! AnimalGreeting(animal, ...)
+          echo a:animal . ' says hi to ' . a:1
+        endfunction
+        
+        call AnimalGreeting('cat', 'dog')
+
+
+        function s:AnimalGreeting(animal)   " 局部作用域
+          echo a:animal . 'says hi!'
+        endfunction
+        
+        call s:AnimalGreeting('cat')
+
+## classes
+
+## lambda
+
+## map filter
+
+## interacting
+
+## file
+
+## prompts
+
+
 # style
 
 # plugin

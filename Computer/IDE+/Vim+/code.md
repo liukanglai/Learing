@@ -69,21 +69,11 @@ vim-tmux-navigator
 
 
 # screen
+
 - see it in vim wikia
 
-
-# 快速恢复列表
-为了方便的跳转到文件的某个部分, 如:make, :grep等产生的信息
-- :copen to open all 
-- :cclose/:bd
-- :cnext(cn) :cprevious(cp/cN)
-- :cwindow/:cw 只在出错时打开
-
-# 位置列表
-- :lgrep :lmake to open
-- :lopne :lclose ...
-
 # make
+
 - :compiler gcc
 - :set errorformat 错误格式
 - :set makeprg 运行make使用哪个命令行程序
@@ -97,14 +87,14 @@ plug: vim-test
 > python use Pylint Flake8 autopep8
 
 1. Linter
-- :make | copen
+    - :make | copen
 
         " Use :make to run pylint for Python files.
         autocmd filetype python setlocal makeprg=pylint3\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p
         autocmd filetype python setlocal errorformat=%f:%l:\ %m
 
 2. syntastic(plug)
-- 显示的是位置列表
+    - 显示的是位置列表
         
         " Plug 'vim-syntastic/syntastic'
 
@@ -120,12 +110,12 @@ plug: vim-test
         " let g:syntastic_python_pylint_exe = 'pylint3'
 
 3. ale(异步调用)
-- :lopen to open
-- :ALEToggle to open and close
-- :ALEGoToDefinition 跳转定义
-- :ALEFindReferences 查找定义的引用
-"自动补全
-let g:ale_completion_enable = 1
+    - :lopen to open
+    - :ALEToggle to open and close
+    - :ALEGoToDefinition 跳转定义
+    - :ALEFindReferences 查找定义的引用
+    "自动补全
+    let g:ale_completion_enable = 1
 
 # arglist(argument list) 
 
@@ -141,9 +131,11 @@ do a same operation in multiple files
 - :bufdo(argdo) (all buffer do)
 
 # refactor
+
 - use regex to substitute, search, 宏...
 - google: vim refactoring plugins
 
 # debug
+
 - termdebug(plug)
 
