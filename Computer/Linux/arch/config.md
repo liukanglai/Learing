@@ -191,8 +191,14 @@ AutoEnable=true
     > .config/compton.conf
 
 # dolphin
+
 - https://wiki.archlinux.org/title/Dolphin#File_previews
 - kdegraphics-thumbnailers
+
+# pdf
+
+- poppler
+- poppler-data
 
 # terminal translation
 - sudo npm install fanyi -g
