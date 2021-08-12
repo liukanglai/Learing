@@ -1,0 +1,5 @@
+#
+
+socialism
+
+class transition

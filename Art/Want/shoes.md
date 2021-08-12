@@ -1,0 +1,64 @@
+- 顶级缓震和轻量缓震
+- 阿迪ub pb eqt
+- 耐克vomero14和epic react(飞马37应该位于次顶级缓震系)
+- PUMA speed600 2代
+- 索康尼triumph17和freedom3
+- 布鲁克斯glycerin18（体重大），levitate3和ghost12
+- NB 1080 v10(fuel cell propel大概和飞马一个级别)
+- 亚瑟士nimbus22和nimbus lite，novablast(glideride算半个，evoride和飞马一个级别)  metaride(跑+行走)
+- 361国际线spire4(非国际线Q弹超和飞马一个级别)
+- 斯凯奇go run ride7+，go run ride8
+- HOKA clifton6
+- 锐步floatride run 2.0
+- 美津浓wave sky3和wave rider23
+
+- 顶级和"次顶"支撑系(一些品牌"没有"硬核支撑，半稳定系)
+- 阿迪solar boost(st)，pulseboost HD和solar glide(st)
+- 耐克react infinity run
+- 索康尼hurricane22和guide13
+- 布鲁克斯transcend7，bedlam和gts
+- 亚瑟士kayano26（体重大）和GT2000-8
+- 361国际线sensation4(国内真正的顶撑没得卖)
+- HOKA arahi4
+- 美津浓wave horizon3，paradox5和inspire16
+
+- 非"推进板"竞速鞋
+- 耐克streak7，streak lt4
+- 阿迪adios5，RC2.0，takumi sen6
+- NB 1500v6，1400v6，Hanzo R，Hanzo S
+- 索康尼Type A9，Fastwitch9(带支撑)
+- 亚瑟士Tartherzeal6，Tartheredge，Sortiemagic RP5
+- 斯凯奇Razor3，Horison Vanish
+- HOKA Tracer2
+- 锐步Floatride runfast PRO
+- 美津浓Emperor3，Ekiden12
+- 李宁追风 ，天马
+- 安踏Challenge202 2.0
+- 多威战神DSP版
+- 特步160
+
+- 顶级"碳板跑鞋("简配"训练款就不写了)
+- 耐克Alphafly 
+- 斯凯奇Speed Elite Hyper
+- 亚瑟士metaracer
+- NB Fuelcell5280，Fuelcell RC Elite
+- 布鲁克斯Hyperion Elite(2)
+- 索康尼Endorphin PRO
+- 阿迪Adizero PRO 
+- 美津浓Wave Dual GTZ(pebax板)
+- HOKA Carbon X，Rocket X
+- 李宁飞电
+- 特步160X
+- 多威神行者
+ 
+- 速度训练
+- 耐克turbo2
+- 阿迪boston8，tempo9(带支撑)，SL20
+- 索康尼kinvara11
+- NB tempo
+- 亚瑟士DS trainer
+- HOKA rincon
+- NB tempo，fuelcell rebel，Hanzo T
+- 锐步floatride runfast
+- 美津浓shadow3
+- 李宁超轻17
