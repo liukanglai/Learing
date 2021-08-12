@@ -13,7 +13,6 @@
         [q ]q 遍历快速修复列表
         [q ]q 遍历tag
 
-
 # Tab
 
 - :tabnew  web 使用 ：tabnew 创建一个名字叫 web 的 tab ,当然名字也可以没有，这样会创建一个没有名字的 tab
@@ -83,7 +82,7 @@
 # Register
 
 - " 访问寄存器
-- "ayy 表示的是复制当前行内容到 a 寄存器当中，如需附加，使用A
+- "ayy 表示的是复制当前行内容到 a 寄存器当中，如需附加复制，使用A
 - “ap 表示的是从 a 寄存器当中取出内容
 - :reg 该命令会列出所有的寄存器
 - :reg a 会查看 a 寄存器里寄存的内容 ((%寄存)器当前文件名，#上次打开的文件名，.最后插入的文本，:最后的命令)
@@ -96,7 +95,8 @@
 - set clipboard=unnamedplus  " 复制到+
 - set clipboard=unamed, unnamedplus  " 同时 
 
-# 快速恢复列表
+
+# 快速恢复列表 quickfix
 
 为了方便的跳转到文件的某个部分, 如:make, :grep等产生的信息
 - :copen to open all 

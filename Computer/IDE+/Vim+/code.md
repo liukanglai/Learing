@@ -7,14 +7,23 @@
 
 2. YouCompleteMe
 
-3. Exuberant ctag
+# browse
+
+
 - gd/D: 跳转函数定义
-- pacman -S ctags
-- ctags -R(create tags)
-- c-]: 会跳转 c-t: back 同名 :tn :tp :ts(select)
-- g]: select
-- vim -t tags(直接跳转)
-- " Regenerate tags when saving Python files.  autocmd BufWritePost \*.py silent! !ctags -R &
+
+1. Exuberant ctag
+    - pacman -S ctags
+    - ctags -R(create tags)
+    - c-]: 会跳转, c-t: turn back, 若有同名 :tn(next) :tp(previous) :ts(select)
+    - g]: select
+    - vim -t tags(直接跳转)
+    - " Regenerate tags when saving Python files.  autocmd BufWritePost \*.py silent! !ctags -R &
+
+            set tags=tags;  " 在父目录中递归查找tags，; 使持续查找
+            set tags=/home/tags  " set a folder
+2. taglist/tagbar
+
 
 # undotree
 - gundo.vim

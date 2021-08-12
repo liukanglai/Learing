@@ -16,6 +16,7 @@
         cc
         mx/'x
         :Ex
+        >> <<  缩进
 
 # 移动光标（普通模式下）
 
@@ -76,7 +77,7 @@
 
 - v/V
 - :normal command (ps: isome)
-- ctr+v  no need
+- ctr+v  no need, then :norm $cw..
 - o to move
 
 # 注释
