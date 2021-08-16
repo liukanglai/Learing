@@ -16,12 +16,7 @@
  
 ## 输入法：安装fcitx
  
-1. fcitx+fcitx-im+fcitx-sunpinyin(fcitx-qt5 fcitx-configtool) kcm-fcitx
-2. 
-
-        sudo pacman -Rsn fcitx-im fcitx-configtool 
-        install fcitx-lilydjwg-git fcitx-sogoupinyin(yay)
-        kcm-fcitx
+1. fcitx+fcitx-im+fcitx-sunpinyin(fcitx-qt5 fcitx-configtool) kcm-fcitx fcitx-qt4+fcitx-sogoupinyin(yay)
 
 > vim /etc/profile
  
@@ -29,7 +24,7 @@
         export GTK_IM_MODULE="fcitx"
         export QT_IM_MODULE="fcitx" 
 
-3. fictx5-im (fictx5+fictx5-gtk/qt+fcitx5-configtool)
+2. fictx5-im (fictx5+fictx5-gtk/qt+fcitx5-configtool)
     - fcitx5-chinese-addons
     - fcitx5-rime
     - fcitx5-nord(Setting -> Location -> input method -> Configure addons -> Classic user interface -> Theme.)
@@ -48,13 +43,6 @@
 > https://github.com/fkxxyz/rime-cloverpinyin/wiki/linux
 
 - yay -S ttf-apple-emoji
-- 在其它 linux 发行版，可以从这个地址下载到 apple emoji 的字体
-https://git.synh.me/dmitry/AUR/-/raw/master/files/ttf-apple-emoji/apple-color-emoji.ttc
-- 下载好之后，需要复制到 /usr/share/fonts 的某个子目录下，然后更新字体缓存
-
-        cd /usr/share/fonts
-        sudo fonts.dir
-        sudo mkfontdir
 
 - For vim: vim-fcitx (set ttimeoutlen=100)
 
