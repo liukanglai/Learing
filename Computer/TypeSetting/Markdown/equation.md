@@ -106,48 +106,44 @@ y{\prime}x \int \iint \iiint \oint \lim \infty \nabla
 
 # 集合运算
 
-包含 $\supset$
-&subset; &subset;
+⊃ &supset;
+⊇ &supseteq;
 
-属于 $\in$
+⊂ &subset;
+⊆ &subseteq;
 
-&prod;
+∈ &in;
+∉ &notin;
 
-&coprod;
+空集 &emptyset; &emptyset;
 
-&emptyset; &emptyset;
+⋂ &bigcap;
 
-&in;
+⋃ &bigcup;
 
-&notin; &notin;
+⋁  &bigvee;
 
-&supset; &supset;
+⋀  &bigwedge;
 
-&subseteq; &subseteq;
+⨆ &bigsqcup;
 
-&supseteq; &supseteq;
+∏ &prod;
 
-&bigcap; &bigcap;
+∐ &coprod;
 
-&bigcup; &bigcup;
+&biguplus;
 
-&bigvee; &bigvee;
 
-&bigwedge; &bigwedge;
-
-&biguplus; &biguplus;
-
-&bigsqcup; &bigsqcup;
 
 - 逻辑运算
 
-&because; 
+∵ &because; 
 
-&therefore; 
+∴ &therefore; 
 
-&forall; 
+∀ &forall; 
 
-&exist;
+∃ &exist;
 
 - 箭头
 
