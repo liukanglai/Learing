@@ -1,11 +1,26 @@
 # complete
 
 1. vim内置
-- c-p/n
-- 插入补全模式：c-x, than: c-i(补全整行) c-j(补全标签) c-f(补全文件名) s(拼写建议的补全, set spell)
-> :help ins-completion :help 'complete'
+    - c-p/n
+    - 插入补全模式：c-x, than: c-i(补全整行) c-j(补全标签) c-f(补全文件名) s(拼写建议的补全, set spell)
+    > :help ins-completion :help 'complete'
 
 2. YouCompleteMe
+3. coc.nvim
+    - ccls:
+
+```
+git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+cd ccls
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/path/to/clang+llvm-xxx
+cmake --build Release
+sudo pacman -S ccls
+
+For mac users with brew
+brew info llvm
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/local/Cellar/llvm/<Your Version>/lib/cmake
+cmake --build Release
+```
 
 # browse
 

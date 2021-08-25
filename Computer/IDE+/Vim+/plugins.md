@@ -67,107 +67,14 @@ delete
 - be same to vim-plug
 - use :PluginSearch ... !!!you can find plugins, then put the cursor on it, push i, will try it, but not installed it, you need use plug '' to install it.
 
-# Plug 
-
-" theme
-Plug 'connorholyday/vim-snazzy'
-
-" File navigation
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" 模糊查找文件
-fzf
-
-" 查找包含某特定行或单词的文件
-ack
-
-" Taglist
-"右显示函数列表
-Plug 'majutsushi/tagbar', { 'on': 'TagbarOpenAutoClose' }
-
-vim-gutentags: 
-- 工作原理：确定vim当前打开的文件是否需要自动生成tags标签，若需要则通过某种方式确定tag文件的路径，再基于tag标签文件完成函数跳转、结构体定义跳转等功能
-
-        " gutentags搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归 "
-        let g:gutentags_project_root = ['.root', '.svn', '.git', '.project']
-        
-        " 所生成的数据文件的名称 "
-        let g:gutentags_ctags_tagfile = '.tags'
-        
-        " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录 "
-        let s:vim_tags = expand('~/.cache/tags')
-        let g:gutentags_cache_dir = s:vim_tags
-        " 检测 ~/.cache/tags 不存在就新建 "
-        if !isdirectory(s:vim_tags)
-           silent! call mkdir(s:vim_tags, 'p')
-        endif
-        
-        " 配置 ctags 的参数 "
-        let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-        let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
-        let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-
-
-“缩进指南
-Plug 'nathanaelkane/vim-indent-guides'
-
-" git (右行显示; ~已更改  +已添加  -已删除
-gitgutter
-
-" HTML, CSS, JavaScript, PHP, JSON, etc.
-Plug 'elzr/vim-json'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
-Plug 'gko/vim-coloresque', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-Plug 'pangloss/vim-javascript', { 'for' :['javascript', 'vim-plug'] }
-Plug 'mattn/emmet-vim'
-
-" Python
-Plug 'vim-scripts/indentpython.vim'
-
-" 表格
-Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' }
-
-
-" Bookmarks
-Plug 'kshenoy/vim-signature'
-
-" Other useful utilities
-Plug 'terryma/vim-multiple-cursors'
-
-" distraction free writing mode
-Plug 'junegunn/goyo.vim' 
-
-    " type ysks ' to wrap the word with '   ' or type cs'`   to change 'word' to `word`
-
-Plug 'tpope/vim-surround' 
-
-"line up text"
-Plug 'godlygeek/tabular' " type ;Tabularize /= to align the =
-Plug 'gcmt/wildfire.vim' " in Visual mode, type i' to select all text in '', or type i) i] i} ip
-
-
-" Dependencies
-
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'kana/vim-textobj-user'
-Plug 'fadein/vim-FIGlet'
-
-call plug#end()
-
 # YouCompleteMe
-  > vim中输入:echo has('python') || has('python3')   - if return 1,show right
-  >
-  > vim --version | grep python(shoule be +, if -, than compile vim) 
-  >
-  > Install cmake python clang boost llvm-libs llvm
-  >
-  > Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-  >
-  > cd .vim/plugged/YouCompleteMe
-  > 
-  >sudo python3 install.py --clangd-completer (all)
+
+        vim中输入:echo has('python') || has('python3')   - if return 1,show right
+        vim --version | grep python(shoule be +, if -, than compile vim) 
+        Install cmake python clang boost llvm-libs llvm
+        Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+        cd .vim/plugged/YouCompleteMe
+        sudo python3 install.py --clangd-completer (all)
 
         let g:ycm_min_num_identifier_candidate_chars = 2
         let g:ycm_semantic_triggers =  {
@@ -187,6 +94,7 @@ call plug#end()
 - YCM默认会显示诊断信息，语言标注出来你代码问题, 屏蔽: 这样你可以用其他插件来完成自动/非自动代码静态检查
 
         let g:ycm_show_diagnostics_ui = 0
+
 - 最后建议设置一下：g:ycm_filetype_whitelist 这个白名单，避免编辑白名单外的文件类型时 YCM也在那分析半天，比如你打开个 1MB 的 TXT 文件，YCM还要再那里空跑半天就傻了：
 
         let g:ycm_filetype_whitelist = { 
@@ -199,12 +107,28 @@ call plug#end()
         			\ "markdown":1,
         			\ }
 
+# coc.nvim
+
+- nodejs(npm) neovim yarn?
+- plug '...'
+- checkhealth/ CocInfo
+
+- CocInstall
+- CocUninstall
+- CocList extensions  //tab
+- file coc-settings.json
+- :CocConfig
+
+
+
 # neocomplete
 # deoplete.nvim / youcompleteme???
- pip install -U msgpack-python
-You can enable Python3 interface with pip:
-pip3 install --user pynvim
+
+- pip install -U msgpack-python
+- You can enable Python3 interface with pip:
+- pip3 install --user pynvim
 - for vim-plug:
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -213,7 +137,6 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 let g:deoplete#enable_at_startup = 1
-
 
 # analysis
 
@@ -226,4 +149,5 @@ let g:deoplete#enable_at_startup = 1
     - :profile func *(CtrlP)
     - :profile file *(CtrlP)
     - open profile.log, G, *可搜索单词
+
 
