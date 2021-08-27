@@ -55,6 +55,8 @@
 
 - EA = U -> A = LU, no row exchanges, 消元系数会直接在L中
 
+> Ax = b; use Gauss is too difficulty, so solve LUx = b; Ux = y, Ly = b;
+
 # 运算律
 
 - 结合律
@@ -91,6 +93,7 @@
 - 构造：取列，行，进行线性组合
 
 ### 列空间C(A)  -- Ax = b 有解的所有 b（对 A 的 列线性组合）
+
 - in R^m
 - dim: r
 - 基：主元所在列
@@ -98,16 +101,19 @@
 > 行变换后，列空间变化，行空间不变
 
 ### 0 空间N(A)（不是 0 向量空间）  -- Ax = 0 的所有 x，不仅限于 0！！！
+
 - in R^n
 - dim: n - r
 - 基：free所在列, 特解
 
 ### 行空间R(A) C($A^T$)
+
 - in R^n
 - dim:r
 - 基：主元所在行
 
 ### N($A^T$) 左 0 空间
+
 - in R^m
 - dim: m - r
 - 基：[A I] -> [R E], EA = R, find E, R 中有 0 行，则其对应 E 即是基，(此基对 A 做行组合得到 0)

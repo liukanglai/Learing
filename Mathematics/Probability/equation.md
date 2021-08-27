@@ -1,4 +1,11 @@
+---
+title: "My First Post"
+date: 2021-08-25T19:25:59+08:00
+draft: false
+---
 
+
+#
 - $\frac{(n-1)S^2}{\theta^2} - X^2(n-1)$
 
 X¯∼N(μ,σ2n)(n−1)S2σ2∼χ2(n−1)X¯与S2相互独立
