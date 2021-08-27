@@ -11,17 +11,14 @@
     - 其他逻辑词（加and或,）：
     - similarly  equally  likewise  at the same time  in the meanwhile
 
-
 2. 转折关系：but  yet  while  whereas
 
     - however  nevertheless  on the contrary  by contrast
     - conversely  unexpectedly  unfortunately
 
-
 3. 选择：or  whether...or...
 
     - alternatively
-
 
 4. 因果：for  so
 
@@ -36,7 +33,6 @@
 
         Do you still keep that day in mind? I failed to pass CET4, and as a result, I shed tears in the rain alone. At the same time, you came up to me, and subsequently you beat my shoulders and told me "there exists no destination in life".
 
-
 # 考点分析
 
 1. 写作
@@ -48,10 +44,7 @@
         There remain an army of companies coming from afar, and consequently, I feel more than delighted.
         I am claimed changedable like water. By contrast, my clarity keeps consistent.
 
-
 2. 完形填空
 - 只需要读懂逻辑关系词前后两句话的意思就ok
 
 3. 长难句分析
-
-
