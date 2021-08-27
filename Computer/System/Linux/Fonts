@@ -1,0 +1,15 @@
+#
+
+- extract file, more 
+- fc-cache -f -v
+解压缩存档并安装字体：
+
+选择文件夹中的所有字体文件，然后双击 “Install Font” 按钮。
+
+选择文件夹中的所有字体文件，右键单击其中任何一个，然后从菜单中选择 “Install”。
+
+将字体解压缩到 ~/.local/share/fonts（或 usr/share/fonts，以在系统范围内安装字体）并执行 fc-cache -f -v
+重启您使用的 IDE
+转到 Preferences/Settings → Editor → Font ，然后从字体下拉列表中选择JetBrains Mono。
+
+- https://www.jetbrains.com/zh-cn/lp/mono/#font-family
