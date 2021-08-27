@@ -21,6 +21,10 @@ brew info llvm
 cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/local/Cellar/llvm/<Your Version>/lib/cmake
 cmake --build Release
 ```
+	- invalid params of initialize: expected array for /workspaceFolders: can't use in home directory
+
+4. bash
+	- sudo npm i -g bash-language-server
 
 # browse
 

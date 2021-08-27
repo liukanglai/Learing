@@ -1,6 +1,8 @@
 # install
 
-
+- sudo pacman -S neovim
+- sudo pacman -S python-pynvim
+- Python 2 and Ruby modules (currently only supported in neovim-git) are available from the AUR as python2-neovim and ruby-neovim respectively.
 
 # nvim
 
