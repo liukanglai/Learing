@@ -14,7 +14,25 @@
 
 - delete: /usr/lib/systemd/system/clash@.service and  /usr/lib/systemd/user/clash@.service
 
-# autostart:https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon
+# run silently
+
+- nohup clash &
+
+- sudo nano /usr/share/applications/clash.desktop，然后输入以下内容：
+
+```
+[Desktop Entry]
+Version=0.10.2
+Name=Clash
+Comment=A rule-based tunnel in Go
+Exec=/full/path/to/clash-linux
+Icon=/full/path/to/clash-logo.png
+Terminal=false
+Type=Application
+Categories=Network
+```
+
+# autostart: https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon
 
 - /etc/systemd/system/clash.service
 
@@ -32,14 +50,15 @@
         WantedBy=multi-user.target
 
 - Launch clashd on system startup with:
-$ systemctl enable clash
+- systemctl enable clash
 - Launch clashd immediately with:
-$ systemctl start clash
+- systemctl start clash
 - Check the health and logs of Clash with:
-$ systemctl status clash
-$ journalctl -xe
+- systemctl status clash
+- journalctl -xe
 
 # update subscription
+
 [root@localhost ~]# crontab -e
 填入以下内容
 29 6    * * *   root    pgrep clash | xargs kill -s 9
@@ -52,13 +71,13 @@ $ journalctl -xe
 
 # cotroller
 
-取消注释 external-controller、external-ui 和 secret，并配置 secret 作为访问 dashboard 的口令。
+- 取消注释 external-controller、external-ui 和 secret，并配置 secret 作为访问 dashboard 的口令。
 
-在终端中通过 clash 命令启动 Clash。如果配置了 dashboard，可以在局域网内的其他设备上开启浏览器，访问 http://10.0.1.11:6300/ui/，其中 10.0.1.11 即此前配置的 Pi 的 IP 地址，端口 6300 即 Clash 监听的外部控制器端口。然后输入如下信息：
+- 在终端中通过 clash 命令启动 Clash。如果配置了 dashboard，可以在局域网内的其他设备上开启浏览器，访问 http://10.0.1.11:6300/ui/，其中 10.0.1.11 即此前配置的 Pi 的 IP 地址，端口 6300 即 Clash 监听的外部控制器端口。然后输入如下信息：
 
-Host 为 10.0.1.11，即 Pi 的 IP 地址。
-端口为 6300，即 external-controller: 0.0.0.0:6300 所配置的端口。
-密钥即 secret 所配置的口令，上述示例中为 your-secret-passphrase。
+- Host 为 10.0.1.11，即 Pi 的 IP 地址。
+- 端口为 6300，即 external-controller: 0.0.0.0:6300 所配置的端口。
+- 密钥即 secret 所配置的口令，上述示例中为 your-secret-passphrase。
 
         # external-controller 主要是用于 web 端管理页面，必须监听在 0.0.0.0
         external-controller: 0.0.0.0:9090
@@ -68,19 +87,4 @@ Host 为 10.0.1.11，即 Pi 的 IP 地址。
         
         # external-ui 表示管理面板的路径，这个路径就是你前面解压缩的dashboard的路径，根据你实际的改
         external-ui: /opt/clash-dashboard-gh-pages(/usr/share/yacd)
-
-# shellclash
-
-- source ~/.bashrc &> /dev/null
-
-启动脚本：clash
-
-启动clash服务：$clashdir/start.sh start
-
-停止clash服务：$clashdir/start.sh stop
-
-重启clash服务：$clashdir/start.sh restart
-
-更新订阅文件：$clashdir/start.sh getyaml
-
 
