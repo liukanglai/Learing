@@ -260,6 +260,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 - xorg xorg-server xorg-xinit
 - sddm sddm-kcm
 - plasma-meta packagekit-qt5
+- plasma-wayland-session
 - 可选：kde-applications (kde-base)
 
 > if you haven't install app,then a terminal needed(yakuake)
