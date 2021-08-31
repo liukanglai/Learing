@@ -1,7 +1,12 @@
 # 考研英语全部语法笔记 
+
     ● 笔记来源于：【公众号：一烫】，各种考研笔记，欢迎关注！
 
-    ● 【一】简单句
+
+>  找谓语动词->找连词(若是简单连接...)->找定语->找状语
+
+##【一】简单句
+
         ● （一）什么是简单句？
             ● 汉语VS英语
                 ● 1）汉语的主谓宾可有可无（EG:滚出去、我很美、他死了）。汉语主要是把几个毫无关系的汉语放在一起表达一种意思就OK了（心花怒放——>开心）
@@ -150,7 +155,8 @@
             ● Eg： 越来越多的大学生自杀(同位语从句)，这个事实表明，我们应该关注这个事实了（宾语从句）
                 ● An increasing amountof university students commit suicide , so we should pay attention to them
 ##【二】并列句
-        ● （一）什么是并列句？在两个句子中加个连词
+
+1. （一）什么是并列句？在两个句子中加个连词
             ● Eg:  although I love you,  you love dog
         ● （二）常见的连词
             ● 1、平行关系：and, not only ... but also, both ... and, either ... or, neither ... nor
@@ -166,17 +172,27 @@
 
 >【补充】连词和其他逻辑关系词区别在于：连词的前面有没有逗号均可，其他逻辑关系词的前面一定是句号，或者加连词and，（and无意义） ● 【or】或者/否则
 
-        ● （三）并列句在写作中的使用
-            ● 写作中只要上下句之间有逻辑关系就一定要有逻辑关系词（逻辑关系词：ad./conj./prep短语）
-                ● Eg:这个男人很有钱，我决定嫁给他
-                    ● The man is rich , soI will marry him
-                ● Eg:爱情已经不在了，他还在留恋过去
-                    ● Romance hasevaporated but she still keeps the past in mind
-                    ● Romance has evaporated.By contrast , she still keeps past in mind
-                ● Eg:有朋自远方来，不亦乐乎
-                    ● There seem a host of companies coming from a long distance, and consequently, I feel exceedingly delighted.
-                    ● 看seem的主语是seem后面的词，一个朋友来用seems，很多朋友用seem
-    ● 【三】名词性从句
+3. 并列句在写作中的使用
+    - 写作中只要上下句之间有逻辑关系就一定要有逻辑关系词（逻辑关系词：ad./conj./prep短语）
+
+		● Eg:这个男人很有钱，我决定嫁给他
+			● The man is rich , soI will marry him
+		● Eg:爱情已经不在了，他还在留恋过去
+			● Romance hasevaporated but she still keeps the past in mind
+			● Romance has evaporated.By contrast , she still keeps past in mind
+		● Eg:有朋自远方来，不亦乐乎
+			● There seem a host of companies coming from a long distance, and consequently, I feel exceedingly delighted.
+			● 看seem的主语是seem后面的词，一个朋友来用seems，很多朋友用seem
+
+	- 长难句分析 ; 并列句的省略
+		- 对称原则，词性对称：并列连词前后的词性，单复数，时态和语态要一致；结构对称：连词所连接的句子结构要一致
+		- 省略现象：主谓；be动词；如何查找：一定在连词后省略，连词后面有的成分，连词前面通常有；连词前有后无的成分即
+		- 翻译时对照前后找省略成分非常实用！！！
+
+			I was beaten and you (were beaten) too.
+
+
+##【三】名词性从句
         ● （一）名词能做什么成分？
             ● 1）主语、宾语、表语、同位语
             ● 2）同位语：作文中只要见到名词，都可以在其后再加一个名词作为其同位语
@@ -374,7 +390,7 @@
                 ● ①非谓语动词变独立主格
                 ● ②加连词
                 ● ③从句
-    ● 【五】状语和状语从句
+##【五】状语和状语从句
         ● 一、什么是状语？
             ● 在一句话中，修饰实义动词、形容词、副词以及整个句子的成分就是状语。状语除了名词不能修饰，其他什么成分都可以修饰
             ● Eg：He runs away quickly （副词修饰实义动词，作状语）
