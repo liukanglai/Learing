@@ -59,8 +59,12 @@
  
 # 蓝牙耳机
 
-- bluez bluez-utils  pulseaudio-bluetooth pavucontrol pulseaudio-alsa
+- bluez bluez-utils  
+- lsmod (check whether btusb is loaded, if not, then modprobe btusb)
+- systemctl start bluetooth.service
+//- pulseaudio-bluetooth pavucontrol pulseaudio-alsa
 - bluedevil:kde
+
 ``` 
 bluez软件包提供蓝牙协议栈
 bluez-utils软件包提供bluetoothctl工具
@@ -68,10 +72,14 @@ pulseaudio-bluetooth则为bluez提供了PulseAudio音频服务,若没有安装�
 pavucontrol则提供了pulseaudio的图形化控制界面
 pulseaudio-alsa(可选)则使pulseaudio和alsa协同使用，之后就可以用alsamixer来管理蓝牙音频
 ```
-你只需要将 AutoEnable=true 添加在 /etc/bluetooth/main.conf 底部的 [Policy] 下面：
+
+- 修改/etc/bluetooth/main.conf 底部的 [Policy]
+
+```
 /etc/bluetooth/main.conf
 [Policy]
 AutoEnable=true
+```
 
 - systemctl enable bluetooth
 - systemctl start bluetooth
@@ -167,6 +175,21 @@ AutoEnable=true
     - yay -S node-fanyi or sudo npm install fanyi -g
     > https://github.com/afc163/fanyi
 
+4. tmux
+  - start with tmux@username.service
+
+      /etc/systemd/system/tmux@.service
+      [Unit]
+      Description=Start tmux in detached session
+
+      [Service]
+      Type=forking
+      User=%I
+      ExecStart=/usr/bin/tmux new-session -s %u -d
+      ExecStop=/usr/bin/tmux kill-session -t %u
+
+      [Install]
+      WantedBy=multi-user.target
 
 # deb安装
 
