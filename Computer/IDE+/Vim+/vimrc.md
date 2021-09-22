@@ -5,13 +5,27 @@
 
 # map
 
+"" Resize splits with arrow keys
+"noremap <up> :res +5<CR>
+"noremap <down> :res -5<CR>
+"noremap <left> :vertical resize-5<CR>
+"noremap <right> :vertical resize+5<CR>
+
+"" Place the two screens up and down
+"noremap sh <C-w>t<C-w>K
+"" Place the two screens side by side
+"noremap sv <C-w>t<C-w>H
+
+"" Disable the default s key
+"noremap s <nop>
+
+
 - map递归映射（可自定义再定义），noremap非递归(系统默认)
 - <c-u>: Ctrl+u <a-u>/<m-u>: Alt+u <s-u>: Shift+u
 - <cr><enter>表示回车 <space> <esc> <tab> bs退格 
 - <up> <down> <left> <right>箭头 <pageup> <pagedown> 上下翻页
 - <f1>...
-- <home> <insert> <del> <end>
-- <nop> 无操作(强制消除)
+- <nop>无操作
 > :help index  :map g
 
 - nmap/nnoremap正常模式
