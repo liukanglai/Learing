@@ -44,6 +44,8 @@
 1. Gauss-Jordan
     - 将 A 变为 I，then I 变为 $A^{-1}$
 
+> E vs I ???
+
 ### A = LU = LDU
 
 - 方阵, 可逆, no 0 主元(无行交换)
@@ -56,6 +58,8 @@
 - EA = U -> A = LU, no row exchanges, 消元系数会直接在L中
 
 > Ax = b; use Gauss is too difficulty, so solve LUx = b; Ux = y, Ly = b;
+>
+> find L: U -> A, then I -> L
 
 # 运算律
 

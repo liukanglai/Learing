@@ -1,14 +1,4 @@
-# coding
-
-
-- Many problems will take place in coding: 
- 
-  1.divide 
-  2.funtion
-  3.struct
-
 # learn
-
 
 - to speak it for someone
 - first get it, then take notes
@@ -41,7 +31,6 @@
 - 检查
 - 由难入简
 
-
 > 每天一难题
 > 
 > 任务清晰 
@@ -51,11 +40,3 @@
 > 体育
 > 
 > 文学
-> 
-> 
-> 
-> 
-> 
-> 
-> 
-> 

@@ -1,4 +1,3 @@
-
 "set whichwrap+=<,>,h,l  "允许空格键和光标键跨越行边界
 
 "highlight CursorLine   cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
@@ -8,8 +7,6 @@
 "ctermbg 设置终端vim的背景色
 "ctermfg 设置终端vim的前景色
 "guibg 和 guifg 分别是设置gvim的背景色和前景色
-
-
 
 
 "NERDTree
