@@ -3,38 +3,31 @@
 > DDL DML DQL DCL
 
 1. 
-  - ; end
+  - ;: end
   - ingore case
   - comment: -- #; `/* */`
 
-## database
+## DDL
 
-1. create
+1. basic types
+  - char(n)
 
         create database Student;
         create database if not exists Student;
         create database Student character set utf-8;
 
-2. retrieve
-
         show databases;
         show create database Student;
 
-3. update
-
         alter database Student character set utf-8;
-
-4. delete
 
         drop database Student;
         drop database if exists Student;
 
-5. change
-
         select database();
         use Student;
 
-## table
+## DML
 
 > Except number, all other types need to use '' or "" to include.
 
@@ -78,7 +71,6 @@
         if null(name, Name);
         as;
 
-
 ## 
 
         >,<,>=,<=,=,<>
@@ -112,7 +104,6 @@
         unique
         foreign key name references
         auto_increment
-
 
 #
 
