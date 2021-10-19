@@ -232,6 +232,11 @@ AutoEnable=true
 - sudo pacman -S virtualbox-guest-iso
 - sudo /sbin/vboxconfig setup
 
+2. 
+
+- Arch下的虚拟机首先开源的VirtualBox，安装官方源的virtualbox virtualbox-ext-vnc virtualbox-guest-iso virtualbox-host-modules-arch这几个包。
+- 再去官网下载Oracle VM VirtualBox Extension Pack ，在设置中导入使用
+
 # java
 
 - sudo pacman -S jre-openjdk
