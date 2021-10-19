@@ -141,11 +141,12 @@ Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
 
 ## 网络
 
-pacman -S networkmanager iw wpa_supplicant dialog dhcpcd netctl 
+- pacman -S networkmanager iw wpa_supplicant dialog dhcpcd netctl 
 
 ## 安装启动加载器
 
 - pacman -S efibootmgr  grub os-prober intel-ucode ntfs-3g
+
 1. grub
     - grub-install -–target=x86_64-efi -–efi-directory=/boot –-bootloader-id=grub 
     - 生成:grub-mkconfig -o /boot/grub/grub.cfg
