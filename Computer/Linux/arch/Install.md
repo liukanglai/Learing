@@ -164,6 +164,22 @@ Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
         options root=PARTUUID=deba4ba7-0c8f-c64e-a60e-e34e5bb87ab3 rw
         > :r !blkid to get partuuid
  
+## swap
+
+        swapon --show
+        free -h
+
+1. swap file
+
+        dd if=/dev/zero of=/swapfile bs=1M count=512 status=progress
+        chmod 600 /swapfile
+        mkswap /swapfile
+        swapon /swapfile
+
+        vim /etc/fstab
+        /swapfile none swap defaults 0 0
+
+
 ## 重启:exit
 
 - killall wpa_supplicant dhcpcd
