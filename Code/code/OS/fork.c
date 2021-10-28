@@ -4,10 +4,13 @@
 #include <unistd.h>
 
 int main(void) {
-  pid_t pid;
+  // pid_t pid;
   int count = 0;
 
-  pid = fork();
+  // pid = fork();
+
+  /*
+  printf("%d\n", pid);
 
   if (pid < 0) {
     fprintf(stderr, "Fork Filed");
@@ -21,12 +24,16 @@ int main(void) {
   }
 
   else {
+    printf("Go go Child\n");
     wait(NULL);
     printf("Child Complete\n");
     count++;
     printf("%d, %d\n", pid, count);
   }
+  */
 
-  printf("%d, %d\n", pid, count);
+  wait(NULL);
+  // printf("%d, %d\n", pid, count);
+  printf("h");
   return 0;
 }
