@@ -227,16 +227,17 @@ AutoEnable=true
 
 # vmbox
 
-- sudo pacman -S linux-headers
-- sudo pacman -S virtualbox  选择 1 virtualbox-host-dkms
-- sudo pacman -S virtualbox-guest-iso
-- sudo /sbin/vboxconfig setup
+- // sudo pacman -S linux-headers
 
-2. 
-
-- Arch下的虚拟机首先开源的VirtualBox，安装官方源的virtualbox virtualbox-ext-vnc virtualbox-guest-iso virtualbox-host-modules-arch这几个包。
+- virtualbox virtualbox-ext-vnc virtualbox-guest-iso virtualbox-host-modules-arch
 - 再去官网下载Oracle VM VirtualBox Extension Pack ，在设置中导入使用
 - sudo restart systemd-modules-load.service
+
+1. share fold
+  - sudo mount -t vboxsf share /mnt/kylin
+
+2. 全屏
+  - 选择不同分辨率
 
 # java
 
