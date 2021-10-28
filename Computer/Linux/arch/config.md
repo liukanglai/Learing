@@ -210,10 +210,12 @@ AutoEnable=true
 - gruvbox konsole, yakuake(.config/yakuakerc)
 - 窗口管理-任务切换器-主窗口可视化切换
 - 安装lattw-dock
-  >布局/
+    > 布局
 - 终端,字体
 - 毛玻璃compton
     > .config/compton.conf
+
+- widgets: cpu, memory, network, ip
 
 # dolphin
 
