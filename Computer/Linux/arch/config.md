@@ -245,3 +245,12 @@ AutoEnable=true
 
 - sudo pacman -S jre-openjdk
 - sudo pacman -S jdk-openjdk
+
+# hibernate
+
+# space
+
+- mkdir /home/space
+- mount /dev/... /home/space
+- vim /etc/fstab:  `/dev/... /home/space ext4 defaults 1 1`
+
