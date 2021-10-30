@@ -4,12 +4,12 @@
 #include <unistd.h>
 
 int main(void) {
-  // pid_t pid;
+  pid_t pid;
   int count = 0;
+  pid = 1;
 
-  // pid = fork();
+  pid = fork();
 
-  /*
   printf("%d\n", pid);
 
   if (pid < 0) {
@@ -30,10 +30,8 @@ int main(void) {
     count++;
     printf("%d, %d\n", pid, count);
   }
-  */
 
-  wait(NULL);
-  // printf("%d, %d\n", pid, count);
-  printf("h");
+  printf("%d, %d\n", pid, count);
+  // printf("h");
   return 0;
 }
