@@ -248,6 +248,12 @@ AutoEnable=true
 
 # hibernate
 
+- cat /sys/power/image_size: swap size
+- sudo filefrag -v /swapfile | sed -n '4p' | awk '{print $4+0}' : get resume_offset
+- sudo vim /boot/leader/entries/arch.conf: options root=UUID=SOMEUUID rw resume=/dev/sda1 resume_offset=12345
+- sudo vim /etc/mkinitcpio.conf: HOOKS=( base udev **resume** autodetect modconf block filesystems keyboard fsck ) -- add resume
+- sudo mkinitcpio -p linux
+
 # space
 
 - mkdir /home/space
