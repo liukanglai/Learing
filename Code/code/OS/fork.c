@@ -3,10 +3,15 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+#define SIZE 5
+
+int nums[SIZE] = {0, 1, 2, 3, 4};
+
 int main(void) {
+  int i;
   pid_t pid;
-  int count = 0;
-  pid = 1;
+  // int count = 0;
+  // pid = 1;
 
   pid = fork();
 
@@ -18,20 +23,27 @@ int main(void) {
   }
 
   else if (pid == 0) {
-    execlp("bin/ls", "ls", NULL);
-    count++;
-    printf("%d, %d\n", pid, count);
+    // execlp("bin/ls", "ls", NULL);
+    // count++;
+    // printf("%d, %d\n", pid, count);
+    for (i = 0; i < SIZE; i++) {
+      nums[i] *= -i;
+      printf("child: %d ", nums[i]);
+    }
   }
 
   else {
     printf("Go go Child\n");
     wait(NULL);
     printf("Child Complete\n");
-    count++;
-    printf("%d, %d\n", pid, count);
+    for (i = 0; i < SIZE; i++) {
+      printf("child: %d ", nums[i]);
+    }
+    // count++;
+    // printf("%d, %d\n", pid, count);
   }
 
-  printf("%d, %d\n", pid, count);
+  // printf("%d, %d\n", pid, count);
   // printf("h");
   return 0;
 }
