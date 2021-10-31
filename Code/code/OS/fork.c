@@ -27,20 +27,23 @@ int main(void) {
     // count++;
     // printf("%d, %d\n", pid, count);
     for (i = 0; i < SIZE; i++) {
-      nums[i] *= -i;
-      printf("child: %d ", nums[i]);
+      *(nums + i) *= -i;
+      printf("child: %d %p ", nums[i], nums + i);
     }
   }
 
   else {
     printf("Go go Child\n");
     wait(NULL);
-    printf("Child Complete\n");
+    printf("\nChild Complete\n");
     for (i = 0; i < SIZE; i++) {
-      printf("child: %d ", nums[i]);
+      printf("father: %d %p ", nums[i], nums + i);
     }
     // count++;
     // printf("%d, %d\n", pid, count);
+  }
+  for (i = 0; i < SIZE; i++) {
+    printf("child: %d %p ", nums[i], nums + i);
   }
 
   // printf("%d, %d\n", pid, count);
