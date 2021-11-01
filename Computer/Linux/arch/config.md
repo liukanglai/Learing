@@ -104,7 +104,7 @@ AutoEnable=true
 >
 > sudo pacman -S wps-office-mui-zh-cn
 
-- baidunetdisk-bin (yay)
+- baidunetdisk-electron (yay)
 - tlp - 电池
 - google-chrome/chromium  (Chromium 的用户资料在~/.config/chromium/Default)
 - qtcreator  ark cmake ctags electron
