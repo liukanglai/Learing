@@ -1,0 +1,1 @@
+cmd_/home/liukanglai/Downloads/final-src-osc10e/ch2/modules.order := {   echo /home/liukanglai/Downloads/final-src-osc10e/ch2/simple.ko; :; } | awk '!x[$$0]++' - > /home/liukanglai/Downloads/final-src-osc10e/ch2/modules.order

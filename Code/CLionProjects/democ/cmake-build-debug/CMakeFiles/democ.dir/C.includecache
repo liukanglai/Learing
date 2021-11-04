@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/liukanglai/Downloads/Learning-diary/Code/CLionProjects/democ/mosaic2.c
-stdarg.h
--
+/home/liukanglai/Learing/Code/CLionProjects/democ/OS/fork.c
 stdio.h
 -
-stdlib.h
+sys/types.h
 -
-math.h
+sys/wait.h
+-
+unistd.h
 -
 

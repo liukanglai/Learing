@@ -3,5 +3,5 @@ project(democ C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(democ mosaic2.c)
+add_executable(democ OS/fork.c)
 target_link_libraries(democ  m)

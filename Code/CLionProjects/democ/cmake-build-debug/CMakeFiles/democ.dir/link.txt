@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/democ.dir/mosaic2.c.o -o democ  -lm 
+/usr/bin/cc -g CMakeFiles/democ.dir/OS/fork.c.o -o democ  -lm 

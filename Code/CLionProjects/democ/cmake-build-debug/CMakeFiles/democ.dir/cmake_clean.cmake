@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/democ.dir/mosaic2.c.o"
+  "CMakeFiles/democ.dir/OS/fork.c.o"
   "democ"
   "democ.pdb"
 )

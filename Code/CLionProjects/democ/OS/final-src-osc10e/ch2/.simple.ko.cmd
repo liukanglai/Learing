@@ -1,0 +1,1 @@
+cmd_/home/liukanglai/Downloads/final-src-osc10e/ch2/simple.ko := ld -r -m elf_x86_64 --build-id=sha1  -T scripts/module.lds -o /home/liukanglai/Downloads/final-src-osc10e/ch2/simple.ko /home/liukanglai/Downloads/final-src-osc10e/ch2/simple.o /home/liukanglai/Downloads/final-src-osc10e/ch2/simple.mod.o;  true
