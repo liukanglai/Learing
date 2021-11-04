@@ -152,6 +152,7 @@ Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
     - 生成:grub-mkconfig -o /boot/grub/grub.cfg
 2. systemd-boot
     - bootctl install(/boot)
+    - bootctl --path=/boot install
     - vim /boot/loader/loader.conf: 
 
         default archlinux

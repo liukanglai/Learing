@@ -13,3 +13,8 @@
     mkpart primary 0 3 // start-end
     print
     quit
+
+
+# df
+
+- look up 
