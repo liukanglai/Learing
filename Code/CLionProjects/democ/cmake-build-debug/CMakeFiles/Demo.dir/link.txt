@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Demo.dir/mympi.c.o -o Demo 

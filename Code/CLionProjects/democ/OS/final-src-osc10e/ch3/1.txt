@@ -1,0 +1,27 @@
+osh>ls
+ls
+ls: cannot access '': No such file or directory
+lsosh>lllll
+lllll
+*** ERROR: exec failed
+lllllosh>l
+l
+*** ERROR: exec failed
+losh>exit
+exit
+losh>exit
+exit
+lllllosh>exit
+exit
+
+osh>ls
+0x7ffc479987400 ls
+ls: cannot access '': No such file or directory
+0x7ffc479987401 ls0x7ffc479987402 lsosh>llll
+0x7ffc479987400 llll
+0x7ffc479987401 llll*** ERROR: exec failed
+0x7ffc479987402 llllosh>exit
+0x7ffc479987400 exit
+0x7ffc479987401 exit0x7ffc479987401 llll0x7ffc479987402 llllosh>exit
+0x7ffc479987400 exit
+0x7ffc479987401 exit%        

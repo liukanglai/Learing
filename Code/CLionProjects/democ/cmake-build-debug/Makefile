@@ -129,29 +129,29 @@ democ/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/build
 .PHONY : democ/fast
 
-OS/fork.o: OS/fork.c.o
-.PHONY : OS/fork.o
+OS/final-src-osc10e/ch3/my_shell.o: OS/final-src-osc10e/ch3/my_shell.c.o
+.PHONY : OS/final-src-osc10e/ch3/my_shell.o
 
 # target to build an object file
-OS/fork.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/fork.c.o
-.PHONY : OS/fork.c.o
+OS/final-src-osc10e/ch3/my_shell.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o
+.PHONY : OS/final-src-osc10e/ch3/my_shell.c.o
 
-OS/fork.i: OS/fork.c.i
-.PHONY : OS/fork.i
+OS/final-src-osc10e/ch3/my_shell.i: OS/final-src-osc10e/ch3/my_shell.c.i
+.PHONY : OS/final-src-osc10e/ch3/my_shell.i
 
 # target to preprocess a source file
-OS/fork.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/fork.c.i
-.PHONY : OS/fork.c.i
+OS/final-src-osc10e/ch3/my_shell.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.i
+.PHONY : OS/final-src-osc10e/ch3/my_shell.c.i
 
-OS/fork.s: OS/fork.c.s
-.PHONY : OS/fork.s
+OS/final-src-osc10e/ch3/my_shell.s: OS/final-src-osc10e/ch3/my_shell.c.s
+.PHONY : OS/final-src-osc10e/ch3/my_shell.s
 
 # target to generate assembly for a file
-OS/fork.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/fork.c.s
-.PHONY : OS/fork.c.s
+OS/final-src-osc10e/ch3/my_shell.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.s
+.PHONY : OS/final-src-osc10e/ch3/my_shell.c.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... democ"
-	@echo "... OS/fork.o"
-	@echo "... OS/fork.i"
-	@echo "... OS/fork.s"
+	@echo "... OS/final-src-osc10e/ch3/my_shell.o"
+	@echo "... OS/final-src-osc10e/ch3/my_shell.i"
+	@echo "... OS/final-src-osc10e/ch3/my_shell.s"
 .PHONY : help
 
 

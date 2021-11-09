@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/liukanglai/Learing/Code/CLionProjects/democ/OS/fork.c
+/home/liukanglai/Learing/Code/CLionProjects/democ/OS/final-src-osc10e/ch3/my_shell.c
 stdio.h
 -
-sys/types.h
+stdlib.h
 -
-sys/wait.h
+string.h
 -
 unistd.h
+-
+wait.h
 -
 

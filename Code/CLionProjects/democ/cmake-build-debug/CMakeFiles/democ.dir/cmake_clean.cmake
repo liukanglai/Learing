@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/democ.dir/OS/fork.c.o"
+  "CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o"
   "democ"
   "democ.pdb"
 )

@@ -1,1 +1,1 @@
-cmd_/home/liukanglai/Downloads/final-src-osc10e/ch2/Module.symvers := sed 's/\.ko$$/\.o/' /home/liukanglai/Downloads/final-src-osc10e/ch2/modules.order | scripts/mod/modpost  -a  -o /home/liukanglai/Downloads/final-src-osc10e/ch2/Module.symvers -e -i Module.symvers  -N -T -
+cmd_/home/liukanglai/file/final-src-osc10e/ch2/Module.symvers := sed 's/\.ko$$/\.o/' /home/liukanglai/file/final-src-osc10e/ch2/modules.order | scripts/mod/modpost  -a  -o /home/liukanglai/file/final-src-osc10e/ch2/Module.symvers -e -i Module.symvers  -N -T -

@@ -1,1 +1,1 @@
-/usr/bin/cc -g CMakeFiles/democ.dir/OS/fork.c.o -o democ  -lm 
+/usr/bin/cc -g CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o -o democ  -lm 
