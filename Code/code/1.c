@@ -2,8 +2,10 @@
 
 int main(void) {
   int wm;
-  printf("w");
-  printf("");
-  printf("j");
-  vwprintf he
+  char a[10];
+  scanf("%d", &wm);
+  scanf("%s", a);
+  printf("%s\n%d", a, wm);
+
+  return 0;
 }
