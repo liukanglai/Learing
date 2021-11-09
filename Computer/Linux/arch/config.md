@@ -178,18 +178,18 @@ AutoEnable=true
 4. tmux
   - start with tmux@username.service
 
-      /etc/systemd/system/tmux@.service
-      [Unit]
-      Description=Start tmux in detached session
+        /etc/systemd/system/tmux@.service
+        [Unit]
+        Description=Start tmux in detached session
 
-      [Service]
-      Type=forking
-      User=%I
-      ExecStart=/usr/bin/tmux new-session -s %u -d
-      ExecStop=/usr/bin/tmux kill-session -t %u
+        [Service]
+        Type=forking
+        User=%I
+        ExecStart=/usr/bin/tmux new-session -s %u -d
+        ExecStop=/usr/bin/tmux kill-session -t %u
 
-      [Install]
-      WantedBy=multi-user.target
+        [Install]
+        WantedBy=multi-user.target
 
 # deb安装
 
