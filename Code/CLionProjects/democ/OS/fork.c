@@ -3,6 +3,8 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+void print(int a) { printf("%d\n", a); }
+
 #define SIZE 5
 
 int nums[SIZE] = {0, 1, 2, 3, 4};
@@ -10,43 +12,32 @@ int nums[SIZE] = {0, 1, 2, 3, 4};
 int main(void) {
   int i;
   pid_t pid;
-  // int count = 0;
-  // pid = 1;
 
   pid = fork();
 
-  printf("%d\n", pid);
+  for (int i = 0; i < 5; i++) {
 
-  if (pid < 0) {
-    fprintf(stderr, "Fork Filed");
-    return 1;
-  }
+    if (pid < 0) {
+      fprintf(stderr, "Fork Filed");
+      return 1;
+    }
 
-  else if (pid == 0) {
-    // execlp("bin/ls", "ls", NULL);
-    // count++;
-    // printf("%d, %d\n", pid, count);
-    for (i = 0; i < SIZE; i++) {
-      *(nums + i) *= -i;
-      printf("child: %d %p ", nums[i], nums + i);
+    else if (pid == 0) {
+      // execlp("bin/ls", "ls", NULL);
+      // count++;
+      // printf("%d, %d\n", pid, count);
+      print(i);
+    }
+
+    else {
+      printf("Go go Child\n");
+      wait(NULL);
+      printf("\nChild Complete\n");
+      print(i);
     }
   }
 
-  else {
-    printf("Go go Child\n");
-    wait(NULL);
-    printf("\nChild Complete\n");
-    for (i = 0; i < SIZE; i++) {
-      printf("father: %d %p ", nums[i], nums + i);
-    }
-    // count++;
-    // printf("%d, %d\n", pid, count);
-  }
-  for (i = 0; i < SIZE; i++) {
-    printf("child: %d %p ", nums[i], nums + i);
-  }
+  printf("End\n");
 
-  // printf("%d, %d\n", pid, count);
-  // printf("h");
   return 0;
 }
