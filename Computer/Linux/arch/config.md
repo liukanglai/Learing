@@ -200,6 +200,10 @@ AutoEnable=true
 - 转换deb包 debtap *.deb
 - 安装 sudo pacman -U <package-name>
 
+# display
+
+- vim /etc/sddm.conf.d/dpi.conf: `[X11] ServerArguments=-dpi 96`
+
 # 美化
 
 - yay -S ocs-url
