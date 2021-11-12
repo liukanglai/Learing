@@ -196,9 +196,16 @@ AutoEnable=true
 - yay -S debtap
 - 也应该安装bash， binutils ，pkgfile 和 fakeroot 依赖包。
 - 创建/更新 pkgfile 和 debtap 数据库。
-- sudo debtap -u ..
-- 转换deb包 debtap *.deb
+- sudo debtap -u
+- 转换deb包 debtap (-q / -Q: no question) *.deb
 - 安装 sudo pacman -U <package-name>
+
+        # /usr/bin/debtap
+        替换：http://ftp.debian.org/debian/dists
+        为：https://mirrors.ustc.edu.cn/debian/dists
+
+        替换：http://archive.ubuntu.com/ubuntu/dists
+        为：https://mirrors.ustc.edu.cn/ubuntu/dists/
 
 # display
 
@@ -263,4 +270,23 @@ AutoEnable=true
 - mkdir /home/space
 - mount /dev/... /home/space
 - vim /etc/fstab:  `/dev/... /home/space ext4 defaults 1 1`
+
+# Easyconnect
+- `https://www.wannaexpresso.com/2020/06/07/easy-connect-manjaro/`
+
+- 错：您的客户端版本与服务器不匹配，请下载更新
+- 由于最新版与服务器要求版本不一致，所以需要修改源码包中的 PKGBUILD 文件，然后重新手动 makepkg 生成服务器要求版本然后再安装。
+1. 修改 PKGBUILD 文件
+
+        source=("http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_767/EasyConnect_x64_7_6_7_3.deb"
+              "http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz")
+        md5sums=('ac2020ce44583d5ee4552c81563dce9c'
+              'deb171a31a3ad76342d5195a1b5bbc7c') 
+
+- 修改为
+
+        source=("http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_01/EasyConnect_x64.deb"
+              "http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz")
+        md5sums=('6ed6273f7754454f19835a456ee263e3'
+              'deb171a31a3ad76342d5195a1b5bbc7c') 
 
