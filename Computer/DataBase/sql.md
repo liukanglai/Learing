@@ -128,3 +128,8 @@
         如果授权使用的是GRANT SELECT ON *.* TO 'pig'@'%';则REVOKE SELECT ON test.user FROM 'pig'@'%';命令也不能撤销该用户对test数据库中user表的Select权限。
 
         具体信息可以用命令SHOW GRANTS FOR 'pig'@'%'; 查看。
+
+
+# privileges
+
+- 
