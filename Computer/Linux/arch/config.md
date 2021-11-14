@@ -238,6 +238,9 @@ AutoEnable=true
 - poppler
 - poppler-data
 
+# ulauncher
+# stacer
+
 # vmbox
 
 - // sudo pacman -S linux-headers
