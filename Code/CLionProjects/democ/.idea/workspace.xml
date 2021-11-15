@@ -16,8 +16,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a55e3cd2-4197-46cb-91f9-1d3cfc575334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Computer/DataBase/sql.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Computer/DataBase/sql.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Computer/Linux/make.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Computer/Linux/make.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,14 +54,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="democ" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="democ" TARGET_NAME="democ" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="democ" RUN_TARGET_NAME="democ">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="democ" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="democ" TARGET_NAME="democ" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="democ" RUN_TARGET_NAME="democ">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -80,6 +81,7 @@
       <workItem from="1636442383846" duration="1776000" />
       <workItem from="1636507050424" duration="74000" />
       <workItem from="1636691894677" duration="102000" />
+      <workItem from="1636960743424" duration="1518000" />
     </task>
     <servers />
   </component>
