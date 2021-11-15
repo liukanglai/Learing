@@ -1,6 +1,50 @@
 
 Nice: `https://www.cnblogs.com/yangguang-it/p/11667772.html`
 
+        list_entry: 获得节点对应的入口
+
+        list_first_entry: 获得第一个入口
+
+        list_last_entry: 获得最后一个入口
+
+        list_first_entry_or_null: 获得第一个入口或 NULL
+
+        list_next_entry: 获得下一个入口
+
+        list_prev_entry: 获得前一个入口
+
+        list_for_each: 正序遍历所有节点
+
+        list_for_each_prev: 倒叙遍历所有节点
+
+        list_for_each_safe: 安全正序遍历所有节点
+
+        list_for_each_prev_safe: 安全倒叙遍历所有节点
+
+        list_for_each_entry: 正序遍历所有入口
+
+        list_for_each_entry_reverse: 倒叙遍历所有入口
+
+        list_prepare_entry: 获得指定入口
+
+        list_for_each_entry_continue: 从指定入口开始正序遍历剩余的入口
+
+        list_for_each_entry_continue_reverse: 从指定入口开始倒叙遍历剩余的入口
+
+        list_for_each_entry_from: 从指定入口正序遍历剩余入口
+
+        list_for_each_entry_from_reverse: 从指定入口倒序遍历剩余入口
+
+        list_for_each_entry_safe: 安全正序遍历所有入口
+
+        list_for_each_entry_safe_continue: 安全从指定入口正序遍历剩余入口
+
+        list_for_each_entry_safe_from: 安全从指定入口正序遍历剩余入口
+
+        list_for_each_entry_safe_reverse: 安全从指定入口倒序遍历剩余入口
+
+        list_safe_reset_next: 安全获得下一个入口
+
 # list\_head
 
     struct list_head{
@@ -116,6 +160,20 @@ Nice: `https://www.cnblogs.com/yangguang-it/p/11667772.html`
 - pos: struct *
 - head: in struct list\_head \*, is &member, but is the head!
 - member: \*head
+
+在上面的实践中，使用 list_for_each() 函数的时候，当每次遍历一个节点的时候， list_for_each() 函数通过当前节点找到下一个节点，如下：
+
+        #define list_for_each(pos, head) \
+        for (pos = (head)->next; pos != (head); pos = pos->next)
+
+如果是正常的遍历，那么下一个节点可以从当前节点中获得。如果此时将当前节点从链表中 删除之后，此时当前节点的 next 和 prev 指针已经被指向了一个不可用的地址。如果此时 还再使用当前节点去查找下一个节点的会必然会引起内核 panic。因此此时需要使用 safe 类 的接口解决这个问题，正如 list_for_each_safe() 函数定义，如下：
+
+        #define list_for_each_safe(pos, n, head) \
+        for (pos = (head)->next, n = pos->next; pos != (head); \
+                pos = n, n = pos->next)
+
+每次遍历的时候，函数都会提前将下一个节点缓存在 n 参数里，如果当前节点被删除之后， 下一个节点也可以从 n 参数中获得，这样不会导致内核 panic。
+
 
 
 # list\_del
