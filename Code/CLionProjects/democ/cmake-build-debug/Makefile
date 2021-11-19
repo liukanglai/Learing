@@ -117,41 +117,89 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named democ
+# Target rules for targets named main
 
 # Build rule for target.
-democ: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 democ
-.PHONY : democ
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-democ/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/build
-.PHONY : democ/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
 
-OS/final-src-osc10e/ch3/my_shell.o: OS/final-src-osc10e/ch3/my_shell.c.o
-.PHONY : OS/final-src-osc10e/ch3/my_shell.o
+OS/design/1.o: OS/design/1.c.o
+.PHONY : OS/design/1.o
 
 # target to build an object file
-OS/final-src-osc10e/ch3/my_shell.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o
-.PHONY : OS/final-src-osc10e/ch3/my_shell.c.o
+OS/design/1.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/1.c.o
+.PHONY : OS/design/1.c.o
 
-OS/final-src-osc10e/ch3/my_shell.i: OS/final-src-osc10e/ch3/my_shell.c.i
-.PHONY : OS/final-src-osc10e/ch3/my_shell.i
+OS/design/1.i: OS/design/1.c.i
+.PHONY : OS/design/1.i
 
 # target to preprocess a source file
-OS/final-src-osc10e/ch3/my_shell.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.i
-.PHONY : OS/final-src-osc10e/ch3/my_shell.c.i
+OS/design/1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/1.c.i
+.PHONY : OS/design/1.c.i
 
-OS/final-src-osc10e/ch3/my_shell.s: OS/final-src-osc10e/ch3/my_shell.c.s
-.PHONY : OS/final-src-osc10e/ch3/my_shell.s
+OS/design/1.s: OS/design/1.c.s
+.PHONY : OS/design/1.s
 
 # target to generate assembly for a file
-OS/final-src-osc10e/ch3/my_shell.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/democ.dir/build.make CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.s
-.PHONY : OS/final-src-osc10e/ch3/my_shell.c.s
+OS/design/1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/1.c.s
+.PHONY : OS/design/1.c.s
+
+OS/design/Client.o: OS/design/Client.c.o
+.PHONY : OS/design/Client.o
+
+# target to build an object file
+OS/design/Client.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/Client.c.o
+.PHONY : OS/design/Client.c.o
+
+OS/design/Client.i: OS/design/Client.c.i
+.PHONY : OS/design/Client.i
+
+# target to preprocess a source file
+OS/design/Client.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/Client.c.i
+.PHONY : OS/design/Client.c.i
+
+OS/design/Client.s: OS/design/Client.c.s
+.PHONY : OS/design/Client.s
+
+# target to generate assembly for a file
+OS/design/Client.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/Client.c.s
+.PHONY : OS/design/Client.c.s
+
+OS/design/webserver.o: OS/design/webserver.c.o
+.PHONY : OS/design/webserver.o
+
+# target to build an object file
+OS/design/webserver.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/webserver.c.o
+.PHONY : OS/design/webserver.c.o
+
+OS/design/webserver.i: OS/design/webserver.c.i
+.PHONY : OS/design/webserver.i
+
+# target to preprocess a source file
+OS/design/webserver.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/webserver.c.i
+.PHONY : OS/design/webserver.c.i
+
+OS/design/webserver.s: OS/design/webserver.c.s
+.PHONY : OS/design/webserver.s
+
+# target to generate assembly for a file
+OS/design/webserver.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/OS/design/webserver.c.s
+.PHONY : OS/design/webserver.c.s
 
 # Help Target
 help:
@@ -161,10 +209,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... democ"
-	@echo "... OS/final-src-osc10e/ch3/my_shell.o"
-	@echo "... OS/final-src-osc10e/ch3/my_shell.i"
-	@echo "... OS/final-src-osc10e/ch3/my_shell.s"
+	@echo "... main"
+	@echo "... OS/design/1.o"
+	@echo "... OS/design/1.i"
+	@echo "... OS/design/1.s"
+	@echo "... OS/design/Client.o"
+	@echo "... OS/design/Client.i"
+	@echo "... OS/design/Client.s"
+	@echo "... OS/design/webserver.o"
+	@echo "... OS/design/webserver.i"
+	@echo "... OS/design/webserver.s"
 .PHONY : help
 
 

@@ -66,30 +66,45 @@ include CMakeFiles/democ.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/democ.dir/flags.make
 
-CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o: CMakeFiles/democ.dir/flags.make
-CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o: ../OS/final-src-osc10e/ch3/my_shell.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o -c /home/liukanglai/Learing/Code/CLionProjects/democ/OS/final-src-osc10e/ch3/my_shell.c
+CMakeFiles/democ.dir/OS/fork.c.o: CMakeFiles/democ.dir/flags.make
+CMakeFiles/democ.dir/OS/fork.c.o: ../OS/fork.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/democ.dir/OS/fork.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/democ.dir/OS/fork.c.o -c /home/liukanglai/Learing/Code/CLionProjects/democ/OS/fork.c
 
-CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/liukanglai/Learing/Code/CLionProjects/democ/OS/final-src-osc10e/ch3/my_shell.c > CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.i
+CMakeFiles/democ.dir/OS/fork.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/democ.dir/OS/fork.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/liukanglai/Learing/Code/CLionProjects/democ/OS/fork.c > CMakeFiles/democ.dir/OS/fork.c.i
 
-CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/liukanglai/Learing/Code/CLionProjects/democ/OS/final-src-osc10e/ch3/my_shell.c -o CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.s
+CMakeFiles/democ.dir/OS/fork.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/democ.dir/OS/fork.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/liukanglai/Learing/Code/CLionProjects/democ/OS/fork.c -o CMakeFiles/democ.dir/OS/fork.c.s
+
+CMakeFiles/democ.dir/OS/monitor.c.o: CMakeFiles/democ.dir/flags.make
+CMakeFiles/democ.dir/OS/monitor.c.o: ../OS/monitor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/democ.dir/OS/monitor.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/democ.dir/OS/monitor.c.o -c /home/liukanglai/Learing/Code/CLionProjects/democ/OS/monitor.c
+
+CMakeFiles/democ.dir/OS/monitor.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/democ.dir/OS/monitor.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/liukanglai/Learing/Code/CLionProjects/democ/OS/monitor.c > CMakeFiles/democ.dir/OS/monitor.c.i
+
+CMakeFiles/democ.dir/OS/monitor.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/democ.dir/OS/monitor.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/liukanglai/Learing/Code/CLionProjects/democ/OS/monitor.c -o CMakeFiles/democ.dir/OS/monitor.c.s
 
 # Object files for target democ
 democ_OBJECTS = \
-"CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o"
+"CMakeFiles/democ.dir/OS/fork.c.o" \
+"CMakeFiles/democ.dir/OS/monitor.c.o"
 
 # External object files for target democ
 democ_EXTERNAL_OBJECTS =
 
-democ: CMakeFiles/democ.dir/OS/final-src-osc10e/ch3/my_shell.c.o
+democ: CMakeFiles/democ.dir/OS/fork.c.o
+democ: CMakeFiles/democ.dir/OS/monitor.c.o
 democ: CMakeFiles/democ.dir/build.make
 democ: CMakeFiles/democ.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable democ"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable democ"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/democ.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

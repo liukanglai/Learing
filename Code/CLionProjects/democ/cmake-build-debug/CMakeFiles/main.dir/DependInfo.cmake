@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/liukanglai/Learing/Code/CLionProjects/democ/OS/fork.c" "/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles/democ.dir/OS/fork.c.o"
-  "/home/liukanglai/Learing/Code/CLionProjects/democ/OS/monitor.c" "/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles/democ.dir/OS/monitor.c.o"
+  "/home/liukanglai/Learing/Code/CLionProjects/democ/OS/design/1.c" "/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles/main.dir/OS/design/1.c.o"
+  "/home/liukanglai/Learing/Code/CLionProjects/democ/OS/design/Client.c" "/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles/main.dir/OS/design/Client.c.o"
+  "/home/liukanglai/Learing/Code/CLionProjects/democ/OS/design/webserver.c" "/home/liukanglai/Learing/Code/CLionProjects/democ/cmake-build-debug/CMakeFiles/main.dir/OS/design/webserver.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
