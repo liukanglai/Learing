@@ -248,6 +248,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 - noto-fonts-sc(AUR) - Noto CJK-SC fonts for Simplified Chinese
 - noto-fonts-emoji
 - ttf-jetbrains-mono + nerd
+- ttf-ibm-plex + nerd(AUR)
 - ttf-liberation ttf-wps-fonts
 
  
