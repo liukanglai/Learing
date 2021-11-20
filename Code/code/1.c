@@ -6,7 +6,6 @@ int main(void) {
   scanf("%d", &wm);
   scanf("%s", a);
   printf("%s\n%d", a, wm);
-  int
-
+  printf("");
   return 0;
 }
