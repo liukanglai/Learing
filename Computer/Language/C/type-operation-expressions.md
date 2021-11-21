@@ -36,6 +36,9 @@
 
 - 字符串常量/字符数组存放的字符串 : '\0'
 
+- "%f" is the (or at least one) correct format for a double. There is no format for a float, because if you attempt to pass a float to printf, it'll be promoted to double before printf receives it1. "%lf" is also acceptable under the current standard -- the l is specified as having no effect if followed by the f conversion specifier (among others).
+
+- Note that this is one place that printf format strings differ substantially from scanf (and fscanf, etc.) format strings. For output, you're passing a value, which will be promoted from float to double when passed as a variadic parameter. For input you're passing a pointer, which is not promoted, so you have to tell scanf whether you want to read a float or a double, so for scanf, %f means you want to read a float and %lf means you want to read a double (and, for what it's worth, for a long double, you use %Lf for either printf or scanf).
 
 
 # 运算符
