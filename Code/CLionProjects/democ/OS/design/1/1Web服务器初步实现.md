@@ -73,6 +73,7 @@ DNS预先截取是指“域名系统”预先截取。当浏览网页时，“Go
 
 # 3 修改 webserver.c 文件中 logger 函数源代码,使得日志文件中每行信息的起始部分均有时间信息,以表示这行信息被写入的时间
 
+- 加入 time.h 函数即可，在 logger 函数中插入
 - 源码见附件，log 如下：
 
 ![addtime](HTML/addtime.png)
@@ -117,6 +118,8 @@ DNS预先截取是指“域名系统”预先截取。当浏览网页时，“Go
 
 # 6 在 server.c 中增加相关计时函数,分析一下程序的哪个部分最耗时?使用 perf 工具来跟踪 webserver 程序,根据其运行报告进行程序性能分析,请指出 webserver 中比较 耗费时间的函数有哪些?
 
+- 开始用了 time 函数，精度只到秒，改用 clock；
+- 记录了开始解析命令的时间，listen，accept 的时间，一个写入 log 的时间做代表，findfile（index.html）的时间，send 文件的时间，再是整个 web 函数的时间，以做对比.
 - 刷新了两次页面，每次请求需要三次 accept：
 
 ![time](HTML/time.png)
