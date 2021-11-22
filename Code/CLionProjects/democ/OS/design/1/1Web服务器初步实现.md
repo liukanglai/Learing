@@ -3,6 +3,10 @@
 # 1 compile
 
 - gcc webserver.c -o webserver 
+- Makefile:
+
+        webserver:
+          gcc webserver.c -o webserver 
 
 # 2 run
 
@@ -148,4 +152,5 @@ DNS预先截取是指“域名系统”预先截取。当浏览网页时，“Go
 1. 可以减少 log 的写入，少些废话，精炼提取，规定格式；
 2. 对于大文件的传输，采取压缩技术，合并技术
 3. 写高质量的代码，提高速度（难）
+4. 并行
 
