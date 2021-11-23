@@ -40,10 +40,10 @@
         QT_IM_MODULE=fcitx
         XMODIFIERS=@im=fcitx
 
--  ~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema_list)
+-  ~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema\_list)
 - use new file(no deffect default.yaml), in build fold, create default.custom.yaml:
 
-- yay -S rime-cloverpinyin (schema_list: - schema: clover)
+- yay -S rime-cloverpinyin (schema\_list: - schema: clover)
 
 > https://github.com/fkxxyz/rime-cloverpinyin/wiki/linux
 
@@ -141,8 +141,9 @@ AutoEnable=true
 
 2. windows 修改 Windows 硬件时钟为 UTC 时间
     - 以管理员身份打开 「PowerShell」，输入以下命令：
-    > Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
-    - 或者打开「注册表编辑器」，定位到 计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation 目录下，新建一个 DWORD 类型，名称为 RealTimeIsUniversal 的键，并修改键值为 1 即可。
+
+        Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+        或者打开「注册表编辑器」，定位到 计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation 目录下，新建一个 DWORD 类型，名称为 RealTimeIsUniversal 的键，并修改键值为 1 即可。
 
 - sudo pacman -S ntpdate
 - sudo ntpdate time.windows.com
