@@ -167,7 +167,7 @@ AutoEnable=true
     - sudo chsh -s /bin/zsh username
     - yay -S oh-my-zsh-git
     - cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
-    - in .zshrc: export LC_CTYPE=en_US.UTF-8
+    - in .zshrc: export LC\_CTYPE=en\_US.UTF-8
     - powerlevel10k
     - yakuake --get theme gruvbox
 
@@ -216,6 +216,7 @@ AutoEnable=true
 - yay -S ocs-url
 - 设置外观 layan
 - yay -S layan-kde-git
+- tela purple
 - author: adhe in `https://store.kde.org/find?search=gruv`(all gruvbox)
 - .local/share/
 - gruvbox konsole, yakuake(.config/yakuakerc)
@@ -239,6 +240,7 @@ AutoEnable=true
 - poppler-data
 
 # ulauncher
+# utools
 # stacer
 
 # vmbox
