@@ -126,6 +126,7 @@
 - in tmux: echo $TERM
 
 > set -g default-terminal "xterm-256color" or "screen-256color" same as the terminal
+>> use "set -g default-terminal "tmux-256color"" int tmux (form neovim)
 
 # escape-time
 
