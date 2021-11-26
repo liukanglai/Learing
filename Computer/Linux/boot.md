@@ -1,3 +1,7 @@
+# /etc/fstab
+
+- 
+
 # <= 2T
 
 - fdisk -l

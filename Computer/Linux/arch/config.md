@@ -31,8 +31,16 @@
 
 2. fictx5-im (fictx5+fictx5-gtk/qt+fcitx5-configtool)
     - fcitx5-chinese-addons
+```
+sudo pacman -S fcitx5-im #基础包组
+sudo pacman -S fcitx5-chinese-addons #官方中文输入引擎
+sudo pacman -S fcitx5-anthy #日文输入引擎
+sudo pacman -S fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn)
+sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
+sudo pacman -S fcitx5-material-color #主题
     - fcitx5-rime
     - fcitx5-nord(Setting -> Location -> input method -> Configure addons -> Classic user interface -> Theme.)
+```
 
 > Edit /etc/environment and add the following lines:
 
