@@ -134,6 +134,9 @@
 # 替换
 
 - substitute
+- g: 行，
+- %：全行第一个
+
 - s/zempty/handsome/g  (行zempty替换成 handsome) (no g, replace next)
 - :%s/zempty/handsome/g  (全文)
 - :n1,n2s/zempty/handsome/g   (n1 到 n2行)

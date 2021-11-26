@@ -124,19 +124,6 @@ delete
 # neocomplete
 # deoplete.nvim / youcompleteme???
 
-- pip install -U msgpack-python
-- You can enable Python3 interface with pip:
-- pip3 install --user pynvim
-- for vim-plug:
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
 
 # analysis
 
