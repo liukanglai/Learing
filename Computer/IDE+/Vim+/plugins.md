@@ -1,3 +1,16 @@
+
+# analysis
+
+1. start time
+    - vim --startuptime startuptime.log 记录行为到文件中
+    - 第三列为启动时间。
+
+2. 特定行为的分析(ps: CtrlP)
+    - :profile start profile.log
+    - :profile func *(CtrlP)
+    - :profile file *(CtrlP)
+    - open profile.log, G, *可搜索单词
+
 # self
 
 - mkidr -p ~/.vim/pack/plugins/start 总是需要加载的插件
@@ -67,6 +80,7 @@ delete
 - be same to vim-plug
 - use :PluginSearch ... !!!you can find plugins, then put the cursor on it, push i, will try it, but not installed it, you need use plug '' to install it.
 
+
 # YouCompleteMe
 
         vim中输入:echo has('python') || has('python3')   - if return 1,show right
@@ -124,17 +138,18 @@ delete
 # neocomplete
 # deoplete.nvim / youcompleteme???
 
+# ale
 
-# analysis
+1. fixing(formart)
 
-1. start time
-    - vim --startuptime startuptime.log 记录行为到文件中
-    - 第三列为启动时间。
+        " In ~/.vim/vimrc, or somewhere similar.
+        let g:ale_fixers = {
+        \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+        \   'javascript': ['eslint'],
+        \}
+        If you want to automatically fix files when you save them, you need to turn a setting on in vimrc.
 
-2. 特定行为的分析(ps: CtrlP)
-    - :profile start profile.log
-    - :profile func *(CtrlP)
-    - :profile file *(CtrlP)
-    - open profile.log, G, *可搜索单词
-
+        " Set this variable to 1 to fix files when you save them.
+        let g:ale_fix_on_save = 1
+  - :ALEFixSuggest
 
