@@ -2,8 +2,8 @@
 
 int main(void) {
   int wm;
-  char a[10];
+  char a[10] = 1;
   printf("%s\n%d", a, wm);
-  printf(" ");
+  printf(" %d");
   return 0;
 }
