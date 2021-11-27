@@ -93,13 +93,14 @@
 - \*寄存器（macOS，windows的），+寄存器（linux默认的ctr+c，ctr+v）
 - .vimrc: set clipboard=unamed  " 复制到**
 - set clipboard=unnamedplus  " 复制到+
-- set clipboard=unamed, unnamedplus  " 同时 
+- set clipboard=unamed, unnamedplus  " 同时
 
 
 # 快速恢复列表 quickfix
 
 为了方便的跳转到文件的某个部分, 如:make, :grep等产生的信息
-- :copen to open all 
+
+- :copen to open all
 - :cclose/:bd
 - :cnext(cn) :cprevious(cp/cN)
 - :cwindow/:cw 只在出错时打开
@@ -110,4 +111,3 @@
 - :lopne :lclose ...
 
 # diff
-

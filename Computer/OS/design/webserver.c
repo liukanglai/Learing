@@ -25,7 +25,7 @@ are modified slightly*/
 #define SIGCLD SIGCHLD
 #define j 1
 #endif
-    struct {
+struct {
   char *ext;
   char *filetype;
 } extensions[] = {{"gif", "image/gif"},
