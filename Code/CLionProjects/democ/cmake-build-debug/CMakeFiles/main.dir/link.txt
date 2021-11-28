@@ -1,1 +1,0 @@
-/usr/bin/cc -g CMakeFiles/main.dir/OS/design/1.c.o CMakeFiles/main.dir/OS/design/Client.c.o CMakeFiles/main.dir/OS/design/webserver.c.o -o main 
