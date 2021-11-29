@@ -2,8 +2,9 @@
 - git  libconfig wget curl npm exfat-utils p7zip unzip zip unrar ranger tlp ark neofetch bash-completion
 - vim nvim
 - google-chrome ark cmake ctags flameshot cheese vlc gwenview gimp okular yakuake 
+- deepin-screenshot 
 - code clion idea qtcreater
-- vnote typora 
+- vnote typora pandoc 
 
 # yay
 
