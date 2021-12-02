@@ -205,6 +205,10 @@ AutoEnable=true
       [Install]
       WantedBy=multi-user.target
 
+5. truecolor:
+
+- look vim/UI, tmux
+
 # deb 安装
 
 - yay -S debtap

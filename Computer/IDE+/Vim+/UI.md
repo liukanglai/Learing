@@ -3,9 +3,9 @@
 ## Terminal Colors https://gist.github.com/XVilka/8346728
 
 - printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
-- colorscheme elflord
+- colorscheme gruvbox
 - 24位颜色(真彩色), set termguicolors
-> .tmux.conf: set -g default-terminal "xterm-256color"
+> .tmux.conf: set -g default-terminal "xterm-256color" or "tmux-256color"
 >> .screenrc: term "xterm-256color"
 > .zshrc: TERM=xterm-256color // not a good idea.
 
