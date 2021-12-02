@@ -238,7 +238,7 @@ int main(int argc, char **argv) {
     exit(1);
   }
 
-  int shm_fd; // shm_fd[0] 为 count（进程数），shm_fd[1] 为 start
+  int shm_fd; // memPtr[0] 为 count（进程数），memPtr[1] 为 start
   if ((shm_fd = shm_open(SHM_NAME, O_RDWR | O_CREAT, 0777)) < 0) {
     perror("create shared memory object error");
     exit(1);
