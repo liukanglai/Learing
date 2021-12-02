@@ -9,8 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/liukanglai/Learing/Code/C/1.c" "CMakeFiles/main.dir/1.c.o" "gcc" "CMakeFiles/main.dir/1.c.o.d"
-  "/home/liukanglai/Learing/Code/C/mympi.c" "CMakeFiles/main.dir/mympi.c.o" "gcc" "CMakeFiles/main.dir/mympi.c.o.d"
-  "/home/liukanglai/Learing/Code/C/test.c" "CMakeFiles/main.dir/test.c.o" "gcc" "CMakeFiles/main.dir/test.c.o.d"
   "/home/liukanglai/Learing/Code/C/text.cpp" "CMakeFiles/main.dir/text.cpp.o" "gcc" "CMakeFiles/main.dir/text.cpp.o.d"
   )
 

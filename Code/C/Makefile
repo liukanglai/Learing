@@ -153,54 +153,6 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/1.c.s
 .PHONY : 1.c.s
 
-mympi.o: mympi.c.o
-.PHONY : mympi.o
-
-# target to build an object file
-mympi.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mympi.c.o
-.PHONY : mympi.c.o
-
-mympi.i: mympi.c.i
-.PHONY : mympi.i
-
-# target to preprocess a source file
-mympi.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mympi.c.i
-.PHONY : mympi.c.i
-
-mympi.s: mympi.c.s
-.PHONY : mympi.s
-
-# target to generate assembly for a file
-mympi.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/mympi.c.s
-.PHONY : mympi.c.s
-
-test.o: test.c.o
-.PHONY : test.o
-
-# target to build an object file
-test.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.c.o
-.PHONY : test.c.o
-
-test.i: test.c.i
-.PHONY : test.i
-
-# target to preprocess a source file
-test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.c.i
-.PHONY : test.c.i
-
-test.s: test.c.s
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/test.c.s
-.PHONY : test.c.s
-
 text.o: text.cpp.o
 .PHONY : text.o
 
@@ -237,12 +189,6 @@ help:
 	@echo "... 1.o"
 	@echo "... 1.i"
 	@echo "... 1.s"
-	@echo "... mympi.o"
-	@echo "... mympi.i"
-	@echo "... mympi.s"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
 	@echo "... text.o"
 	@echo "... text.i"
 	@echo "... text.s"

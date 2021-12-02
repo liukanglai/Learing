@@ -14,3 +14,6 @@ add_executable(main ${DIR_SRCS})
 
 
 #target_link_libraries(democ  m)
+
+# for compile_commands.json
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
