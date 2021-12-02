@@ -1,0 +1,17 @@
+[{
+    "directory": "/home/liukanglai/Learing/Code/C/Debug",
+    "command": "/usr/bin/cc   -g -std=gnu99 -o CMakeFiles/main.dir/1.c.o -c /home/liukanglai/Learing/Code/C/1.c",
+    "file": "/home/liukanglai/Learing/Code/C/1.c"
+  },
+
+  {
+    "directory": "/home/liukanglai/Learing/Code/C/Debug",
+    "command": "/usr/bin/cc   -g -std=gnu99 -o CMakeFiles/main.dir/mympi.c.o -c /home/liukanglai/Learing/Code/C/mympi.c",
+    "file": "/home/liukanglai/Learing/Code/C/mympi.c"
+  },
+  {
+    "directory": "/home/liukanglai/Learing/Code/C/Debug",
+    "command": "/usr/bin/c++   -g -o CMakeFiles/main.dir/text.cpp.o -c /home/liukanglai/Learing/Code/C/text.cpp",
+    "file": "/home/liukanglai/Learing/Code/C/text.cpp"
+  }
+]
