@@ -63,6 +63,7 @@ unsigned long get_file_size(const char *path) {
 }
 
 void logger(int type, char *s1, char *s2, int socket_fd) {
+  // s1 is request:, s2 is GET /
   int fd;
   char logbuffer[BUFSIZE * 2];
   switch (type) {
@@ -126,7 +127,8 @@ void *web(void *data) {
       if (buffer[i] == '\r' || buffer[i] == '\n')
         buffer[i] = '*';
     logger(LOG, "request", buffer, hit);
-    if (strncmp(buffer, "GET ", 4) && strncmp(buffer, "get ", 4)) {
+    if (strncmp(buffer, "GET ", 4) &&
+        strncmp(buffer, "get ", 4)) { // GET 从何而来，socket
       logger(FORBIDDEN, "only simple get operation supported", buffer, fd);
     }
     for (i = 4; i < BUFSIZE; i++) { /* null terminate after the second space to
@@ -188,6 +190,7 @@ index file */
 }
 
 int main(int argc, char **argv) {
+
   int i, port, pid, listenfd, socketfd, hit;
   socklen_t length;
   static struct sockaddr_in cli_addr;  /* static = initialised to zeros */
@@ -221,16 +224,19 @@ int main(int argc, char **argv) {
     (void)printf("ERROR: Can't Change to directory %s\n", argv[2]);
     exit(4);
   }
+
   /* Become deamon + unstopable and no zombies children (= no wait()) */
   if (fork() != 0)
-    return 0;                    /* parent returns OK to shell */
+    return 0; /* parent returns OK to shell */
+
   (void)signal(SIGCLD, SIG_IGN); /* ignore child death */
   (void)signal(SIGHUP, SIG_IGN); /* ignore terminal hangups */
-  for (i = 0; i < 32; i++)
+  for (i = 0; i < 32; i++)       // what meaning?
     (void)close(i);
   /* close open files */
-  (void)setpgrp();
-  /* break away from process group */
+
+  (void)setpgrp(); /* break away from process group */
+
   logger(LOG, "nweb starting", argv[1], getpid());
   /* setup the network socket */
   if ((listenfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
@@ -238,11 +244,12 @@ int main(int argc, char **argv) {
   port = atoi(argv[1]);
   if (port < 0 || port > 60000)
     logger(ERROR, "Invalid port number (try 1->60000)", argv[1], 0);
+
   //初始化线程属性,为分离状态
   pthread_attr_t attr;
   pthread_attr_init(&attr);
   pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
-  //
+
   pthread_t pth;
   serv_addr.sin_family = AF_INET;
   serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
@@ -251,7 +258,7 @@ int main(int argc, char **argv) {
     logger(ERROR, "system call", "bind", 0);
   if (listen(listenfd, 64) < 0)
     logger(ERROR, "system call", "listen", 0);
-  for (hit = 1;; hit++) {
+  for (hit = 1;; hit++) { // accept and create pthread
     length = sizeof(cli_addr);
     if ((socketfd = accept(listenfd, (struct sockaddr *)&cli_addr, &length)) <
         0)
