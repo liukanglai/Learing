@@ -2,30 +2,32 @@
 
 > DDL DML DQL DCL
 
-1. 
-  - ;: end
-  - ingore case
-  - comment: -- #; `/* */`
+1.
+
+- ;: end
+- ingore case
+- comment: -- #; `/* */`
 
 ## DDL
 
 1. basic types
-  - char(n)
 
-        create database Student;
-        create database if not exists Student;
-        create database Student character set utf-8;
+- char(n)
 
-        show databases;
-        show create database Student;
+      create database Student;
+      create database if not exists Student;
+      create database Student character set utf-8;
 
-        alter database Student character set utf-8;
+      show databases;
+      show create database Student;
 
-        drop database Student;
-        drop database if exists Student;
+      alter database Student character set utf-8;
 
-        select database();
-        use Student;
+      drop database Student;
+      drop database if exists Student;
+
+      select database();
+      use Student;
 
 ## DML
 
@@ -71,7 +73,7 @@
         if null(name, Name);
         as;
 
-## 
+##
 
         >,<,>=,<=,=,<>
         BETWEEN...AND
@@ -81,7 +83,8 @@
         and or &&
         or or ||
         not or !
-## 
+
+##
 
         order by name (asc);
         order by name desc;
@@ -93,7 +96,7 @@
         avg
 
         group by name;
-        
+
         limit 1;
 
 # constraint
@@ -107,15 +110,15 @@
 
 #
 
-        create user 'name'@'localhost' identified by 'password'; 
-        drop user 'name'@'localhost' 
+        create user 'name'@'localhost' identified by 'password';
+        drop user 'name'@'localhost'
 
         host：指定在哪个主机上登陆，本地用户可用localhost，让该用户可以从任意远程主机登陆，%
         password：密码可以为空，可以不需要密码登陆
 
         grant all on mydb.* (*.*) to 'monty'@'localhost';
         grant privileges on databasename.tablename to 'username'@'host' with grant option;
-        
+
         all, select, update, delete
 
         set password for 'username'@'localhost' = password('...');
@@ -129,7 +132,6 @@
 
         具体信息可以用命令SHOW GRANTS FOR 'pig'@'%'; 查看。
 
-
 # privileges
 
-- 
+-
