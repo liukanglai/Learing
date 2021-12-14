@@ -4,11 +4,13 @@
 - next/n     执行当前行，停在下一行 （step over）
 - step/s     执行当前行，进入下一层函数 （step in）
 - finish     执行直至离开当前函数
-- where      显示栈
 - continue/c 继续执行
 - break/b N  在第 N 行加断点
 - break/b f  在函数 f 处加断点
 - delete     删除所有断点
+
+- where      显示在哪
+
 # create file 
 
 - gcc -g -o hello hello.c
