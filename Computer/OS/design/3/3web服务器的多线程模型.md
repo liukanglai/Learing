@@ -1,3 +1,109 @@
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div align='center'><font size = '7'> OS 课设3 </font></div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<div align='center'><font size = '5'> 信息科学与工程学院 </font></div>
+
+<br/>
+
+<div align='center'><font size = '5'> 2019011777 计算机 19-3 刘康来 </font></div>
+
+<div STYLE="page-break-after: always;"></div>
+
+# 实验 3 Web 服务器的多线程模型
+
+## 对比实验 2
+
+### http_load
+
+> 前言报错：Forbidden The requested URL, file type or operation is not allowed on this simple static file webserver.
+>
+> > 发现是 GET 的大小写问题，找了好久，还是对照实验 1 的代码才找出问题，教训，看出错信息，有“源”的找，总是不愿动脑子，仔细想想。。。
+
+> http_load:
+>
+> > -p(paralllel)与-r(rate)：两者只能取一，一是同一时间发起的并发连接数，二是每秒的；
+> >
+> > -s(seconds)与-fetches：两者只能取一，一是运行总秒数，二是总获取数.
+
+- 并发数相同 10，在 30 秒内获取比较：
+
+多线程：
+
+![1](thread30.png)
+
+多进程：
+
+![2](process30.png)
+
+- 分析：多线程比多进程获取的要多的多，可以看出线程的并行度十分高，是真正的并行。
+- 本以为加锁用了很多时间，然后去锁后发现时间差不多，
+- 文章开头有说到，
+- 线程负责具体程序逻辑的执行,是处理器调度的基本单位。与进程相比,线程不具有独立的地址空间,可以与进程内的其它线程共享进程的资源。因此线程具有容易共享信息、调度切换开销小等特点。
+- 用的 pthread 库，一个 LWP 与一个内核线程相对应，系统调度自如。
+
+### 计时
+
+- socket 数据读取、发送、网页文件读取和日志文件写入四个 I/O 操作分别计时，并打印出每个进程或线程处理各项 I/O 计时的平均时间。
+
+> 与以前的时间计时基本一样，用共享内存进行计时累加，只是多线程模型不能直接输出，需要写入日志文件
+
+- 进程模型：
+
+![](process0.png)
+
+![](process1.png)
+
+可以看出时间基本正确，关于写 socket 的时间与读网页的时间，在代码中无法精确定位，或许是我理解有问题？
+
+- 线程模型：
+
+![](pthreadtime.png)
+
+这个时间有点长，是因为我开网页慢了一下。。。
+
+- http_load: -p 10 -s 30
+
+![](processhttp.png)
+
+![](pthreadhttp.png)
+
+- nweb.log 100 多 M，没卡死我，kate 能打开，
+- 这差距有点大啊，不会进程写错了吧，no，不会
+
+### 分析：
+
+- 从上图看出，两者对于数据的读写相差 10 倍左右，
+- 完成一个客户端响应的时间差的更多，
+- 系统对线程的调度？
+
+### 改进线程模型
+
+- 看下面的实验吧
+- 线程池，内存缓冲。。。
+
+## 多线程性能下降分析
+
+- 增大并发访问线程数量, 多线程性能会下降
+- 下一章开头有说
+- 进程数过多，cpu 的调度，以及一切相关资源的分配都会出问题，造成拥堵阻塞。
+- 同时如果有大量客户端同时请求 Web 服务器时,将造成 Web 服务器同时创建大量的 线程,这些线程将相互竞争 CPU 资源、I/O、进程内临界资源等计算机资源,从而导致 Web 服务进程并发吞吐量降低。
+- 对于 CPU 利用率来说,如果线程数量增多,则因为线程的读写 I/O 阻塞而导致的线程上下文切换次数增多,则 CPU 的利用率会下降。
+- 对于外存 I/O,如果 多个线程竞争对外存的读写权,由于外存存储数据的特性以及 I/O 传输数据带宽限制,会导 致大多数线程存在阻塞状态。
+- 如果多个线程之间存在临界资源、数据同步等使用问题,随着 线程数量的增多,也会使得线程的并发性下降。
+
+> 写代码时可能有一些想法，都写在代码附近了，什么时候去解决呢。。。
+Code:
+```
 //编译代码指令 gcc -std=gnu99 -g -o multithread_webserver
 // multithread_webserver.c -lphtread
 
@@ -309,17 +415,17 @@ int main(int argc, char **argv) {
   }
 
   /* Become deamon + unstopable and no zombies children (= no wait()) */
-  /*if (fork() != 0)*/
-  /*return 0; [> parent returns OK to shell <]*/
+  if (fork() != 0)
+    return 0; /* parent returns OK to shell */
 
-  /*(void)signal(SIGCLD, SIG_IGN); [> ignore child death <]*/
-  /*(void)signal(SIGHUP, SIG_IGN); [> ignore terminal hangups <]*/
-  /*for (i = 0; i < 32; i++)       // what meaning?*/
-  /*(void)close(i);*/
+  (void)signal(SIGCLD, SIG_IGN); /* ignore child death */
+  (void)signal(SIGHUP, SIG_IGN); /* ignore terminal hangups */
+  for (i = 0; i < 32; i++)       // what meaning?
+    (void)close(i);
   /* close open files */
 
   // 设置组的 pid 为 点前进程的 pid
-  /*(void)setpgrp(); [> break away from process group <]*/
+  (void)setpgrp(); /* break away from process group */
 
   logger(LOG, "nweb starting", argv[1], getpid());
   /* setup the network socket */
@@ -384,3 +490,4 @@ int main(int argc, char **argv) {
     }
   }
 }
+```

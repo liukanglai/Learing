@@ -1,0 +1,10 @@
+
+/* Set the process group ID of the process matching PID to PGID.
+   If PID is zero, the current process's process group ID is set.
+   If PGID is zero, the process ID of the process is used.  */
+extern int setpgid (__pid_t __pid, __pid_t __pgid) __THROW;
+
+/* Create a new session with the calling process as its leader.
+   The process group IDs of the session and the calling process
+   are set to the process ID of the calling process, which is returned.  */
+extern __pid_t setsid (void) __THROW;

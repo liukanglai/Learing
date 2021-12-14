@@ -20,14 +20,6 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#include <semaphore.h>
-#include <sys/mman.h> // shared memory
-
-#include <sys/time.h>
-
-#define SEM_NAME "sem_count"
-#define SHM_NAME "mmap_example"
-
 #define VERSION 23
 #define BUFSIZE 8096
 #define ERROR 42
@@ -54,13 +46,6 @@ struct {
                   {"html", "text/html"},
                   {0, 0}};
 
-struct timeval start, end;
-struct timeval start_web;              // 统计单个 web 的时间
-struct timeval start_totol, end_totol; // 统计总时间
-double timeuse = 0, time_totol = 0;
-sem_t *psem;
-int shm_fd;
-void *memPtr;
 typedef struct {
   int hit;
   int fd;
@@ -120,11 +105,6 @@ void logger(int type, char *s1, char *s2, int socket_fd) {
 
 /* this is a web thread, so we can exit on errors */
 void *web(void *data) {
-  sem_wait(psem); // 进程数加 1
-  (*((double *)memPtr + 5))++;
-  sem_post(psem);
-  gettimeofday(&start_web, NULL);
-
   int fd;
   int hit;
   int j, file_fd, buflen;
@@ -134,18 +114,8 @@ void *web(void *data) {
   webparam *param = (webparam *)data;
   fd = param->fd;
   hit = param->hit;
-
-  gettimeofday(&start, NULL);
   ret = read(fd, buffer, BUFSIZE); /* read web request in one go */
-  gettimeofday(&end, NULL);
-  double timeuse = (end.tv_sec - start.tv_sec) +
-                   (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-  /*printf("平均每个客户端完成读 socket 时间为 %fms\n", timeuse * 1000);*/
-  sem_wait(psem);
-  *((double *)memPtr + 1) += timeuse * 1000;
-  sem_post(psem);
-
-  if (ret == 0 || ret == -1) { /* read failure stop now */
+  if (ret == 0 || ret == -1) {     /* read failure stop now */
     logger(FORBIDDEN, "failed to read browser request", "", fd);
   } else {
     if (ret > 0 && ret < BUFSIZE) /* return code is valid chars */
@@ -200,69 +170,16 @@ index file */
                       SEEK_END); /* 使用 lseek 来获得文件⻓度,比较低效*/
     (void)lseek(file_fd, (off_t)0, SEEK_SET);
     /* 想想还有什么方法来获取*/
-    gettimeofday(&start, NULL);
     (void)sprintf(buffer,
                   "http/1.1 200 ok\nserver: nweb/%d.0\ncontent-length: "
                   "%ld\nconnection: close\ncontent-type: %s\n\n",
                   VERSION, len, fstr); /* header + a blank line */
     logger(LOG, "header", buffer, hit);
-    gettimeofday(&end, NULL);
-    timeuse = end.tv_sec - start.tv_sec +
-              (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-    /*printf("平均每个客户端完成写日志数据时间为 %fms\n", timeuse * 1000);*/
-    sem_wait(psem);
-    *((double *)memPtr + 4) += timeuse * 1000;
-    sem_post(psem);
-
-    (void)write(fd, buffer, strlen(buffer)); // 往 fd 中写？
-
-    gettimeofday(&start, NULL);
+    (void)write(fd, buffer, strlen(buffer));
     /* send file in 8kb block - last block may be smaller */
     while ((ret = read(file_fd, buffer, BUFSIZE)) > 0) {
       (void)write(fd, buffer, ret);
     }
-    gettimeofday(&end, NULL);
-    timeuse = end.tv_sec - start.tv_sec +
-              (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-    /*printf("平均每个客户端完成读网页数据时间为 %fms\n", timeuse * 1000);*/
-    /*printf("平均每个客户端完成写 socket 的时间为 %fms\n", timeuse * 1000);*/
-    sem_wait(psem);
-    *((double *)memPtr + 2) += timeuse * 1000;
-    *((double *)memPtr + 3) += timeuse * 1000;
-    sem_post(psem);
-
-    gettimeofday(&end, NULL);
-    timeuse = (end.tv_sec - start_web.tv_sec) +
-              (double)(end.tv_usec - start_web.tv_usec) / 1000000.0;
-    /*printf("平均每个客户端完成请求处理时间为 %fms\n", timeuse * 1000);*/
-
-    sem_wait(psem);
-    *(double *)memPtr += timeuse * 1000;
-    (*((double *)memPtr + 5))--;
-    sem_post(psem);
-    if (!(*((double *)memPtr + 5)) && hit > 400000) {
-      gettimeofday(&end_totol, NULL);
-      time_totol =
-          (end_totol.tv_sec - start_totol.tv_sec) +
-          (double)(end_totol.tv_usec - start_totol.tv_usec) / 1000000.0;
-      char buffer[BUFSIZE + 1]; /* static so zero filled */
-      (void)sprintf(buffer,
-                    "共用 %fms 成功处理 %d 个客户端请求,其中\n "
-                    "平均每个客户端完成请求处理时间为 %fms\n "
-                    "平均每个客户端完成读 socket "
-                    "时间为 %fms\n 平均每个客户端完成写 socket 时间为 "
-                    " %fms\n "
-                    "平均每个客户端完成读网页数据时间为 %fms\n "
-                    "平均每个客户端完成写日志数据时间为 %fms\n",
-                    time_totol * 1000, hit, *(double *)memPtr / hit,
-                    *((double *)memPtr + 1) / hit,
-                    *((double *)memPtr + 2) / hit,
-                    *((double *)memPtr + 3) / hit,
-                    *((double *)memPtr + 4) / hit); /* header + a blank line
-                                                     */
-      logger(LOG, "time", buffer, hit);
-    }
-
     usleep(10000); /*在 socket 通道关闭前,留出一段信息发送的时间*/
     close(file_fd);
   }
@@ -309,17 +226,17 @@ int main(int argc, char **argv) {
   }
 
   /* Become deamon + unstopable and no zombies children (= no wait()) */
-  /*if (fork() != 0)*/
-  /*return 0; [> parent returns OK to shell <]*/
+  if (fork() != 0)
+    return 0; /* parent returns OK to shell */
 
-  /*(void)signal(SIGCLD, SIG_IGN); [> ignore child death <]*/
-  /*(void)signal(SIGHUP, SIG_IGN); [> ignore terminal hangups <]*/
-  /*for (i = 0; i < 32; i++)       // what meaning?*/
-  /*(void)close(i);*/
+  (void)signal(SIGCLD, SIG_IGN); /* ignore child death */
+  (void)signal(SIGHUP, SIG_IGN); /* ignore terminal hangups */
+  for (i = 0; i < 32; i++)       // what meaning?
+    (void)close(i);
   /* close open files */
 
   // 设置组的 pid 为 点前进程的 pid
-  /*(void)setpgrp(); [> break away from process group <]*/
+  (void)setpgrp(); /* break away from process group */
 
   logger(LOG, "nweb starting", argv[1], getpid());
   /* setup the network socket */
@@ -342,40 +259,11 @@ int main(int argc, char **argv) {
     logger(ERROR, "system call", "bind", 0);
   if (listen(listenfd, 64) < 0)
     logger(ERROR, "system call", "listen", 0);
-
-  if ((psem = sem_open(SEM_NAME, O_CREAT, 0777, 1)) ==
-      SEM_FAILED) { // 信号量是否为全局变量，fork 会咋样？
-    perror("create semaphore error");
-    exit(1);
-  }
-
-  if ((shm_fd = shm_open(SHM_NAME, O_RDWR | O_CREAT, 0777)) < 0) {
-    perror("create shared memory object error");
-    exit(1);
-  }
-  ftruncate(shm_fd, 6 * sizeof(double));
-  memPtr = mmap(NULL, 6 * sizeof(double), PROT_READ | PROT_WRITE, MAP_SHARED,
-                shm_fd, 0);
-  if (memPtr == MAP_FAILED) {
-    perror("create mmap error");
-    exit(1);
-  }
-
-  *(double *)memPtr = 0;
-  *((double *)memPtr + 1) = 0;
-  *((double *)memPtr + 2) = 0;
-  *((double *)memPtr + 3) = 0;
-  *((double *)memPtr + 4) = 0;
-  *((double *)memPtr + 5) = 0;
-
-  gettimeofday(&start_totol, NULL); // 统计总时间
-  for (hit = 1;; hit++) {           // accept and create pthread
-    /*printf("hello\n"); // 在这不能输出？？？到哪去了*/
+  for (hit = 1;; hit++) { // accept and create pthread
     length = sizeof(cli_addr);
     if ((socketfd = accept(listenfd, (struct sockaddr *)&cli_addr, &length)) <
         0)
       logger(ERROR, "system call", "accept", 0);
-
     webparam *param = malloc(sizeof(webparam));
     param->hit = hit;
     param->fd = socketfd;
