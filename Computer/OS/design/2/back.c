@@ -36,9 +36,6 @@ are modified slightly*/
 #define j 1
 #endif
 
-sem_t *psem;
-int shm_fd;
-void *memPtr;
 void sigchild_handler(int sig) {
   while (waitpid(-1, 0, WNOHANG) > 0)
     ;
@@ -119,10 +116,7 @@ void web(int fd, int hit) {
   gettimeofday(&end, NULL);
   double timeuse = (end.tv_sec - start.tv_sec) +
                    (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-  /*printf("平均每个客户端完成读 socket 时间为 %fms\n", timeuse * 1000);*/
-  sem_wait(psem);
-  *((double *)memPtr + 1) += timeuse * 1000;
-  sem_post(psem);
+  printf("平均每个客户端完成读 socket 时间为 %fms", timeuse);
   if (ret == 0 ||
       ret == -1) { //如果读取客户端消息失败,则向客户端发送 HTTP 失败响应信息
     logger(FORBIDDEN, "failed to read browser request", "", fd);
@@ -183,10 +177,7 @@ void web(int fd, int hit) {
   gettimeofday(&end, NULL);
   timeuse = end.tv_sec - start.tv_sec +
             (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-  /*printf("平均每个客户端完成写日志数据时间为 %fms\n", timeuse * 1000);*/
-  sem_wait(psem);
-  *((double *)memPtr + 4) += timeuse * 1000;
-  sem_post(psem);
+  printf("平均每个客户端完成读网页数据时间为 %fms", timeuse);
 
   (void)write(fd, buffer, strlen(buffer));
   /* 不停地从文件里读取文件内容,并通过 socket 通道向客户端返回文件内容*/
@@ -197,12 +188,7 @@ void web(int fd, int hit) {
   gettimeofday(&end, NULL);
   timeuse = end.tv_sec - start.tv_sec +
             (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-  /*printf("平均每个客户端完成读网页数据时间为 %fms\n", timeuse * 1000);*/
-  /*printf("平均每个客户端完成写 socket 的时间为 %fms\n", timeuse * 1000);*/
-  sem_wait(psem);
-  *((double *)memPtr + 2) += timeuse * 1000;
-  *((double *)memPtr + 3) += timeuse * 1000;
-  sem_post(psem);
+  printf("平均每个客户端完成读网页数据时间为 %fms", timeuse);
   sleep(1); /* sleep 的作用是防止消息未发出,已经将此 socket 通道关闭*/
 
   // 保证运行完后立刻计时，在这加一个锁，出于懒，就不加了
@@ -261,36 +247,31 @@ int main(int argc, char **argv) {
     logger(ERROR, "system call", "listen", 0);
 
   struct timeval start, end;
-  struct timeval start_totol, end_totol;
-  double timeuse = 0, time_totol = 0;
+  double timeuse;
+  int count = 0; // 判断子进程全结束，获取总时间。
+  sem_t *psem;
 
-  if ((psem = sem_open(SEM_NAME, O_CREAT, 0777, 1)) ==
-      SEM_FAILED) { // 信号量是否为全局变量，fork 会咋样？
+  if ((psem = sem_open(SEM_NAME, O_CREAT, 0777, 1)) == SEM_FAILED) {
     perror("create semaphore error");
     exit(1);
   }
 
+  int shm_fd; // memPtr[0] 为 count（进程数），memPtr[1] 为 start
   if ((shm_fd = shm_open(SHM_NAME, O_RDWR | O_CREAT, 0777)) < 0) {
     perror("create shared memory object error");
     exit(1);
   }
-  ftruncate(shm_fd, 6 * sizeof(double));
-  memPtr = mmap(NULL, 6 * sizeof(double), PROT_READ | PROT_WRITE, MAP_SHARED,
-                shm_fd, 0);
+  ftruncate(shm_fd, sizeof(int));
+  void *memPtr = mmap(NULL, 3 * sizeof(int), PROT_READ | PROT_WRITE, MAP_SHARED,
+                      shm_fd, 0);
   if (memPtr == MAP_FAILED) {
     perror("create mmap error");
     exit(1);
   }
 
-  *(double *)memPtr = 0;
-  *((double *)memPtr + 1) = 0;
-  *((double *)memPtr + 2) = 0;
-  *((double *)memPtr + 3) = 0;
-  *((double *)memPtr + 4) = 0;
-  *((double *)memPtr + 5) = 0;
+  *(int *)memPtr = count;
 
   signal(SIGCHLD, sigchild_handler);
-  gettimeofday(&start_totol, NULL);
   for (hit = 1;; hit++) {
     length = sizeof(cli_addr);
     if ((socketfd = accept(listenfd, (struct sockaddr *)&cli_addr, &length)) <
@@ -300,45 +281,40 @@ int main(int argc, char **argv) {
     pid_t pid = fork();
     if (pid == 0) {
       close(listenfd);
+      /*sem_wait(psem);*/
+      /*if (!(*(int *)memPtr)) {*/
+      /*gettimeofday(&start, NULL); // 记录 start*/
+      /**((long *)memPtr + 1) = start.tv_sec;*/
+      /**((long *)memPtr + 2) = start.tv_usec;*/
+      /*}*/
+      /*(*(int *)memPtr)++;*/
+      /*gettimeofday(&start, NULL);*/
+      /*sem_post(psem);*/
 
-      sem_wait(psem);
-      (*((double *)memPtr + 5))++;
-      sem_post(psem);
-
-      gettimeofday(&start, NULL);
+      pid = getpid();
       web(socketfd, hit);
-      gettimeofday(&end, NULL);
-      timeuse = (end.tv_sec - start.tv_sec) +
-                (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-      /*printf("平均每个客户端完成请求处理时间为 %fms\n", timeuse * 1000);*/
+      /* never returns */ // 这句运行完了去运行父进程，end
+                          // 时间出错，而且总时间也会出错。
+                          // 规定计时后才算子进程结束。还是懒啊
 
-      sem_wait(psem);
-      *(double *)memPtr += timeuse * 1000;
-      (*((double *)memPtr + 5))--;
-      sem_post(psem);
-      if (!(*((double *)memPtr + 5))) {
-        gettimeofday(&end_totol, NULL);
-        time_totol =
-            (end_totol.tv_sec - start_totol.tv_sec) +
-            (double)(end_totol.tv_usec - start_totol.tv_usec) / 1000000.0;
-        char buffer[BUFSIZE + 1]; /* static so zero filled */
-        (void)sprintf(buffer,
-                      "共用 %fms 成功处理 %d 个客户端请求,其中\n "
-                      "平均每个客户端完成请求处理时间为 %fms\n "
-                      "平均每个客户端完成读 socket "
-                      "时间为 %fms\n 平均每个客户端完成写 socket 时间为 "
-                      " %fms\n "
-                      "平均每个客户端完成读网页数据时间为 %fms\n "
-                      "平均每个客户端完成写日志数据时间为 %fms\n",
-                      time_totol * 1000, hit, *(double *)memPtr / hit,
-                      *((double *)memPtr + 1) / hit,
-                      *((double *)memPtr + 2) / hit,
-                      *((double *)memPtr + 3) / hit,
-                      *((double *)memPtr + 4) / hit); /* header + a blank line
-                                                       */
-        logger(LOG, "time", buffer, hit);
-      }
-
+      /*sem_wait(psem);*/
+      /*gettimeofday(&end, NULL);*/
+      /*timeuse = (end.tv_sec - start.tv_sec) +*/
+      /*(double)(end.tv_usec - start.tv_usec) / 1000000.0;*/
+      /*[>printf("the pid:%d the hit:%d time:%f count:%d\n", pid, hit,
+       * timeuse,<]*/
+      /*[>(*(int *)memPtr));<]*/
+      /*(*(int *)memPtr)--;*/
+      /*if (!(*(int *)*/
+      /*memPtr)) { // 想想为什么放子进程里面，放父进程什么时候运行？还要加锁？*/
+      /*//共享变量一定要注意锁!!!*/
+      /*timeuse = (end.tv_sec - *((long *)memPtr + 1)) +*/
+      /*(double)(end.tv_usec - *((long *)memPtr + 2)) / 1000000.0;*/
+      /*[>printf("the total time:%f\n", timeuse);<]*/
+      /*printf("the total time:%ld %ld\n", end.tv_usec, *((long *)memPtr +
+       * 1));*/
+      /*}*/
+      /*sem_post(psem);*/
       close(socketfd);
       exit(0);
     } else if (pid > 0) {
