@@ -41,7 +41,7 @@
 
 - 30s 的对比（各自的最优）：
 
-- 线程池
+- 线程池(开 10 个客户端一样)
 
 ![](301.png)
 
@@ -69,7 +69,7 @@
 - 至于获取的页面，大概是加锁的时间限制了？
 
 - 就简单分析吧，理论就是线程池少了线程创建销毁的时间，切换更迅速。
-- 可能还是我的线程池写的不是很好，分析没啥意义。
+- 可能还是我的线程池写的不是很好？，分析没啥意义。
 
 ## 小计
 
@@ -80,10 +80,14 @@
 - segmentation 错误，真难找。。。
 - segmentation fault (core dumped)
 - "thread" received signal SIGSEGV, Segmentation fault.
-- 在 signal 那块，那个 staconv.status 参数真有意义。
+
+> signal: spurious wakeup?`https://www.showdoc.com.cn/lizhicheng/1229635626051961`；多线程中的 signal 发多个；惊群效应？`https://www.cnblogs.com/cthon/p/9084735.html`
+>
+> > 关于原子性思考：`https://zhuanlan.zhihu.com/p/55123862`
 
 Code:
 threadPool.h:
+
 ```
 #include <errno.h> // error
 #include <pthread.h>
@@ -179,14 +183,14 @@ task *take_taskqueue(
     taskqueue *poolQueue) { // take_taskqueue
                             // 从任务队列头部提取任务,并在队列中删除此任务
   task *tem_task;
-  // pthread_mutex_lock(&poolQueue->mutex);
+  // pthread_mutex_lock(&poolQueue->mutex); // lock!
   if (poolQueue->front == NULL) //
     return NULL;
   pthread_mutex_lock(&poolQueue->mutex); // lock!
   tem_task = poolQueue->front;           // 可返回 NULL
   poolQueue->front = poolQueue->front->next;
   tem_task->next = NULL; //
-  poolQueue->len--;
+  // poolQueue->len--;
   pthread_mutex_unlock(&poolQueue->mutex);
   return tem_task;
 }
@@ -211,13 +215,15 @@ void *thread_do(void *tem_pthread) {
     /*如果任务队列中还要任务,则继续运行,否则阻塞*/
     /*............ */
     pthread_mutex_lock(&(pool->queue.has_jobs->mutex));
-    while (!pool->queue.has_jobs->status) { // vs queue.len ?
-      // while (!pool->queue.len) { // 一个 signal 放多个线程。。。那么多个
-      // take_taskqueue，里面空指针。。。而且时间大大延长
+    // while (!pool->queue.has_jobs->status) { // vs queue.len ?
+    while (!pool->queue.len) { // 一个 signal 放多个线程。。。那么多个
+      //  take_taskqueue，里面空指针。。。而且时间大大延长
       pthread_cond_wait(&pool->queue.has_jobs->cond,
                         &pool->queue.has_jobs->mutex);
     }
-    pool->queue.has_jobs->status = false; // 保证一次只要一个线程下来
+    pool->queue.len--; // 保证一次只要一个线程下来，还要保证所有任务都被完成
+    // pool->queue.has_jobs->status = false;
+    //  这个不行，任务数大于线程数时，有些任务不会 signal.
     pthread_mutex_unlock(&(pool->queue.has_jobs->mutex));
     // printf("len:%d,id:%d\n", pool->queue.len, pthread->id);
 
@@ -326,9 +332,11 @@ void addTask2ThreadPool(threadpool *pool, task *curtask) {
   //****需实现*****
   push_taskqueue(&pool->queue, curtask);
   pthread_mutex_lock(&pool->queue.has_jobs->mutex);
-  pool->queue.has_jobs->status = true;
+  // pool->queue.has_jobs->status = true;
   if (pool->num_working != pool->num_threads)
     pthread_cond_signal(&pool->queue.has_jobs->cond); // 提出阻塞线程
+  // 任务数大于线程数时，signal 浪费了。
+  // pthread_cond_broadcast(&pool->queue.has_jobs->cond); // 提出阻塞线程
   pthread_mutex_unlock(&pool->queue.has_jobs->mutex);
 }
 
@@ -365,6 +373,7 @@ int getNumofThreadWorking(threadpool *pool) { return pool->num_working; }
 ```
 
 thread.c:
+
 ```
 #include <stdio.h>
 #include <stdlib.h>

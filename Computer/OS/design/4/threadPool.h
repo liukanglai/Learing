@@ -93,14 +93,14 @@ task *take_taskqueue(
     taskqueue *poolQueue) { // take_taskqueue
                             // 从任务队列头部提取任务,并在队列中删除此任务
   task *tem_task;
-  // pthread_mutex_lock(&poolQueue->mutex);
+  // pthread_mutex_lock(&poolQueue->mutex); // lock!
   if (poolQueue->front == NULL) //
     return NULL;
   pthread_mutex_lock(&poolQueue->mutex); // lock!
   tem_task = poolQueue->front;           // 可返回 NULL
   poolQueue->front = poolQueue->front->next;
   tem_task->next = NULL; //
-  poolQueue->len--;
+  // poolQueue->len--;
   pthread_mutex_unlock(&poolQueue->mutex);
   return tem_task;
 }
@@ -125,13 +125,15 @@ void *thread_do(void *tem_pthread) {
     /*如果任务队列中还要任务,则继续运行,否则阻塞*/
     /*............ */
     pthread_mutex_lock(&(pool->queue.has_jobs->mutex));
-    while (!pool->queue.has_jobs->status) { // vs queue.len ?
-      // while (!pool->queue.len) { // 一个 signal 放多个线程。。。那么多个
-      // take_taskqueue，里面空指针。。。而且时间大大延长
+    // while (!pool->queue.has_jobs->status) { // vs queue.len ?
+    while (!pool->queue.len) { // 一个 signal 放多个线程。。。那么多个
+      //  take_taskqueue，里面空指针。。。而且时间大大延长
       pthread_cond_wait(&pool->queue.has_jobs->cond,
                         &pool->queue.has_jobs->mutex);
     }
-    pool->queue.has_jobs->status = false; // 保证一次只要一个线程下来
+    pool->queue.len--; // 保证一次只要一个线程下来，还要保证所有任务都被完成
+    // pool->queue.has_jobs->status = false;
+    //  这个不行，任务数大于线程数时，有些任务不会 signal.
     pthread_mutex_unlock(&(pool->queue.has_jobs->mutex));
     // printf("len:%d,id:%d\n", pool->queue.len, pthread->id);
 
@@ -240,9 +242,11 @@ void addTask2ThreadPool(threadpool *pool, task *curtask) {
   //****需实现*****
   push_taskqueue(&pool->queue, curtask);
   pthread_mutex_lock(&pool->queue.has_jobs->mutex);
-  pool->queue.has_jobs->status = true;
+  // pool->queue.has_jobs->status = true;
   if (pool->num_working != pool->num_threads)
     pthread_cond_signal(&pool->queue.has_jobs->cond); // 提出阻塞线程
+  // 任务数大于线程数时，signal 浪费了。
+  // pthread_cond_broadcast(&pool->queue.has_jobs->cond); // 提出阻塞线程
   pthread_mutex_unlock(&pool->queue.has_jobs->mutex);
 }
 
