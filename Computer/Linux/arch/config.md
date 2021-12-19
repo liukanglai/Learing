@@ -3,7 +3,7 @@
 - google-chrome ark cmake ctags flameshot cheese vlc gwenview gimp okular yakuake
 - deepin-screenshot
 - code clion idea qtcreater
-- vnote typora suziwen/markdownxiaoshujiang
+- vnote typora suziwen/markdownxiaoshujiang https://github.com/marktext/marktext
 
 # yay
 
