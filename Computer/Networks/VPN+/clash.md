@@ -1,6 +1,7 @@
 #
-- sudo gunzip ***.gz
-- chmod +x clash***
+
+- sudo gunzip \*\*\*.gz
+- chmod +x clash\*\*\*
 - ./clash -d .
 
 - wget (-P /opt/clash/) -O config.yaml [你的订阅链接]
@@ -12,7 +13,7 @@
 - run clash
 - ~/.config/clash: yaml
 
-- delete: /usr/lib/systemd/system/clash@.service and  /usr/lib/systemd/user/clash@.service
+- delete: /usr/lib/systemd/system/clash@.service and /usr/lib/systemd/user/clash@.service
 
 # run silently
 
@@ -39,13 +40,13 @@ Categories=Network
         [Unit]
         Description=Clash daemon, A rule-based proxy in Go.
         After=network.target
-        
+
         [Service]
         Type=simple
         Restart=always
         Restart=on-failure
         ExecStart=/usr/local/bin/clash -d /etc/clash // need change
-        
+
         [Install]
         WantedBy=multi-user.target
 
@@ -61,12 +62,12 @@ Categories=Network
 
 [root@localhost ~]# crontab -e
 填入以下内容
-29 6    * * *   root    pgrep clash | xargs kill -s 9
-30 6    * * *   root    mv /opt/clash/config.yaml /opt/clash/configbackup.yaml
-31 6    * * *   root    wget -P /opt/clash/ -O config.yaml [你的订阅链接]
-32 6    * * *   root    nohup /opt/clash/clash -d /opt/clash/
-按Esc和:wq保存退出
-重启crontab，使配置生效
+29 6 \* \* _ root pgrep clash | xargs kill -s 9
+30 6 _ \* _ root mv /opt/clash/config.yaml /opt/clash/configbackup.yaml
+31 6 _ \* _ root wget -P /opt/clash/ -O config.yaml [你的订阅链接]
+32 6 _ \* \* root nohup /opt/clash/clash -d /opt/clash/
+按 Esc 和:wq 保存退出
+重启 crontab，使配置生效
 [root@localhost ~]# systemctl restart crond.service
 
 # cotroller
@@ -81,10 +82,23 @@ Categories=Network
 
         # external-controller 主要是用于 web 端管理页面，必须监听在 0.0.0.0
         external-controller: 0.0.0.0:9090
-        
+
         # secret 是进入管理面板所需要的密码，可填可不填，建议填上
         secret: "123456"
-        
+
         # external-ui 表示管理面板的路径，这个路径就是你前面解压缩的dashboard的路径，根据你实际的改
         external-ui: /opt/clash-dashboard-gh-pages(/usr/share/yacd)
 
+# cfw
+
+        mixin: # 注意下面缩进
+          dns:
+            enable: true
+            enhanced-mode: redir-host
+            nameserver:
+              - 114.114.114.114 # 真实请求DNS，可多设置几个
+          tun:
+            enable: true
+            stack: system # 或 gvisor
+            dns-hijack: # DNS劫持设置为系统DNS
+              - 1.0.0.1:53 # 请勿更改
