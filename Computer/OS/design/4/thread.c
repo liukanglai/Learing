@@ -139,13 +139,6 @@ void *web(void *data) {
 
   gettimeofday(&start, NULL);
   ret = read(fd, buffer, BUFSIZE); /* read web request in one go */
-  gettimeofday(&end, NULL);
-  double timeuse = (end.tv_sec - start.tv_sec) +
-                   (double)(end.tv_usec - start.tv_usec) / 1000000.0;
-  /*printf("平均每个客户端完成读 socket 时间为 %fms\n", timeuse * 1000);*/
-  sem_wait(psem);
-  *((double *)memPtr + 1) += timeuse * 1000;
-  sem_post(psem);
 
   if (ret == 0 || ret == -1) { /* read failure stop now */
     logger(FORBIDDEN, "failed to read browser request", "", fd);
@@ -192,6 +185,16 @@ index file */
     }
     if (fstr == 0)
       logger(FORBIDDEN, "file extension type not supported", buffer, fd);
+
+    gettimeofday(&end, NULL);
+    double timeuse = (end.tv_sec - start.tv_sec) +
+                     (double)(end.tv_usec - start.tv_usec) / 1000000.0;
+    /*printf("平均每个客户端完成读 socket 时间为 %fms\n", timeuse * 1000);*/
+    sem_wait(psem);
+    *((double *)memPtr + 1) += timeuse * 1000;
+    sem_post(psem);
+
+    gettimeofday(&start, NULL);
     if ((file_fd = open(&buffer[5], O_RDONLY)) ==
         -1) { /* open the file for reading */
       logger(NOTFOUND, "failed to open file", &buffer[5], fd);
@@ -202,12 +205,13 @@ index file */
                       SEEK_END); /* 使用 lseek 来获得文件⻓度,比较低效*/
     (void)lseek(file_fd, (off_t)0, SEEK_SET);
     /* 想想还有什么方法来获取*/
-    gettimeofday(&start, NULL);
     (void)sprintf(buffer,
                   "http/1.1 200 ok\nserver: nweb/%d.0\ncontent-length: "
                   "%ld\nconnection: close\ncontent-type: %s\n\n",
                   VERSION, len, fstr); /* header + a blank line */
     logger(LOG, "header", buffer, hit);
+    (void)write(fd, buffer, strlen(buffer)); // 往 fd 中写？
+
     gettimeofday(&end, NULL);
     timeuse = end.tv_sec - start.tv_sec +
               (double)(end.tv_usec - start.tv_usec) / 1000000.0;
@@ -215,8 +219,6 @@ index file */
     sem_wait(psem);
     *((double *)memPtr + 4) += timeuse * 1000;
     sem_post(psem);
-
-    (void)write(fd, buffer, strlen(buffer)); // 往 fd 中写？
 
     gettimeofday(&start, NULL);
     /* send file in 8kb block - last block may be smaller */
@@ -252,23 +254,17 @@ index file */
           (double)(end_totol.tv_usec - start_totol.tv_usec) / 1000000.0;
       char buffer[BUFSIZE + 1]; /* static so zero filled */
       (void)sprintf(buffer,
-                    "共用 %fms 成功处理 %d 个客户端请求,其中\n "
-                    "平均每个客户端完成请求处理时间为 %fms\n "
-                    "平均每个客户端完成读 socket "
-                    "时间为 %fms\n 平均每个客户端完成写 socket 时间为 "
-                    " %fms\n "
-                    "平均每个客户端完成读网页数据时间为 %fms\n "
-                    "平均每个客户端完成写日志数据时间为 %fms\n",
-                    time_totol * 1000, hit, *(double *)memPtr / hit,
+                    "平均 readmsg  %fms\n "
+                    "平均 readfile %fms\n "
+                    "平均 sendmsg %fms\n",
                     *((double *)memPtr + 1) / hit,
-                    *((double *)memPtr + 2) / hit,
-                    *((double *)memPtr + 3) / hit,
-                    *((double *)memPtr + 4) / hit); /* header + a blank line
+                    *((double *)memPtr + 4) / hit,
+                    *((double *)memPtr + 2) / hit); /* header + a blank line
                                                      */
       logger(LOG, "time", buffer, hit);
     }
 
-    usleep(10000); /*在 socket 通道关闭前,留出一段信息发送的时间*/
+    /*usleep(10000); //在 socket 通道关闭前,留出一段信息发送的时间*/
     close(file_fd);
   }
 
@@ -376,7 +372,7 @@ int main(int argc, char **argv) {
 
   gettimeofday(&start_totol, NULL); // 统计总时间
 
-  threadpool *pool = initTheadPool(80);
+  threadpool *pool = initTheadPool(15);
   for (hit = 1;; hit++) { // accept and create pthread
     /*printf("hello\n"); // 在这不能输出？？？到哪去了*/
     length = sizeof(cli_addr);

@@ -205,6 +205,7 @@ int main(int argc, char **argv) {
 
   /* 建立服务端侦听 socket*/
   signal(SIGCHLD, sigchild_handler);
+
   if ((listenfd = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     logger(ERROR, "system call", "socket", 0);
   port = atoi(argv[1]);
@@ -230,7 +231,7 @@ int main(int argc, char **argv) {
       close(listenfd);
       web(socketfd, hit); /* never returns */
       /*printf("pid: %d, hit: %d\n", pid, hit);*/
-      close(socketfd);
+      /*close(socketfd);*/
       exit(0);
     } else if (pid > 0) {
       close(socketfd);
