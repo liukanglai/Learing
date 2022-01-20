@@ -11,13 +11,17 @@
 - failing hips 胯骨
 - clinical depression 临床忧郁
 - cataracts 白内障
-bar 律师资格
-associate 同事
-plant 工厂，发电厂
-cover 支付，包括
-rathan than 不是，而是
-subtly shows 微妙显示
-condensed in 凝聚在
+- bar 律师资格
+- associate 同事
+- plant 工厂，发电厂
+- cover 支付，包括
+- rathan than 不是，而是
+- subtly shows 微妙显示
+- condensed in 凝聚在
+
+# 
+
+- human bengs 后接单数
 
 2020.08.03 monday
 
