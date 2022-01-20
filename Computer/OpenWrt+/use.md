@@ -3,7 +3,6 @@
 ssh -l root 192.168.1.1
 
 
-
 # transport files (linux ssh)
 
 - upload

@@ -1,4 +1,23 @@
+# package
+
+```
+- 再安装一些必需的package，官方源下载太慢，需要换国内源：
+- vim /etc/opkg/distfeeds.conf:
+
+src/gz openwrt_core http://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.2/targets/ramips/mt7620/packages
+src/gz openwrt_kmods http://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.2/targets/ramips/mt7620/kmods/4.14.171-1-18384755d38fc43c447d83d4a3e07054
+src/gz openwrt_base http://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.2/packages/mipsel_24kc/base
+src/gz openwrt_luci http://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.2/packages/mipsel_24kc/luci
+src/gz openwrt_packages http://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.2/packages/mipsel_24kc/packages
+src/gz openwrt_routing http://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.2/packages/mipsel_24kc/routing
+src/gz openwrt_telephony http://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/19.07.2/packages/mipsel_24kc/telephony
+
+```
+
+
 # 192.168.1.1
+
+> ssh root@192.168.1.1
 
 1. 若ssh不能登录：
 
@@ -22,8 +41,6 @@ wlan1      另一块无线网卡
 > br-lan = eth0.1 + rai0 + ra0，即将有线 LAN 口和无线网统一划分为 LAN。
 
 - LAN 是设置局域网内的相关属性，可以设置内网的 IP，桥接的端口。比如我们默认使用 192.168.1.1 访问，可以修改为 192.168.9.1，生效后内网分配的 ip 网段就会变成 192.168.9.x 。LAN 口的协议为【静态地址】
-
-
 
 
 # language 
@@ -60,3 +77,10 @@ option 'defaultroute' '1'
     > Lan-physical 
     
     ![settings](2020-07-18_17-12.png)
+
+
+
+# ipv6
+
+`https://github.com/tuna/ipv6.tsinghua.edu.cn/blob/master/openwrt.md`
+
