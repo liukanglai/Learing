@@ -5,6 +5,7 @@
 - the genuine ones
 - pirated discs
 - be peculiar to
+- tend to be/do
 
 # 
 
@@ -18,10 +19,21 @@
 - rathan than 不是，而是
 - subtly shows 微妙显示
 - condensed in 凝聚在
+- purify 涤荡
+- beyond dispute 超越争论
+- rejoice 开心
+- remarkable 优秀
+- endeavors 努力
+- feelings of others 别人的感受
+- plates 版块，盘子
 
 # 
 
 - human bengs 后接单数
+
+#
+
+- it goes without saying that/...
 
 2020.08.03 monday
 

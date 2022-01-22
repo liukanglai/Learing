@@ -4,6 +4,7 @@
 
 
 >  找谓语动词->找连词(若是简单连接...)->找定语->找状语
+> 找到一句话所有成分，再独自翻译，组合
 
 ##【一】简单句
 
@@ -268,17 +269,19 @@
 4. 名词性从句在写作中应用
   1. 写作
     ● 1、主语从句
-        ● ①满分句型：把主语从句放到句末，加it来作形式主语
-        ● ②满分表语：it…that
+        ● ① 满分句型：把主语从句放到句末，加it来作形式主语
+        ● ② 满分表语：it…that
             ● It is apparent that
             ● It looks beyond dispute that 显而易见的，众所周知的
             ● It has been widely accepted that
             ● It is universally acknowledged that
-            ● It keeps my argument that 我坚信，我认为
-        ● ③主语从句的满分句型可以写在作文中任何一个部分，用来拉长句子，最多在作文中用一次哦~
+            ● It keeps my argument that 我坚信，我认为 it is my belief that
+
+        ● ③ 主语从句的满分句型可以写在作文中任何一个部分，用来拉长句子，最多在作文中用一次哦~
+
     ● 2、同位语从句
         ● 作文中所有的名词，都可在其后加一个同位语哦~
-        ● 同位语从句即可紧跟这个名词，也可以放到整句话的最后。
+        ● 同位语从句即可紧跟这个名词，也可以放到整句话的最后
         ● Eg:他已经找到了一个女朋友，这件事情使我们很开心
             ● The matter that hemanages to find a girlfriend ,makes us delighted.
                 ● ——>Thematter makes us delighted that he manages to find a girlfriend.
@@ -288,7 +291,14 @@
             ● The news that herhusband passed away was spread the whole village.
         ● Eg:温室里的花朵不能经受风雨（同位语从句），这个事实表明我们不应该溺爱孩子（宾语从句）
             ● 主语从句+宾语从句（“人间绝配“）
-            ● The truththat flowers in the greenhouse fail to undergo storms demonstrates that kidsshould never be spoiled by their superiors.
+            ● The truth that flowers in the greenhouse fail to undergo storms demonstrates that kids should never be spoiled by their superiors.
+  2. 长难句分析(识别)
+    1. 主语从句
+      - 有引导词放在句首，没有被 ',' 隔开，一定是主语从句，从句到主句的谓语动词之前结束
+      - 除此以外，it ... that 也是主语从句
+    2. 宾语从句
+    3. 表语从句
+    4. 同位语从句
 
 ## ● 【四】定语
 
