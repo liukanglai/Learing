@@ -1,34 +1,51 @@
 #
 
-- 二维数组： int (*a)[4];
+- 二维数组： int (\*a)[4];
 - return *(*a+2);
-- function(int a[][4]) 4不能省；
+- function(int a[][4]) 4 不能省；
 
-# 
+#
 
-    int a[10][10]
-- a[10] + 1 ???
+    int a[2][2] = {1, 2, 3, 4};
+    *(a[0] + 1) vs **(a + 1) (is 2, 3)，类推更高维数组
 
-# 
-
-T *p;
+#
 
 - p1 – p2 = ( 地址 p1 – 地址 p2 ) / sizeof( T)
-- :int * pn = NULL; char * pc = NULL;
-- 所有指针 变量,不论它是什么类型的,其占用的空间都是 4 个字节。
+- 所有指针变量,不论它是什么类型的,其占用的空间都是 4 个字节。
 
+# 初始化
 
+> `https://www.freesion.com/article/37471412731/`
 
-# memcpy
+1.  直接赋值
 
-- void 指针主要用于内存拷贝。源块和目的块的地址就都可以用 void 指针表示。C/C++中有以下标准库函数:
-- void *memcpy(void *dest, const void *src, unsigned int n);
-- 它在头文件 string.h 和 mem.h 中声明,作用就是将地址 src 开始的 n 字节内容,拷贝 到地址 dest。返回值就是 dest 。
+        int[2][3] arr1 = { {5, 2, 4}, {10, 2, 1} };
 
-        int a1[10];
-        int a2[10];
-        memcpy( a2, a1, 10*sizeof(int));
+2.  循环对每个元素赋值
 
+        int[2][3] arr2;
+        int i, j;
+        for (i = 0; i < 2; i++) {
+          for (j = 0; j < 3; j++) {
+            arr2[i][j] = 2; /_ 本例为了简单都赋值成相同值 _/
+          }
+        }
+
+3.  借用 MEMSET/MEMSET_S 初始化为 0 或-1，注意：memset/memset_s 只能将变量初始化为 0 或-1，
+
+        int[10][10] arr3;
+        memset(arr3, 0, sizeof(arr3); /_ 正常，arr3 中的每个元素都为 0 _/
+        memset(arr3, -1, sizeof(arr3); /_ 正常，arr3 中的每个元素都为-1 _/
+        memset(arr3, 2, sizeof(arr3); /_ 异常，arr3 中的每个元素都为异常值 33686018 _/
+
+4、数组所有元素初始化为相同值
+只要值为相同的，特别是数组元素比较多的情况，推荐用此方法：
+{ [0 … LENA-1][0 … lenb-1] = num };
+这种初始化方法比较少见，但特别省事，所以共享给大家。
+
+        #define ARR_LEN 100
+        int arr4[ARR_LEN][ARR_LEN] = { [0 ... (ARR_LEN-1)][0 ... (ARR_LEN-1)] = 10 }; /* 100*100个元素都初始化为10 */
 
 # 函数指针
 
@@ -49,33 +66,3 @@ T *p;
             //调用 pf 指向的函数,即 PrintMin
             return 0;
         }
-
-# qsort
-
-```
-void qsort(void *base, int nelem, unsigned int width, int ( * pfCompare)( const void *, const void *));
-
-#include <stdio.h>
-#include <stdlib.h>
-int MyCompare( const void * elem1, const void * elem2 ) {
-    unsigned int * p1, * p2;
-    p1 = (unsigned int *) elem1;
-    p2 = (unsigned int *) elem2;
-    return (* p1 % 10) - (* p2 % 10 );
-}
-#define NUM 5
-int main() {
-    unsigned int an[NUM] = { 8,123,11,10,4 };
-    qsort( an, NUM, sizeof(unsigned int), MyCompare);
-    for( int i = 0;i < NUM; i ++ )
-    printf("%d ", an[i]);
-    return 0;
-}
-```
-- 1) 如果 * elem1 应该排在 * elem2 前面,则函数返回值是负整数(任何负整数都行)
-- 2) 如果 * elem1 和* elem2 哪个排在前面都行,那么函数返回 0
-- 3) 如果 * elem1 应该排在 * elem2 后面,则函数返回值是正整数(任何正整数都行)
-
-# wm
-
-- 
