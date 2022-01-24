@@ -213,12 +213,15 @@
         Eg:合作很重要 Teamwork , a Chineseconventional virtue , plays a crucial role on the road to glories.
         Eg: From the previous discussion we can come to the conclusion that the smart phone syndrome is acurse.
 
+> it：主语代词，形式宾语！
+
 2. 什么是名词性从句？
   1. 什么是从句？
     ● 引导词 + 分句（主语 + 谓语）
   2. 什么是名词性从句？
     ● 名词在句子中能充当什么成分，从句在句中也能充当什么成分
     ● 名词性从句一共包括四类：主语从句、宾语从句、表语从句、同位语从句
+    - that 只有在宾语从句中可省，但不正式
 
         Eg: What I saw is attractive
         Eg: I appreciate what she said
@@ -227,14 +230,18 @@
 
 3. 名词性从句的引导词
   1. 名词性从句的引导词是按照从句的类型分类，大致上引导词分为三类
-    ● that
+    - that
         ● 当从句是陈述句时
         ● that 在从句中没有意思，且不充当任何成分（只是一个引导词）不能省
-    ● whether
+
+    - whether
         ● 当从句是一般疑问句时
         ● whether 在从句中依然不充当成分，但意思可以翻译成“是否“
         ●（一般疑问句中，句子自带“是否“的含义哦~例如：北京热么？你开心么？）
-    ● 所有的特殊疑问句
+
+    > if 也可为是否，但只能作宾语从句的引导词
+
+    - 所有的特殊疑问句
         ● 特殊疑问词都是引导词，不需要加
         ● 所有的特殊疑问句在句子都充当了文字且有它特殊的的意思
 
@@ -292,15 +299,23 @@
         ● Eg:温室里的花朵不能经受风雨（同位语从句），这个事实表明我们不应该溺爱孩子（宾语从句）
             ● 主语从句+宾语从句（“人间绝配“）
             ● The truth that flowers in the greenhouse fail to undergo storms demonstrates that kids should never be spoiled by their superiors.
+
   2. 长难句分析(识别)
     1. 主语从句
       - 有引导词放在句首，没有被 ',' 隔开，一定是主语从句，从句到主句的谓语动词之前结束
       - 除此以外，it ... that 也是主语从句
+
     2. 宾语从句
+      - 实意动词后，宾语从句或状语从句
+
     3. 表语从句
+      - 
+
     4. 同位语从句
 
 ## ● 【四】定语
+
+> 动词加 ed，是过去式谓语还是过去分词做定语：看这个单词和前面名词的关系，主动还是被动关系
 
 1. 什么是定语？
     ● 只要听到“xxx+名词”，xxx就是修饰这个名词的定语成分
@@ -337,6 +352,7 @@
     ● 【补充】如何按段一个单词+ed，是过去式/谓语动词/过去分词/定语？
         ● 看这句话还没有没有动词做谓语
     ● 【注意】故事的标题一般都用a，只有在文中具体讲述时才能用the
+
 4. 定语从句
     ● 1）构成：名词+引导词+句子
     ● 2）引导词：

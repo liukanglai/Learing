@@ -26,6 +26,26 @@
 - endeavors 努力
 - feelings of others 别人的感受
 - plates 版块，盘子
+- ultimate fairyland 最后的桃花源
+- readily 轻易的
+- deprive 剥夺
+- rats 老鼠
+- fatal 致命的
+- phone directories 电话簿
+- demonstrate 证明，说明
+- underline 强调
+- difficulty n.
+- intent 专注
+- men 人类
+- induct 归纳
+- deduct 演绎
+
+
+- be bound up in 热衷于
+- be bound up with/to 与...有关系
+- out of 之外，之中
+
+- rest upon 依赖
 
 # 
 
