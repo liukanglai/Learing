@@ -64,7 +64,15 @@
 - 每年有大量的重复词
 
 ```
-
+address: 解决
+astronomy 天文学
+transition 过渡
+sit for 参与
+indispensable 不可或缺的
+disassemble 拆卸
+literacy 识字能力
+chronic 慢性的
+geometry 几何
 ```
 
 
