@@ -5,3 +5,8 @@
 # cheap
 
 - affordable
+
+# different
+
+- various
+- diverse
