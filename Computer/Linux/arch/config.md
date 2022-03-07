@@ -1,187 +1,149 @@
-- git libconfig wget curl npm exfat-utils p7zip unzip zip unrar ranger tlp ark neofetch bash-completion
-- vim nvim
-- google-chrome ark cmake ctags flameshot cheese vlc gwenview gimp okular yakuake
-- deepin-screenshot
-- code clion idea qtcreater
-- vnote typora suziwen/markdownxiaoshujiang https://github.com/marktext/marktext
+# 基本配置
 
-# yay
+## 用户
+
+- pacman -S sudo
+- useradd -m -G wheel -s /bin/bash ... (wheel 附加组可 sudo，以 root 用户执行命令 -m 同时创建用户家目录)
+- passwd ..(name)
+- 修改 sudo 权限: vim /etc/sudoers
+
+`Uncomment to allow members of group wheel to execute any command 去%wheel前#`
+
+## 源
+
+1. vim /etc/pacman.conf 文末：
+
+- [multilib]去# (32 bits support)
+
+2. archlinuxcn
+
+```
+[archlinuxcn]
+# The Chinese Arch Linux communities packages.
+# SigLevel = Optional TrustAll
+#SigLevel = Optional TrustedOnly
+Include = /etc/pacman.d/archlinuxcn(need created)
+
+- vim /etc/pacman.d/archlinuxcn:
+# 官方源
+Server = http://repo.archlinuxcn.org/$arch
+# 163 源
+Server = http://mirrors.163.com/archlinux-cn/$arch
+# 清华大学
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+```
+
+- 安装 archlinuxcn-keyring
+- pacman -Syyu
+
+## 桌面
+
+- sudo pacman -S plasma-meta konsole yakuake dolphin
+- 可选：kde-applications (kde-base) plasma-wayland-session
+
+- systemctl enable sddm
+- systemctl start sddm
+
+## network
+
+- systemctl disable iwd
+- systemctl stop iwd
+- sudo systemctl enable --now NetworkManager (确保先启动 NetworkManager，并进行网络连接 若 iwd 已经与 NetworkManager 冲突 则执行完上一步重启一下电脑即可。)
+
+## base soft
+
+### yay
 
 1.  compiler
 
-        git clone https://aur.archlinux.org/yay.git
-        cd yay
-        makepkg -si
+```
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+```
 
 2.  pacman -S yay
 
 - 源：yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save (https://aur.archlinux.org)
 - 查看：yay -P -g(位于 ~/.config/yay/config.json)
-- yay -Syu
 
-## 输入法：安装 fcitx
+> yay -Syu
+
+```
+yay -S google-chrome
+ntfs-3g #识别NTFS格式的硬盘
+ark p7zip zip unzip unrar unarchiver lzop lrzip #安装ark可选依赖
+需要注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题
+sudo pacman -S unarchiver
+unar xxx.zip
+packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)可用, 需重启
+gwenview deepin-screenshot flameshot cheese vlc
+tlp okular neofetch
+vim nvim kate bind
+git libconfig wget curl npm exfat-utils cmake ctags
+```
+
+## DNS
+
+- vim 编辑/etc/resolv.conf，删除已有条目，并将如下内容加入其中
+
+```
+nameserver 8.8.8.8
+nameserver 2001:4860:4860::8888
+nameserver 8.8.4.4
+nameserver 2001:4860:4860::8844
+```
+
+- 如果你的路由器可以自动处理 DNS,resolvconf 会在每次网络连接时用路由器的设置覆盖本机/etc/resolv.conf 中的设置，执行如下命令加入不可变标志，使其不能覆盖如上加入的配置
+
+`sudo chattr +i /etc/resolv.conf`
+
+## input
 
 1. fcitx+fcitx-im+fcitx-sunpinyin(fcitx-qt5 fcitx-configtool) kcm-fcitx fcitx-qt4+fcitx-sogoupinyin(yay)
 
-> vim /etc/profile
-
-        export XMODIFIERS="@im=fcitx"
-        export GTK_IM_MODULE="fcitx"
-        export QT_IM_MODULE="fcitx"
-
 2. fictx5-im (fictx5+fictx5-gtk/qt+fcitx5-configtool)
-   - fcitx5-chinese-addons
 
 ```
-sudo pacman -S fcitx5-im #基础包组
-sudo pacman -S fcitx5-chinese-addons #官方中文输入引擎
-sudo pacman -S fcitx5-anthy #日文输入引擎
-sudo pacman -S fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn)
-sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
-sudo pacman -S fcitx5-material-color #主题
-    - fcitx5-rime
-    - fcitx5-nord(Setting -> Location -> input method -> Configure addons -> Classic user interface -> Theme.)
+fcitx5-im #基础包组
+fcitx5-chinese-addons #官方中文输入引擎
+fcitx5-anthy #日文输入引擎
+fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn)
+fcitx5-pinyin-zhwiki #中文维基百科词库
+fcitx5-material-color #主题
+fcitx5-nord(Setting -> Location -> input method -> Configure addons -> Classic user interface -> Theme.)
+fcitx5-rime
 ```
+
+> 设置添加输入法，云拼音，颜色
 
 > Edit /etc/environment and add the following lines:
 
-        GTK_IM_MODULE=fcitx
-        QT_IM_MODULE=fcitx
-        XMODIFIERS=@im=fcitx
-
-- ~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema_list)
-- use new file(no deffect default.yaml), in build fold, create default.custom.yaml:
-
-- yay -S rime-cloverpinyin (schema_list: - schema: clover)
-
-> https://github.com/fkxxyz/rime-cloverpinyin/wiki/linux
-
-- yay -S ttf-apple-emoji
+```
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+```
 
 - For vim: vim-fcitx (set ttimeoutlen=100)
 
-# 触控板
+## terminal
 
-- yay -S kcm-pointing-devices-git
-- sudo pacman -S xf86-input-libinput
-- sudo pacman -S xf86-input-synaptics #触摸板驱动#
+- vim /etc/profile: export EDITOR='vim'
 
-# 蓝牙耳机
+> copy zshrc, tmux.conf, nvim, .tmux(fold)
 
-- bluez bluez-utils
-- lsmod (check whether btusb is loaded, if not, then modprobe btusb)
-- systemctl start bluetooth.service
-  //- pulseaudio-bluetooth pavucontrol pulseaudio-alsa
-- bluedevil:kde
-
-```
-bluez软件包提供蓝牙协议栈
-bluez-utils软件包提供bluetoothctl工具
-pulseaudio-bluetooth则为bluez提供了PulseAudio音频服务,若没有安装则蓝牙设备在配对完成后,连接会失败,提示
-pavucontrol则提供了pulseaudio的图形化控制界面
-pulseaudio-alsa(可选)则使pulseaudio和alsa协同使用，之后就可以用alsamixer来管理蓝牙音频
-```
-
-- 修改/etc/bluetooth/main.conf 底部的 [Policy]
-
-```
-/etc/bluetooth/main.conf
-[Policy]
-AutoEnable=true
-```
-
-- systemctl enable bluetooth
-- systemctl start bluetooth
-- pulseaudio -k # 确保没有 pulseaudio 启动
-- pulseaudio --start # 启动 pulseaudio 服务
-
-# 软件
-
-- install deepin-wine firstly.
-
-  > deepin-wine-qq
-  >
-  > deepin-wine-wechat
-  >
-  > deepin-wine-tim
-
-> 办公软件 WPS 安装软件和缺失字体：
->
-> sudo pacman -S wps-office ttf-wps-fonts
->
-> 如果你下载了国际版本缺失中文：
->
-> sudo pacman -S wps-office-mui-zh-cn
-
-- baidunetdisk-electron (yay)
-- tlp - 电池
-- google-chrome/chromium (Chromium 的用户资料在~/.config/chromium/Default)
-- qtcreator ark cmake ctags electron
-- flameshot cheese vlc gwenview gimp
-- okular
-- yakuake ranger
-- ark
-- woeusb
-- neofetch
-- openssh 远程连接工具
-- deepin-screenshot Flameshot 现代、快捷、轻便的截图工具
-- SimpleScreenRecorder 轻量的录屏软件
-- kdenlive shotcut 强大的视频剪辑软件
-- sublime-text-dev 代码编辑器
-- proxychains-ng 终端内科学上网代理工具
-- redshift 显示屏色温调节工具
-- telegram-desktop 客户端开源的加密聊天工具
-- liferea RSS 阅读器
-- qbittorrent 好用的 BT 下载工具
-- calibre 电子书转换、编辑、阅读工具
-- gthumb 图片浏览工具,可简单编辑图片,可清除照片元数据
-- libreoffice-fresh 必备的办公软件
-- peek 录制 GIF 动图
-- inkscape 强大的矢量图形编辑软件
-- fontforge 字体设计、编辑软件
-- aria2 强大的多线程下载工具
-- youtube-dl YouTube 视频下载工具
-- AppImageLauncher .appimage 文件的启动器
-
-# 系统时间
-
-1. 24 小时：
-
-   - qt5-base-24h
-
-2. windows 修改 Windows 硬件时钟为 UTC 时间
-
-   - 以管理员身份打开 「PowerShell」，输入以下命令：
-
-     Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
-     或者打开「注册表编辑器」，定位到 计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation 目录下，新建一个 DWORD 类型，名称为 RealTimeIsUniversal 的键，并修改键值为 1 即可。
-
-- sudo pacman -S ntpdate
-- sudo ntpdate time.windows.com
-- sudo hwclock --localtime --systohc
-- hwclock --show
-- hwclock --systohc
-
-# 代理
-
-- cfw
-- qv2ray 出错，可删除再装，（用 pacman 装，用 yay 装，）
-- clashy
-- wine/crossover
-- darling
-
-# Terminal
-
-1. bash-completion
 2. zsh
 
-   - yay -S zsh
-   - sudo chsh -s /bin/zsh username
-   - yay -S oh-my-zsh-git
-   - cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
-   - in .zshrc: export LC_CTYPE=en_US.UTF-8
-   - powerlevel10k
-   - yakuake --get theme gruvbox
+- yay -S zsh
+- sudo chsh -s /bin/zsh username
+- yay -S oh-my-zsh-git
+- cp /usr/share/oh-my-zsh/zshrc ~/.zshrc
+- powerlevel10k
+- git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+- or: git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+- yakuake --get theme gruvbox
 
 3. translation
 
@@ -190,132 +152,86 @@ AutoEnable=true
 
 4. tmux
 
+- (https://wiki.archlinux.org/title/Tmux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E7%94%A8systemd%E5%90%8E%E5%8F%B0%E8%87%AA%E5%90%AFtmux)
 - start with tmux@username.service
-
-      /etc/systemd/system/tmux@.service
-      [Unit]
-      Description=Start tmux in detached session
-
-      [Service]
-      Type=forking
-      User=%I
-      ExecStart=/usr/bin/tmux new-session -s %u -d
-      ExecStop=/usr/bin/tmux kill-session -t %u
-
-      [Install]
-      WantedBy=multi-user.target
 
 5. truecolor:
 
 - look vim/UI, tmux
 
-# deb 安装
+## bluetooth
 
-- yay -S debtap
-- 也应该安装 bash， binutils ，pkgfile 和 fakeroot 依赖包。
-- 创建/更新 pkgfile 和 debtap 数据库。
-- sudo debtap -u
-- 转换 deb 包 debtap (-q / -Q: no question) \*.deb
-- 安装 sudo pacman -U <package-name>
+1. b
 
-        # /usr/bin/debtap
-        替换：http://ftp.debian.org/debian/dists
-        为：https://mirrors.ustc.edu.cn/debian/dists
+```
+sudo pacman -S bluez bluez-utils
+sudo systemctl enable --now bluetooth
+```
 
-        替换：http://archive.ubuntu.com/ubuntu/dists
-        为：https://mirrors.ustc.edu.cn/ubuntu/dists/
+2. 如果要连接蓝牙音频设备，需要安装 pulseaudio-bluetooth 并重启 pulseaudio。
 
-# display
+```
+sudo pacman -S pulseaudio-bluetooth
+pulseaudio -k
+```
 
-- vim /etc/sddm.conf.d/dpi.conf: `[X11] ServerArguments=-dpi 96`
+## 显卡
 
-# 美化
+- 查看：lspci | grep VGA
+- 英特尔： sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+- amd: `https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/graphic_driver`
+- nvidia: sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
+- change: yay -S optimus-manager optimus-manager-qt
+- 安装完成后重启即可使用。optimus-manager 安装完成后会默认 enable optimus-manager 的服务，你可在重启前检查其状态，若没有 enable 则手动将其 enable。重启后在菜单栏搜索 optimus-manager 点击即可使用。可在其设置中设置开机自动启动。
+- sudo systemctl enable optimus-manager
 
-- yay -S ocs-url
-- 设置外观 layan
-- yay -S layan-kde-git
-- tela purple
-- author: adhe in `https://store.kde.org/find?search=gruv`(all gruvbox)
-- .local/share/
+## 美化
+
+1. proxy
+
+- sudo pacman -S proxychains-ng
+- sudo vim /etc/proxychains.conf
+- 把配置文件中最后一行改为本地代理的 ip 和端口，如 socks5 127.0.0.1 1089
+- proxychains systemsettings5 #通过代理打开系统设置
+
+2. 壁纸
+
+- 在桌面右键，选择配置桌面。在新出现的窗口中右下角选择添加图片可以选择你想要的图片。其中位置一项选择'缩放，保持比例'，背景一项选择'模糊'。这样你就可以拥有一个成比例，且边缘带有高斯模糊的漂亮的桌面壁纸。
+- 收集的
+
+3. 全局
+
+- 设置外观 layan (yay -S layan-kde-git)
+- tela-icon-theme
+- color: gruvbox
+- SDDM
+- 欢迎屏幕(splashscreen)
+
+4. widgets
+
+- cpu, memory, network, ip
+- sudo pacman -S ksysguard
+
+5. konsole
+
 - gruvbox konsole, yakuake(.config/yakuakerc)
-- 窗口管理-任务切换器-主窗口可视化切换
-- 安装 lattw-dock
-  > 布局
-- 终端,字体
-- 毛玻璃 compton
+- .locla/share/konsole have profile
 
-  > .config/compton.conf
+6. fonts
 
-- widgets: cpu, memory, network, ip
+- ibm-plex
+- `https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#fontconfig_%E8%AE%BE%E7%BD%AE`
+- `https://wiki.archlinux.org/title/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)`
 
-# dolphin
+7. lattw-dock
 
-- https://wiki.archlinux.org/title/Dolphin#File_previews
-- kdegraphics-thumbnailers
+8. yay -S ocs-url
 
-# pdf
+truecolor:
 
-- poppler
-- poppler-data
+- printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
+- printf "\x1b[${bg};2;${red};${green};${blue}m\n"
 
-# ulauncher
+# git
 
-# utools
-
-# stacer
-
-# vmbox
-
-- // sudo pacman -S linux-headers
-
-- virtualbox virtualbox-ext-vnc virtualbox-guest-iso virtualbox-host-modules-arch
-- 再去官网下载 Oracle VM VirtualBox Extension Pack ，在设置中导入使用
-- sudo restart systemd-modules-load.service
-
-1. share fold
-
-- sudo mount -t vboxsf share /mnt/kylin
-
-2. 全屏
-
-- 选择不同分辨率
-
-# java
-
-- sudo pacman -S jre-openjdk
-- sudo pacman -S jdk-openjdk
-
-# hibernate
-
-- cat /sys/power/image_size: swap size
-- sudo filefrag -v /swapfile | sed -n '4p' | awk '{print $4+0}' : get resume_offset
-- sudo vim /boot/leader/entries/arch.conf: options root=UUID=SOMEUUID rw resume=/dev/sda1 resume_offset=12345
-- sudo vim /etc/mkinitcpio.conf: HOOKS=( base udev **resume** autodetect modconf block filesystems keyboard fsck ) -- add resume
-- sudo mkinitcpio -p linux
-
-# space
-
-- mkdir /home/space
-- mount /dev/... /home/space
-- vim /etc/fstab: `/dev/... /home/space ext4 defaults 1 1`
-
-# Easyconnect
-
-- `https://www.wannaexpresso.com/2020/06/07/easy-connect-manjaro/`
-
-- 错：您的客户端版本与服务器不匹配，请下载更新
-- 由于最新版与服务器要求版本不一致，所以需要修改源码包中的 PKGBUILD 文件，然后重新手动 makepkg 生成服务器要求版本然后再安装。
-
-1.  修改 PKGBUILD 文件
-
-        source=("http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_767/EasyConnect_x64_7_6_7_3.deb"
-              "http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz")
-        md5sums=('ac2020ce44583d5ee4552c81563dce9c'
-              'deb171a31a3ad76342d5195a1b5bbc7c')
-
-- 修改为
-
-        source=("http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_01/EasyConnect_x64.deb"
-              "http://ftp.acc.umu.se/pub/GNOME/sources/pango/1.42/pango-1.42.4.tar.xz")
-        md5sums=('6ed6273f7754454f19835a456ee263e3'
-              'deb171a31a3ad76342d5195a1b5bbc7c')
+- look Git+/git/ssh.md
