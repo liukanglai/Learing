@@ -18,6 +18,7 @@
 - sudo swapon --show / sudo free -h
 
 ## swappiness
+
 - 0~100, 越高，交换越频繁
 - cat /proc/sys/vm/swappiness
 - sudo sysctl vm.swappiness=10

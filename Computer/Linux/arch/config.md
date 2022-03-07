@@ -145,6 +145,8 @@ SDL_IM_MODULE=fcitx
 - or: git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 - yakuake --get theme gruvbox
 
+> look `../zsh.md`
+
 3. translation
 
    - yay -S node-fanyi or sudo npm install fanyi -g

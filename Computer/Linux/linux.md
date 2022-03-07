@@ -1,3 +1,8 @@
+# history
+
+
+- linux,GNU工具包+software 于 GPL许可证  --GNU
+
 #
 
 clean ctr+l
@@ -14,8 +19,6 @@ zip
 # 权限：
 
 chomd -R 777 file 目录下文件都改
-
-
 
 
 # look up cpu

@@ -36,3 +36,4 @@
         UUID=afcc811f-4b20-42fc-9d31-7307a8cfe0df /boot ext4 defaults,x-systemd.device-timeout=0 0 0
         /dev/mapper/euleros-home /home ext4 defaults 0 0
         /dev/mapper/euleros-swap swap swap defaults 0 0
+
