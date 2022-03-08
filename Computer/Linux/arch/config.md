@@ -271,8 +271,9 @@ truecolor:
 
 # vim
 
-- nvim
+- nvim python-pynvim
 - prettier
+- clang ccls
 
 # dolphin
 
