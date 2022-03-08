@@ -221,9 +221,30 @@ pulseaudio -k
 
 6. fonts
 
-- ibm-plex
+- 无衬线：西文 Noto Sans，中文 Noto Sans CJK
+- 衬线：西文 Noto Serif，中文 Noto Serif CJK
+- 等宽：西文 Iosevka，中文 Noto Sans Mono CJK
+
+- ttf-twemoji
+- ttf-nerd-fonts-symbols
+- ttf-Iosevka
+
+- than use .config/fontconfig/font.conf yes!
+
+- ttf-ibm-plex + nerd
+- ttf-jetbrains-mono + nerd
+- ttf-liberation ttf-wps-fonts ?
+
 - `https://wiki.archlinux.org/title/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#fontconfig_%E8%AE%BE%E7%BD%AE`
 - `https://wiki.archlinux.org/title/Font_Configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)`
+
+> ~/.config/fontconfig /etc/fonts/font.conf
+
+no:
+
+- wqy-zenhei #安装几个开源中文字体 一般装上文泉驿就能解决大多 wine 应用中文方块的问题
+- adobe-source-han-sans-cn-fonts - 无衬线体(使用) adobe-source-han-sans-tw-fonts - 思源黑体繁体中文部分
+- adobe-source-han-serif-cn-fonts - 衬线体(打印) 思源宋体简体中文部分 adobe-source-han-serif-tw-fonts - 思源宋体繁体中文部分
 
 7. lattw-dock
 
@@ -237,3 +258,29 @@ truecolor:
 # git
 
 - look Git+/git/ssh.md
+
+# professional
+
+- sudo pacman -S libreoffice-still #稳定版
+- sudo pacman -S libreoffice-fresh #尝鲜版
+- yay -S onlyoffice-bin
+
+- sudo pacman -S wps-office ttf-wps-fonts
+- 如果你下载了国际版本缺失中文：
+- sudo pacman -S wps-office-mui-zh-cn
+
+# vim
+
+- nvim
+- prettier
+
+# dolphin
+
+- https://wiki.archlinux.org/title/Dolphin#File_previews
+- kdegraphics-thumbnailers
+- dolphin-plug
+
+# pdf
+
+- poppler
+- poppler-data

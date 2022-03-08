@@ -1,13 +1,7 @@
-ranger
+#
 
-- code clion idea qtcreater
-- vnote typora suziwen/markdownxiaoshujiang https://github.com/marktext/marktext
-  (gimp)
-
-  pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如 okular 或者 calibre。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，Foliate 是阅读 epub 的更佳选择。
-
-- https://github.com/qier222/YesPlayMusic
-- yay -S yesplaymusic
+- yay -S octopi #包管理器前端界面
+- pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如 okular 或者 calibre。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，Foliate 是阅读 epub 的更佳选择。
 
 # rime
 
@@ -50,57 +44,34 @@ AutoEnable=true
 
 # 软件
 
-## professional
+- ranger
+- code clion idea qtcreater
+- vnote typora suziwen/markdownxiaoshujiang https://github.com/marktext/marktext
+- gimp
 
-sudo pacman -S libreoffice-still #稳定版
-sudo pacman -S libreoffice-fresh #尝鲜版
-yay -S onlyoffice-bin
+- install deepin-wine firstly
+- deepin-wine-qq
+- deepin-wine-wechat
+- deepin-wine-tim
 
-- install deepin-wine firstly.
+- telegram-desktop 客户端开源的加密聊天工具
+- qbittorrent 好用的 BT 下载工具
 
-  > deepin-wine-qq
-  >
-  > deepin-wine-wechat
-  >
-  > deepin-wine-tim
-
-> 办公软件 WPS 安装软件和缺失字体：
->
-> sudo pacman -S wps-office ttf-wps-fonts
->
-> 如果你下载了国际版本缺失中文：
->
-> sudo pacman -S wps-office-mui-zh-cn
+- google-chrome/chromium (Chromium 的用户资料在~/.config/chromium/Default)
 
 - baidunetdisk-electron (yay)
-- tlp - 电池
-- google-chrome/chromium (Chromium 的用户资料在~/.config/chromium/Default)
-- qtcreator ark cmake ctags electron
-- flameshot cheese vlc gwenview gimp
-- okular
-- yakuake ranger
-- ark
+
 - woeusb
-- neofetch
 - openssh 远程连接工具
-- deepin-screenshot Flameshot 现代、快捷、轻便的截图工具
 - SimpleScreenRecorder 轻量的录屏软件
 - kdenlive shotcut 强大的视频剪辑软件
 - sublime-text-dev 代码编辑器
-- proxychains-ng 终端内科学上网代理工具
 - redshift 显示屏色温调节工具
-- telegram-desktop 客户端开源的加密聊天工具
-- liferea RSS 阅读器
-- qbittorrent 好用的 BT 下载工具
 - calibre 电子书转换、编辑、阅读工具
 - gthumb 图片浏览工具,可简单编辑图片,可清除照片元数据
-- libreoffice-fresh 必备的办公软件
 - peek 录制 GIF 动图
 - inkscape 强大的矢量图形编辑软件
 - fontforge 字体设计、编辑软件
-- aria2 强大的多线程下载工具
-- youtube-dl YouTube 视频下载工具
-- AppImageLauncher .appimage 文件的启动器
 
 cool tips:
 
@@ -150,27 +121,7 @@ cool tips:
 
 - vim /etc/sddm.conf.d/dpi.conf: `[X11] ServerArguments=-dpi 96`
 
-# dolphin
-
-yay -S octopi #包管理器前端界面
-
-- https://wiki.archlinux.org/title/Dolphin#File_previews
-- kdegraphics-thumbnailers
-
-# pdf
-
-- poppler
-- poppler-data
-
-# ulauncher
-
-# utools
-
-# stacer
-
-# vim
-
-- prettier
+# ulauncher utools stacer
 
 # vmbox
 

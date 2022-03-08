@@ -138,17 +138,7 @@ Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
 2. 进行硬件时间设置，将当前的正确 UTC 时间写入硬件时间: hwclock –-systohc
 3. 安装字体：
 
-- adobe-source-han-sans-cn-fonts - 无衬线体(使用) adobe-source-han-sans-tw-fonts - 思源黑体繁体中文部分
-- adobe-source-han-serif-cn-fonts - 衬线体(打印) 思源宋体简体中文部分 adobe-source-han-serif-tw-fonts - 思源宋体繁体中文部分
-- wqy-zenhei #安装几个开源中文字体 一般装上文泉驿就能解决大多 wine 应用中文方块的问题
-- noto-fonts-cjk noto-fonts-emoji noto-fonts-extra #安装谷歌开源字体及表情
-- noto-fonts-sc(AUR)
-- noto-fonts-emoji
-- ttf-ibm-plex + nerd(AUR)
-- ttf-jetbrains-mono + nerd
-- ttf-liberation ttf-wps-fonts
-
-> ~/.config/fontconfig /etc/fonts/font.conf
+- noto-fonts, noto-fonts-cjk noto-fonts-emoji
 
 4. 本地化:
 
