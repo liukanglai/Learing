@@ -81,6 +81,7 @@ gwenview deepin-screenshot flameshot cheese vlc
 tlp okular neofetch
 vim nvim kate bind
 git libconfig wget curl npm exfat-utils cmake ctags
+net-tools(ifconfig) kdeconnect
 ```
 
 ## DNS
