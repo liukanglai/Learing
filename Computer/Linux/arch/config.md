@@ -275,6 +275,7 @@ truecolor:
 - nvim python-pynvim
 - prettier
 - clang ccls
+- `https://wiki.archlinux.org/title/Neovim` install lsp
 
 # dolphin
 
