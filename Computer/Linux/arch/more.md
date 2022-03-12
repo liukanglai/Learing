@@ -139,11 +139,6 @@ cool tips:
 
 - 选择不同分辨率
 
-# java
-
-- sudo pacman -S jre-openjdk
-- sudo pacman -S jdk-openjdk
-
 # hibernate
 
 - cat /sys/power/image_size: swap size

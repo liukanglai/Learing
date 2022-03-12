@@ -72,7 +72,7 @@ makepkg -si
 ```
 yay -S google-chrome
 ntfs-3g #识别NTFS格式的硬盘
-ark p7zip zip unzip unrar unarchiver lzop lrzip #安装ark可选依赖
+ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖
 需要注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题
 sudo pacman -S unarchiver
 unar xxx.zip
@@ -80,8 +80,11 @@ packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)�
 gwenview deepin-screenshot flameshot cheese vlc
 tlp okular neofetch
 vim nvim kate bind
-git libconfig wget curl npm exfat-utils cmake ctags
+git libconfig wget curl npm exfat-utils cmake ctags nodejs
 net-tools(ifconfig) kdeconnect
+python python-pip
+go
+openjdk-doc openjdk-src (内含jre-openjdk jdk-openjdk)
 ```
 
 ## DNS
