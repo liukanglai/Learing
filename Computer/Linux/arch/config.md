@@ -276,7 +276,7 @@ truecolor:
 # vim
 
 - nvim python-pynvim
-- prettier
+- prettier eslint lua-format(aur) yapf (neoformart)
 - clang ccls
 - `https://wiki.archlinux.org/title/Neovim` install lsp
 
