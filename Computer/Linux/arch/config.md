@@ -216,6 +216,8 @@ pulseaudio -k
 4. widgets
 
 - cpu, memory, network, ip
+- yay -S plasma5-applets-netspeed
+- yay -S plasma5-applets-weather-widget qt5-xmlpatterns
 - sudo pacman -S ksysguard
 
 5. konsole
