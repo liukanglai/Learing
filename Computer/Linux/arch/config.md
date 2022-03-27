@@ -284,8 +284,8 @@ truecolor:
 - clang
 - nvim python-pynvim
 - neoformart: prettier eslint lua-format(aur) yapf
-- lint: vale(aur) python-pylint vint
-- LspInstall clangd, jsonls pylsp, sumneko_lua, zeta_note
+- lint: vale(aur,markdown) nodejs-markdownlintcli(aur) python-pylint vint
+- LspInstall clangd, jsonls pylsp, sumneko_lua
 - `https://wiki.archlinux.org/title/Neovim` install lsp
 
 # dolphin
