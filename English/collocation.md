@@ -39,6 +39,13 @@
 - men 人类
 - induct 归纳
 - deduct 演绎
+- group 协会
+- school 学科
+- couplets 对联
+- stepfather
+- dynasty 王朝
+- irrigate 灌溉
+- set off firecrackers 放鞭炮
 
 - be bound up in 热衷于
 - be bound up with/to 与...有关系
@@ -79,6 +86,8 @@ drawback
 laundromat
 deposit
 sauna
+old flame 旧情人
+at teh mercy of 支配
 
 # 导学
 
@@ -118,4 +127,3 @@ save to 除了...以外
 ```
 
 - 阅读中的常识，错，无中生有
-

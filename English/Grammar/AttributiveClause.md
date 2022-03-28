@@ -2,36 +2,37 @@
 
 > 动词加 ed，是过去式谓语还是过去分词做定语：看这个单词和前面名词的关系，主动还是被动关系
 
-1. 什么是定语？
+## 什么是定语？
 
 - 只要听到“xxx 的+名词”，xxx 就是修饰这个名词的定语成分
 
-2. 定语的成分 -形容词
-   The innocent nightingale died 这个善良的夜莺失去了他的性命
-   The nightingale brave and innocent died
+## 定语的成分 -形容词
 
-   -名词
-   The nightingale’s singing can make the rose bloom
-   The singing of nightingale can make the rose bloom
+The innocent nightingale died 这个善良的夜莺失去了他的性命
+The nightingale brave and innocent died
 
-   -介词短语
-   The nightingale out of the window heard the sign of the youngster
+- 名词
+  The nightingale’s singing can make the rose bloom
+  The singing of nightingale can make the rose bloom
 
-   -非谓语动词
-   The singing nightingale lost his life （主动的唱）
-   The nightingale losing lost his life （有目的的唱）
+- 介词短语
+  The nightingale out of the window heard the sign of the youngster
 
-   -从句
+- 非谓语动词
+  The singing nightingale lost his life （主动的唱）
+  The nightingale losing lost his life （有目的的唱）
 
-   -形容词性物主代词（≈ 形容词）
-   My / you / his mother
+- 从句
 
-3. 定语的位置
-   前小后大
-   当一个单词修饰名词时，通常放在名词前；当多个单词修饰名词时，通常放在名词后；过去分词作定语时，即使是一个单词通常也放在名词后（He is a man abandoned）
-   Eg:那个懂爱的年轻人被拒绝了
-   The youngster grasping romance was declined
-   Eg:我有一朵和白云一样白的玫瑰花
+- 形容词性物主代词（≈ 形容词） My / you / his mother
+
+## 定语的位置
+
+前小后大
+当一个单词修饰名词时，通常放在名词前；当多个单词修饰名词时，通常放在名词后；过去分词作定语时，即使是一个单词通常也放在名词后（He is a man abandoned）
+Eg:那个懂爱的年轻人被拒绝了
+The youngster grasping romance was declined
+Eg:我有一朵和白云一样白的玫瑰花
 
 - 当一句话有“有”这个字且有主语时，谓语动词应该用 available
   A rose asa white asclouds remains available for me
@@ -41,9 +42,9 @@
   This proves a function about a nightingale and a rose
   【注意】故事的标题一般都用 a，只有在文中具体讲述时才能用 the
 
-4. 定语从句构成：名词(先行词)+引导词+句子
+## 定语从句构成：名词(先行词)+引导词+句子
 
-5. 引导词：按照先行词的种类分的类，一共把定语从句分成五类
+## 引导词：按照先行词的种类分的类，一共把定语从句分成五类
 
 - 先行词是人，引导词：(that) who whom whose
 - 先行词是物，引导词：that which whose
@@ -85,7 +86,7 @@ The gift **\_**the prince sent to me neverfails to fascinate me
 The gift sent by the prince neverfails to fascinate me
 所以，定语从句是可以转化的
 
-6. 定语从句的特殊用法
+## 定语从句的特殊用法
 
 - 关系副词在定语从句中作状语时，可以用介词 + 关系代词替代
 - whose = of which/whom
@@ -123,33 +124,37 @@ The gift sent by the prince neverfails to fascinate me
 
 > that/which, that/who 的区别 ?
 
-7. 区分定语从句和同位语从句
+## 区分定语从句和同位语从句
 
 - 同位语是描述解释，定语从句是修饰
 - 看引导词是否充当成分
 - 同位语从句前面那个名词一定是能被解释的抽象名词，定语从句的先行词可以是所有词
 - 同位语从句的引导词一般是 that(whether)
 
-8. 寻找先行词
+- 引导定语从句的 that 叫做关系代词，它除了起连接作用，还在定语从句中充当一定成分，并且在意义上代表先行词；
+- 引导同位语从句的 that 叫做从属连词，它只起连接作用，没有指代作用，不能省略。
+
+## 寻找先行词
 
 - 离他最近的名词
 - 前面的几个名词
 - 可能是前面的一个从句，句子
 - 可能被隔开
 
-9.  定语和定语从句的考点分析
+## 定语和定语从句的考点分析
 
-- 只要在作文中见到名词，都可以给它加一个定语成分，把句子拉长
+1.  只要在作文中见到名词，都可以给它加一个定语成分，把句子拉长
 
-  Eg：养宠物能够减少孤单
-  Raising pets cute as well as can reduceloneliness of senior citizens who have no offspring  to take care of them
+    Eg：养宠物能够减少孤单
+    Raising pets cute as well as can reduceloneliness of senior citizens who have no offspring  to take care of them
 
-- 万能定语： a. + as well as + a. 名词复数 + such as 引导的定语（介词短语作定语），such as 后一般 + 3 个名词
+2.  万能定语： a. + as well as + a. 名词复数 + such as 引导的定语（介词短语作定语），such as 后一般 + 3 个名词
 
-  Eg：Reading books interesting as well as meaningful/such as little prince ,gone with the wind and I have a dream can decrease pressure of all children and adults
-  （作文书名用斜体或下划线）
+    Eg：Reading books interesting as well as meaningful/such as little prince ,gone with the wind and I have a dream can decrease pressure of all children and adults
+    （作文书名用斜体或下划线）
 
-- 中国人不习惯给名词 + 定语，喜欢写短语，英语多长句 所以，汉语—>英语，多是长句子—>短句子；英语—>汉语，多是长句—>短句
+3.  中国人不习惯给名词 + 定语，喜欢写短语，英语多长句 所以，汉语—>英语，多是长句子—>短句子；英语—>汉语，多是长句—>短句
+
 - 逻辑关系词；主动，被动
 
   Eg：乌镇是浙江的水镇，它位于京杭大运河旁—>位于京杭大运河的乌镇是浙江的水镇
@@ -164,4 +169,8 @@ The gift sent by the prince neverfails to fascinate me
 
 > 英语中把两句话变成一句话的方法：非谓语动词变独立主格，加连词，从句
 
-- 名词的后面：定语，同位语，谓语动词，插入语，状语
+4. 找定语：
+
+- 名词的后面：定语，同位语，谓语动词，插入语，状语；定语一直到句尾，如果谓语在前已出现。到连词结束。
+- 每一个大定语中通常有小定语，每一小定语都是到下一个名词后结束，后面修饰紧挨前面一个。
+- 名词有 and 并列，全修饰。
