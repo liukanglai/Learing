@@ -165,6 +165,8 @@ SDL_IM_MODULE=fcitx
 
 - look vim/UI, tmux
 
+> `https://github.com/starship/starship`
+
 ## bluetooth
 
 1. b
