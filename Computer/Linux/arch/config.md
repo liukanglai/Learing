@@ -209,8 +209,9 @@ pulseaudio -k
 
 3. 全局
 
-- 设置外观 layan (yay -S layan-kde-git)
-- tela-icon-theme
+- `https://github.com/vinceliuice/Tela-icon-theme`
+- `https://github.com/vinceliuice/Layan-kde`
+- 设置外观 layan
 - color: gruvbox
 - SDDM
 - 欢迎屏幕(splashscreen)
