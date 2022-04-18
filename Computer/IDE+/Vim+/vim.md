@@ -128,11 +128,11 @@
 - 保存: `:w !sudo tee % `
 - :terminal(term) :vert term(vsplit)
 - :term ls
-        " Navigate windows with <Ctrl-hjkl> in terminal job mode.
-        tnoremap <c-j> <c-w><c-j>
-        tnoremap <c-k> <c-w><c-k>
-        tnoremap <c-l> <c-w><c-l>
-        tnoremap <c-h> <c-w><c-h>
+  " Navigate windows with <Ctrl-hjkl> in terminal job mode.
+  tnoremap <c-j> <c-w><c-j>
+  tnoremap <c-k> <c-w><c-k>
+  tnoremap <c-l> <c-w><c-l>
+  tnoremap <c-h> <c-w><c-h>
 
 ... don't know
 
@@ -145,24 +145,23 @@
 - substitute
 - g: 行，
 - %：全行第一个
-
-- s/zempty/handsome/g (行 zempty 替换成 handsome) (no g, replace next)
-- :%s/zempty/handsome/g (全文)
-- :n1,n2s/zempty/handsome/g (n1 到 n2 行)
 - $: last line,
-- :12;$s/zempty/handsome/g (12 行到最后一行)
-- :12;/dog/s/zempty/handsome/g (12 行开始搜索到有 dog 的行, 其间替换)
 - 结合可视模式
 
-  > :help cmdline-ranges
+> :help cmdline-ranges
+
+- s/zempty/handsome/g (行 zempty 替换成 handsome) (no g, replace next)
+- %s/zempty/handsome/g (全文)
+- n1,n2s/zempty/handsome/g (n1 到 n2 行)
+- 12;$s/zempty/handsome/g (12 行到最后一行)
+- 12;/dog/s/zempty/handsome/g (12 行开始搜索到有 dog 的行, 其间替换)
 
 - 只匹配 s，no ss: /\\<s\\> to search
 
 - i 表示大小写不敏感查找，I 表示大小写敏感：
-- :%s/zempty/handsome/i 替换掉所有行第一个出现 zempty (不区分大小写) 为 handsome 。
-- :%s/zempty/handsome/gi 替换掉所有行出现 zempty (不区分大小写) 为 handsome
-- c 表示需要确认，例如全局查找"zempty"替换为"handsome"并且需要确认： - :%s/zempty/handsome/gc
-- e 表示不显示错误
+- %s/zempty/handsome/i 替换掉所有行第一个出现 zempty (不区分大小写) 为 handsome 。
+- %s/zempty/handsome/gi 替换掉所有行出现 zempty (不区分大小写) 为 handsome
+- c 表示需要确认 e 表示不显示错误
 
 # 搜索:
 
