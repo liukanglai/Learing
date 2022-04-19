@@ -23,7 +23,7 @@
 
 3. 名词所有格
 
-- 后不接谓语动词，一定为非
+- 后不接谓语动词，一定为非谓语动词
 - 不能连用，用 of
 
 4. 专有名词
@@ -44,8 +44,7 @@
 
 5. 抽象名词
 
-important grammar / grammar's importance
-
+- important grammar / grammar's importance
 - 起源于形容词 (ce, ness, th, ty, cy)
 
 写作技巧：
@@ -55,4 +54,35 @@ important grammar / grammar's importance
     substantial(相当的) primary(主要的) remarkable(显著的) supreme(极其的) magnificent(重大的) measurable(可测量的)
     The conclusion is of remarkable usefulness. -> Few conclusion is ... -> The conclusion is of no/little ...
 
--
+- 起源于动词(propose proposal approve approval advise advice practise practice please pleasure die death elect election argue argument) (clear clarity)
+
+翻译：
+
+    Your point is of supreme clarity.
+    Your viewpoint is with little clarity.
+    Your perspective is
+
+> 如果把抽象名词当名词翻译不通顺，则用动词或形容词去翻译。
+
+# 动词
+
+1. 分类
+
+- 非实义动词(情态动词，系动词，助动词)
+- 实义动词(及物动词，不及物动词)
+
+- (第三人称)认为：assume argue agree claim consider insist maintain hold say
+
+  Who is running the team?
+
+> 动词后有介词，一定是不及物动词(接名词/能独立完成)
+
+2. 三种形式
+
+- 过去式 过去分词 现在分词
+
+3. 语态
+
+4. 情态
+
+5. 时态
