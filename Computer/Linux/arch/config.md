@@ -287,7 +287,7 @@ truecolor:
 - clang
 - nvim python-pynvim
 - neoformart: prettier eslint lua-format(aur) yapf
-- lint: nodejs-markdownlintcli(aur) python-pylint vint
+- lint: nodejs-markdownlintcli(aur) python-pylint vint tidy
 - LspInstall clangd, jsonls pylsp, sumneko_lua
 - `https://wiki.archlinux.org/title/Neovim` install lsp
 
