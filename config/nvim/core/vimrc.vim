@@ -1,4 +1,3 @@
-
 " 配色
 let &t_ut=''
 set autochdir
@@ -90,10 +89,32 @@ set virtualedit=block
 " back to last location
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" undotree
+silent !mkdir -p $HOME/.config/nvim/tmp/backup
+silent !mkdir -p $HOME/.config/nvim/tmp/undo
+silent !mkdir -p $HOME/.config/nvim/tmp/sessions
+set backupdir=$HOME/.config/nvim/tmp/backup,.
+set directory=$HOME/.config/nvim/tmp/backup,.
+if has('persistent_undo')
+  set undofile
+  set undodir=$HOME/.config/nvim/tmp/undo,.
+endif
+
+"silent !mkdir -p $HOME/.vim/tmp/backup
+"silent !mkdir -p $HOME/.vim/tmp/undo
+"silent !mkdir -p $HOME/.vim/tmp/sessions
+"set backupdir=$HOME/.vim/tmp/backup,.
+"set directory=$HOME/.vim/tmp/backup,.
+"if has('persistent_undo')
+	"set undofile
+	"set undodir=$HOME/.vim/tmp/undo,.
+"endif
+
 " fcitx
 "let g:fcitx5-remote
 
-autocmd InsertLeave * :silent !fcitx5-remote -c " 退出插入模式时禁用输入法加
-autocmd BufCreate *  :silent !fcitx5-remote -c " 创建 Buf 时禁用输入法
-autocmd BufEnter *  :silent !fcitx5-remote -c " 进入 Buf 时禁用输入法
-autocmd BufLeave *  :silent !fcitx5-remote -c " 离开 Buf 时禁用输入法
+"autocmd InsertLeave * :silent !fcitx5-remote -c " 退出插入模式时禁用输入法加
+"autocmd BufCreate *  :silent !fcitx5-remote -c " 创建 Buf 时禁用输入法
+"autocmd BufEnter *  :silent !fcitx5-remote -c " 进入 Buf 时禁用输入法
+"autocmd BufLeave *  :silent !fcitx5-remote -c " 离开 Buf 时禁用输入法
+

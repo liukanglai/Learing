@@ -1,80 +1,58 @@
 local api = vim.api
 local lsp = vim.lsp
 
-local M = {}
-
-function M.show_line_diagnostics()
-    local opts = {
-        focusable = false,
-        close_events = {"BufLeave", "CursorMoved", "InsertEnter", "FocusLost"},
-        border = 'rounded',
-        source = 'always', -- show source in diagnostic popup window
-        prefix = ' '
-    }
-    vim.diagnostic.open_float(nil, opts)
-end
-
 local custom_attach = function(client, bufnr)
-    local function buf_set_keymap(...) api.nvim_buf_set_keymap(bufnr, ...) end
-
     -- Mappings.
-    local opts = {noremap = true, silent = true}
+    local opts = {silent = true, buffer = bufnr}
+    vim.keymap.set("n", "<space>ld", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "<space>lf", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "<space>lt", vim.lsp.buf.type_definition, opts)
+    vim.keymap.set("n", "<space>li", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<space>lh", vim.lsp.buf.signature_help, opts)
+    vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set("n", "<space>wl", function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set("n", "<space>lr", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<space>lm", vim.diagnostic.goto_prev, opts)
+    vim.keymap.set("n", "<space>ln", vim.diagnostic.goto_next, opts)
+    vim.keymap.set("n", "<space>q",
+                   function() vim.diagnostic.setqflist({open = true}) end, opts)
+    vim.keymap.set("n", "<space>la", vim.lsp.buf.code_action, opts)
 
-    buf_set_keymap('n', '<space>ld', '<cmd>lua vim.lsp.buf.declaration()<CR>',
-                   opts)
-    buf_set_keymap('n', '<space>lf', '<cmd>lua vim.lsp.buf.definition()<CR>',
-                   opts)
-    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap('n', '<space>li',
-                   '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<space>lh',
-                   '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-    buf_set_keymap('n', '<space>wa',
-                   '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>wr',
-                   '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-    buf_set_keymap('n', '<space>wl',
-                   '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
-                   opts)
-    buf_set_keymap('n', '<space>D',
-                   '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-    buf_set_keymap('n', '<space>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-    buf_set_keymap('n', '<space>lc', '<cmd>lua vim.lsp.buf.code_action()<CR>',
-                   opts)
-    buf_set_keymap('n', '<space>gr', '<cmd>lua vim.lsp.buf.references()<CR>',
-                   opts)
-    buf_set_keymap('n', '<space>le',
-                   '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-                   opts)
-    buf_set_keymap('n', '<space>lm',
-                   '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-    buf_set_keymap('n', '<space>ln',
-                   '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap('n', '<space>q',
-                   '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-    -- buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>',
-    -- opts)
-
-    vim.cmd([[
-    autocmd CursorHold <buffer> lua require('config.lsp').show_line_diagnostics()
-  ]])
+    vim.api.nvim_create_autocmd("CursorHold", {
+        buffer = bufnr,
+        callback = function()
+            local opts = {
+                focusable = false,
+                close_events = {
+                    "BufLeave", "CursorMoved", "InsertEnter", "FocusLost"
+                },
+                border = 'rounded',
+                source = 'always', -- show source in diagnostic popup window
+                prefix = ' '
+            }
+            vim.diagnostic.open_float(nil, opts)
+        end
+    })
 
     -- Set some key bindings conditional on server capabilities
-    -- if client.resolved_capabilities.document_formatting then
-    -- buf_set_keymap("n", "<space>f",
-    -- "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
-    -- end
-    -- if client.resolved_capabilities.document_range_formatting then
-    -- buf_set_keymap("x", "<space>f",
-    -- "<cmd>lua vim.lsp.buf.range_formatting()<CR><ESC>", opts)
-    -- end
+    if client.resolved_capabilities.document_formatting then
+        vim.keymap.set("n", "<space>ff", vim.lsp.buf.formatting_sync, opts)
+    end
+    if client.resolved_capabilities.document_range_formatting then
+        vim.keymap.set("x", "<space>ff", vim.lsp.buf.range_formatting, opts)
+    end
 
     -- The blow command will highlight the current variable and its usages in the buffer.
     if client.resolved_capabilities.document_highlight then
         vim.cmd([[
-      hi link LspReferenceRead Visual
-      hi link LspReferenceText Visual
-      hi link LspReferenceWrite Visual
+      hi! link LspReferenceRead Visual
+      hi! link LspReferenceText Visual
+      hi! link LspReferenceWrite Visual
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
@@ -89,150 +67,142 @@ local custom_attach = function(client, bufnr)
     end
 end
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(lsp.protocol
-                                                                     .make_client_capabilities())
+local capabilities = lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require("lspconfig")
-
-lspconfig.pylsp.setup({
-    on_attach = custom_attach,
-    settings = {
-        pylsp = {
-            plugins = {
-                pylint = {enabled = true, executable = "pylint"},
-                pyflakes = {enabled = false},
-                pycodestyle = {enabled = false},
-                jedi_completion = {fuzzy = true},
-                pyls_isort = {enabled = true},
-                pylsp_mypy = {enabled = true}
-            }
-        }
-    },
-    flags = {debounce_text_changes = 200},
-    capabilities = capabilities
-})
-
--- lspconfig.pyright.setup{
---   on_attach = custom_attach,
---   capabilities = capabilities
--- }
-
--- lspconfig.clangd.setup({
--- on_attach = custom_attach,
--- capabilities = capabilities,
--- filetypes = {"c", "cpp", "cc"},
--- flags = {debounce_text_changes = 500}
--- })
-
-require'lspconfig'.ccls.setup {}
-lspconfig.ccls.setup {
-    init_options = { -- let ccls search co*.json in build, because it will only search in root...
-        compilationDatabaseDirectory = "build",
-        index = {threads = 0},
-        clang = {excludeArgs = {"-frounding-math"}}
-    },
-    on_attach = custom_attach,
-    capabilities = capabilities,
-    filetypes = {"c", "cpp", "cc"},
-    flags = {debounce_text_changes = 500}
-}
-
--- set up vim-language-server
--- lspconfig.vimls.setup({
--- on_attach = custom_attach,
--- flags = {debounce_text_changes = 500},
--- capabilities = capabilities
--- })
-
-local sumneko_binary_path = vim.fn.exepath("lua-language-server")
-if vim.g.is_mac or vim.g.is_linux and sumneko_binary_path ~= "" then
-    local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ":h:h:h")
-
-    local runtime_path = vim.split(package.path, ";")
-    table.insert(runtime_path, "lua/?.lua")
-    table.insert(runtime_path, "lua/?/init.lua")
-
-    require("lspconfig").sumneko_lua.setup({
-        on_attach = custom_attach,
-        cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"},
-        settings = {
-            Lua = {
-                runtime = {
-                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-                    version = "LuaJIT",
-                    -- Setup your lua path
-                    path = runtime_path
-                },
-                diagnostics = {
-                    -- Get the language server to recognize the `vim` global
-                    globals = {"vim"}
-                },
-                workspace = {
-                    -- Make the server aware of Neovim runtime files
-                    library = api.nvim_get_runtime_file("", true)
-                },
-                -- Do not send telemetry data containing a randomized but unique identifier
-                telemetry = {enable = false}
-            }
-        },
-        capabilities = capabilities
-    })
-end
 
 -- Change diagnostic signs.
 vim.fn.sign_define("DiagnosticSignError",
                    {text = "●", texthl = "DiagnosticSignError"})
 vim.fn.sign_define("DiagnosticSignWarn",
-                   {text = "", texthl = "DiagnosticSignWarn"})
+                   {text = "!", texthl = "DiagnosticSignWarn"})
+-- vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
 vim.fn.sign_define("DiagnosticSignInformation",
                    {text = "", texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define("DiagnosticSignHint",
                    {text = "", texthl = "DiagnosticSignHint"})
 
--- sign = '✗','   ''●' !
-
 -- global config for diagnostic
 vim.diagnostic.config({
-    underline = true,
+    underline = false,
     virtual_text = false,
     signs = true,
     severity_sort = true
 })
 
--- lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
---   underline = false,
---   virtual_text = false,
---   signs = true,
---   update_in_insert = false,
--- })
-
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover,
                                               {border = "rounded"})
 
-local lsp_installer = require("nvim-lsp-installer")
+-- show diagnostics automatically
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+-- vim.o.updatetime = 250
+-- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, opts)]]
 
+-- lint
+
+require('lint').linters_by_ft = {
+    javascript = {"eslint"},
+    typescript = {"eslint"},
+    html = {"tidy"},
+    -- markdown = {'vale'},
+    markdown = {'markdownlint'},
+    python = {'pylint'},
+    vim = {'vint'},
+    cpp = {'clangtidy'},
+    c = {'clangtidy'}
+    -- go = {"golangcilint"}
+}
+-- vim.cmd([[au BufWritePost <buffer> lua require('lint').try_lint()]])
+vim.cmd([[
+au BufEnter * lua require('lint').try_lint()
+au BufWritePost * lua require('lint').try_lint()
+]])
+
+-- installer
+
+local lsp_installer = require("nvim-lsp-installer")
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
-    local opts = {on_attach = custom_attach, capabilities = capabilities}
+    local optts = {on_attach = custom_attach, capabilities = capabilities}
+    -- local opts = {on_attach = on_attach, capabilities = capabilities}
 
     -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
+    -- if server.name == "javascript" then
+    -- opts.root_dir = function() ... end
     -- end
 
     -- This setup() function is exactly the same as lspconfig's setup function.
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
+    server:setup(optts)
 end)
 
-return M
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+-- local servers = { 'rust_analyzer', 'tsserver', 'pylsp', 'ccls' }
+-- for _, lsp in pairs(servers) do
+-- require('lspconfig')[lsp].setup {
+-- on_attach = on_attach,
+-- flags = {
+---- This will be the default in neovim 0.7+
+-- debounce_text_changes = 150,
+-- }
+-- }
+-- end
 
--- require("lsp-colors").setup({
--- Error = "#db4b4b",
--- Warning = "#e0af68",
--- Information = "#0db9d7",
--- Hint = "#10B981"
--- })
+-- require'lspconfig'.eslint.setup {}
+
+-- Go-to definition in a split window
+local function goto_definition(split_cmd)
+    local util = vim.lsp.util
+    local log = require("vim.lsp.log")
+    local api = vim.api
+
+    -- note, this handler style is for neovim 0.5.1/0.6, if on 0.5, call with function(_, method, result)
+    local handler = function(_, result, ctx)
+        if result == nil or vim.tbl_isempty(result) then
+            local _ = log.info() and log.info(ctx.method, "No location found")
+            return nil
+        end
+
+        if split_cmd then vim.cmd(split_cmd) end
+
+        if vim.tbl_islist(result) then
+            util.jump_to_location(result[1])
+
+            if #result > 1 then
+                util.set_qflist(util.locations_to_items(result))
+                api.nvim_command("copen")
+                api.nvim_command("wincmd p")
+            end
+        else
+            util.jump_to_location(result)
+        end
+    end
+
+    return handler
+end
+
+vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
+
+-- 插入模式函数
+require("lsp_signature").setup({
+    bind = true,
+    -- 边框样式
+    handler_opts = {
+        -- double、rounded、single、shadow、none
+        border = "rounded"
+    },
+    -- 自动触发
+    floating_window = false,
+    -- 绑定按键
+    toggle_key = "<C-j>",
+    -- 虚拟提示关闭
+    hint_enable = false,
+    -- 正在输入的参数将如何突出显示
+    hi_parameter = "LspSignatureActiveParameter"
+})
