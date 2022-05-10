@@ -1,6 +1,9 @@
 #
 
 - yay -S octopi #包管理器前端界面
+
+#
+
 - pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如 okular 或者 calibre。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，Foliate 是阅读 epub 的更佳选择。
 
 # rime
@@ -14,38 +17,12 @@
 
 - yay -S ttf-apple-emoji
 
-# 蓝牙耳机
-
-- bluez bluez-utils
-- lsmod (check whether btusb is loaded, if not, then modprobe btusb)
-- systemctl start bluetooth.service
-- bluedevil:kde
-
-```
-bluez软件包提供蓝牙协议栈
-bluez-utils软件包提供bluetoothctl工具
-pulseaudio-bluetooth则为bluez提供了PulseAudio音频服务,若没有安装则蓝牙设备在配对完成后,连接会失败,提示
-pavucontrol则提供了pulseaudio的图形化控制界面
-pulseaudio-alsa(可选)则使pulseaudio和alsa协同使用，之后就可以用alsamixer来管理蓝牙音频
-```
-
-- 修改/etc/bluetooth/main.conf 底部的 [Policy]
-
-```
-/etc/bluetooth/main.conf
-[Policy]
-AutoEnable=true
-```
-
-- systemctl enable bluetooth
-- systemctl start bluetooth
-- pulseaudio -k # 确保没有 pulseaudio 启动
-- pulseaudio --start # 启动 pulseaudio 服务
-
 # 软件
 
-- ranger
 - code clion idea qtcreater
+- sublime-text-dev 代码编辑器
+
+- ranger
 - vnote typora suziwen/markdownxiaoshujiang https://github.com/marktext/marktext
 - gimp
 
@@ -65,7 +42,6 @@ AutoEnable=true
 - openssh 远程连接工具
 - SimpleScreenRecorder 轻量的录屏软件
 - kdenlive shotcut 强大的视频剪辑软件
-- sublime-text-dev 代码编辑器
 - redshift 显示屏色温调节工具
 - calibre 电子书转换、编辑、阅读工具
 - gthumb 图片浏览工具,可简单编辑图片,可清除照片元数据
@@ -92,8 +68,8 @@ cool tips:
 
    - 以管理员身份打开 「PowerShell」，输入以下命令：
 
-     Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
-     或者打开「注册表编辑器」，定位到 计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation 目录下，新建一个 DWORD 类型，名称为 RealTimeIsUniversal 的键，并修改键值为 1 即可。
+   Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+   或者打开「注册表编辑器」，定位到 计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation 目录下，新建一个 DWORD 类型，名称为 RealTimeIsUniversal 的键，并修改键值为 1 即可。
 
 - sudo pacman -S ntpdate
 - sudo ntpdate time.windows.com

@@ -50,7 +50,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 - systemctl stop iwd
 - sudo systemctl enable --now NetworkManager (确保先启动 NetworkManager，并进行网络连接 若 iwd 已经与 NetworkManager 冲突 则执行完上一步重启一下电脑即可。)
 
-## base soft
+## base software
 
 ### yay
 
@@ -74,17 +74,13 @@ yay -S google-chrome
 ntfs-3g #识别NTFS格式的硬盘
 ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖
 需要注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题
-sudo pacman -S unarchiver
-unar xxx.zip
+sudo pacman -S unarchiver then: unar xxx.zip
 packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)可用, 需重启
 gwenview deepin-screenshot flameshot cheese vlc
 tlp okular neofetch
-vim nvim kate bind
+vim neovim kate bind
 git libconfig wget curl npm exfat-utils cmake ctags nodejs
 net-tools(ifconfig) kdeconnect
-python python-pip
-go
-openjdk-doc openjdk-src (内含jre-openjdk jdk-openjdk)
 ```
 
 ## DNS
@@ -180,7 +176,7 @@ sudo systemctl enable --now bluetooth
 
 ```
 sudo pacman -S pulseaudio-bluetooth
-pulseaudio -k
+pulseaudio -k # 确保没有 pulseaudio 启动
 ```
 
 ## 显卡
@@ -256,8 +252,6 @@ no:
 
 7. lattw-dock
 
-8. yay -S ocs-url
-
 truecolor:
 
 - printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
@@ -281,15 +275,36 @@ truecolor:
 
 (c, c++, java)
 (python, javascript)
-(scheme, lua, vimscript?)
+(scheme, lua, vimscript)
 (markdown, latex)
 
-- clang
 - nvim python-pynvim
-- neoformart: prettier eslint lua-format(aur) yapf
-- lint: nodejs-markdownlintcli(aur) python-pylint vint tidy
-- LspInstall clangd, jsonls pylsp, sumneko_lua
+- neoformart: prettier eslint lua-format(aur) yapf(python)
+
+- eslint ?
+
+- c/cpp: lspinstall clang, sudo pacman -S clangd,
+- python: lspinstall pylsp, sudo pacman -S python-pylint(lint)
+- java:
+
+- lua: lspinstall sumneko_lua,
+
+- javascript: lspinstall quick_lint_js,
+- html: lspinstall html, pacman -S tidy(lint)
+- css: lspinstall cssls
+
+- vim: lspinstall vimls, sudo pacman -S vint(lint)
+
+- markdown: lspinstall prosemd_lsp, nodejs-markdownlintcli(aur)(lint)
+- latex: lspinstall
+
 - `https://wiki.archlinux.org/title/Neovim` install lsp
+
+> checkHealth:
+
+- ruby python3 go
+- python python-pip
+- openjdk-doc openjdk-src(include jre-openjdk jdk-openjdk)
 
 # dolphin
 
