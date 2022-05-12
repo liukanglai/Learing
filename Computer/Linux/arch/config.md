@@ -281,17 +281,15 @@ truecolor:
 - nvim python-pynvim
 - neoformart: prettier eslint lua-format(aur) yapf(python)
 
-- eslint ?
-
-- c/cpp: lspinstall clang, sudo pacman -S clangd,
+- c/cpp: lspinstall clang, sudo pacman -S clangd, cppchek(lint), python-cpplint(lint)
 - python: lspinstall pylsp, sudo pacman -S python-pylint(lint)
-- java:
+- java: checkstyle(lint)
 
 - lua: lspinstall sumneko_lua,
 
-- javascript: lspinstall quick_lint_js,
+- javascript: lspinstall quick_lint_js, pacman -S eslint(lint)
 - html: lspinstall html, pacman -S tidy(lint)
-- css: lspinstall cssls
+- css: lspinstall cssls, stylelint(lint)
 
 - vim: lspinstall vimls, sudo pacman -S vint(lint)
 
