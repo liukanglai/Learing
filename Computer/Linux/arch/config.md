@@ -185,6 +185,7 @@ pulseaudio -k # 确保没有 pulseaudio 启动
 - 英特尔： sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 - amd: `https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/graphic_driver`
 - nvidia: sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils
+- for new: yay -S nvidia-beta nvidia-utils-beta nvidia-dkms
 - change: yay -S optimus-manager optimus-manager-qt
 - 安装完成后重启即可使用。optimus-manager 安装完成后会默认 enable optimus-manager 的服务，你可在重启前检查其状态，若没有 enable 则手动将其 enable。重启后在菜单栏搜索 optimus-manager 点击即可使用。可在其设置中设置开机自动启动。
 - sudo systemctl enable optimus-manager
