@@ -278,7 +278,7 @@ truecolor:
 (scheme, lua, vimscript)
 (markdown, latex)
 
-- nvim python-pynvim
+- nvim python-pynvim(pip install pynvim)(npm -i -g neovim)
 - neoformart: prettier eslint lua-format(aur) yapf(python)
 
 - c/cpp: lspinstall clang, sudo pacman -S clangd, cppchek(lint), python-cpplint(lint)
