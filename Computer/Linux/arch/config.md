@@ -176,8 +176,12 @@ sudo systemctl enable --now bluetooth
 
 ```
 sudo pacman -S pulseaudio-bluetooth
-pulseaudio -k # 确保没有 pulseaudio 启动
+pulseaudio -k
 ```
+
+## 声卡
+
+- 别动(有问题，可安装：alsa-utils alsa-plugins pulseaudio-alsa pavucontrol-qt)(在 pavucontrol-qt 中调节)
 
 ## 显卡
 
