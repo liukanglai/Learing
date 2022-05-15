@@ -77,7 +77,7 @@ ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖
 sudo pacman -S unarchiver then: unar xxx.zip
 packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)可用, 需重启
 gwenview deepin-screenshot flameshot cheese vlc
-tlp okular neofetch
+tlp okular(/calibre) neofetch Foliate
 vim neovim kate bind
 git libconfig wget curl npm exfat-utils cmake ctags nodejs
 net-tools(ifconfig) kdeconnect

@@ -2,10 +2,6 @@
 
 - yay -S octopi #包管理器前端界面
 
-#
-
-- pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如 okular 或者 calibre。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，Foliate 是阅读 epub 的更佳选择。
-
 # rime
 
 - ~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema_list)
