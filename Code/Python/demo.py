@@ -2,9 +2,32 @@
 # -*- coding: utf-8 -*-
 
 # comment
+'''
 """
 jajgjgja
 """
+'''
+
+# variable
+
+# int (no limit for size)
+NUMBER = 1_000_000_000
+HEXO = 0xabc3_abc
+
+# float (no limit for size, but there is a sign of 'inf' to display infinite)
+FLOAT = -1.23
+FLOAT = 1.23e9
+FLOAT = 1.23e-5
+
+# String
+STRING = 'abc'
+STRING = "abc"
+STRING = "a'bc"
+STRING = "a\'b\"c\""
+STRING = '1'
+
+NUM = int(STRING)
+
 # I/O
 
 print(10 + 10)
@@ -15,8 +38,8 @@ name = input('please enter your name: ')
 print('hello:', name)
 
 birthday = input('birth: ')
-birth = int(birthday)
-
+print(birthday)
+"""
 # format
 print('Hello, %s' % 'world')
 print('Hello, %s, %d' % ('world', 100))  # %d %f %s %x(0x int) %%(no \%)
@@ -24,23 +47,6 @@ print('Hello, %s, %d' % ('world', 100))  # %d %f %s %x(0x int) %%(no \%)
 number = 19.2
 'Hello, {0}, 成绩提升了 {1:.1f}%'.format('小明', number)
 print(f'The area of a circle with radius {name} is {number:.2f}')
-
-# variable
-
-# int (no limit for size)
-number = 1_000_000_000
-hexo = 0xabc3_abc
-
-# float (no limit for size, but there is a sign of 'inf' to display infinite)
-float0 = -1.23
-float1 = 1.23e9
-float2 = 1.23e-5
-
-# String
-string = 'abc'
-string = "abc"
-string = "a'bc"
-string = "a\'b\"c\""
 
 print("\n, \t, \\")
 print(r"\n, \t, \\")
@@ -185,3 +191,4 @@ while number > 0:
     sum = sum + number
     number = number - 2
 print(sum)
+"""
