@@ -93,6 +93,17 @@ cool tips:
 
 - vim /etc/sddm.conf.d/dpi.conf: `[X11] ServerArguments=-dpi 96`
 
+# 录屏
+
+- obs-studio
+
+> 录制的声音太大/太吵可以调小麦克风音量
+
+- yay -S wemeet-bin(二维码一直弹不出来，开启独显才好。)
+- yay -S skypeforlinux-stable-bin
+
+- yay -S deskreen(投屏)
+
 # ulauncher utools stacer
 
 # vmbox
