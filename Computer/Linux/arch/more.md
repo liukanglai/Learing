@@ -96,6 +96,7 @@ cool tips:
 # 录屏
 
 - obs-studio
+- nvenc 编码不行就改
 
 > 录制的声音太大/太吵可以调小麦克风音量
 
