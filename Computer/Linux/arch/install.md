@@ -14,6 +14,12 @@
 
 - 验证启动模式:ls /sys/firmware/efi/efivars 有输出即为 UEFI
 
+## 禁用 reflector
+
+- reflector 会为你选择速度合适的镜像源，但其结果并不准确，同时会清空配置文件中的内容，对于新人来讲并不适用，我们首先对其进行禁用。
+
+  systemctl stop reflector.service
+
 ## 联网
 
 - ip link –看网卡 `enp开头有线网卡 wlp无线网卡`
