@@ -39,7 +39,7 @@ print('hello:', name)
 
 birthday = input('birth: ')
 print(birthday)
-"""
+
 # format
 print('Hello, %s' % 'world')
 print('Hello, %s, %d' % ('world', 100))  # %d %f %s %x(0x int) %%(no \%)
@@ -191,4 +191,3 @@ while number > 0:
     sum = sum + number
     number = number - 2
 print(sum)
-"""
