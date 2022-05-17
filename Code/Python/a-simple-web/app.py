@@ -45,6 +45,7 @@ def hello_change(name):
     for item in student:
         if item['name'] == name:
             return render_template('change.html', user=item)
+        else return render_template('admin.html', message='Bad')
 
 
 @app.route('/changed/<name>', methods=['POST'])
