@@ -27,6 +27,7 @@
 __author__ = 'Michael Liao'
 
 import sys
+from math import sin as S  # namly
 
 
 def test():
@@ -106,9 +107,9 @@ im.save('thumbnail.jpg', 'jpeg')
 im2 = im.filter(ImageFilter.BLUR)
 im2.save('blur.jpg', 'jpeg')
 
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
-
 import random
+
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 
 # 随机字母:

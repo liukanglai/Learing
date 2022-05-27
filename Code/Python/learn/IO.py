@@ -17,7 +17,7 @@
 # 文件读写 文件对象
 
 try:
-    f = open('/home/liukanglai/1', 'r')
+    f = open('/home/liukanglai/1', 'r')  # r, rb, w, a
     f.read()
 finally:
     if f:
@@ -44,6 +44,7 @@ with open('/home/liukanglai/1', 'r', encoding='gbk', errors='ignore') as f:
 # change r to w
 # 'a' append
 # f.write('')
+# f.writelines('This is the first line\r\n')
 # f.close()
 
 # StringIO in memory for str

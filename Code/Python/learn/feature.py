@@ -13,8 +13,9 @@ L[-2:]
 L[-2:-1]
 L[:2]
 print(L[:4:2])
-L[:]
-'abcd'[:2]
+print(L[:])
+print('abcd'[::3])
+print('abcd'[0:1:-1])  # 从start 往左搜，下标错误
 
 
 def trim(s):
@@ -31,6 +32,7 @@ def trim(s):
 print(trim(input('Please input a string: ')))
 
 # Iteration
+
 d = {'a': 1, 'b': 2, 'c': 3}
 for key in d:
     print(key)
