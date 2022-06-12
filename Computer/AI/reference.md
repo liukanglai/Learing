@@ -16,4 +16,11 @@ PyTorch入门: https://blog.csdn.net/qq_42580947/category_9720349.html
 【深度学习】CNN图像分类：从LeNet5到EfficientNet：https://cloud.tencent.com/developer/article/1721687
 
 使用CNN进行图像分类任务的优化设计指南：https://juejin.cn/post/6844903603795132429
+
+GPU，CUDA，cuDNN的理解:https://blog.csdn.net/u014380165/article/details/77340765
+pytorch使用GPU计算-学习笔记:https://zhuanlan.zhihu.com/p/268165089
+轻松学Pytorch-使用卷积神经网络实现图像分类:https://cloud.tencent.com/developer/article/1631939
+
+pytorch安装:`https://pytorch.org/get-started/locally/`
+cuda的安装:https://wiki.archlinux.org/title/GPGPU#CUDA
 ```
