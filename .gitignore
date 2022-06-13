@@ -4,3 +4,6 @@
 *.out
 nweb.log
 webserver.log
+
+# AI
+/Computer/AI/data
