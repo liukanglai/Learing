@@ -6,13 +6,11 @@
 # Name:figureCude.py
 # Version:V1.0
 
-# 使用CIFAR-10数据集进行图像分类
-# 由于ImageNet数据集较大，下载和训练较慢，为了方便大家学习，我们使用CIFAR10数据集。CIFAR10数据集包含60,000张32x32的彩色图片，10个类别，每个类包含6,000张。其中50,000张图片作为训练集，10000张作为测试集。图11从每个类别中随机抽取了10张图片，展示了所有的类别。
-# 数据集中的图像大小为32x32x3 。在训练的过程中最好使用GPU来加速。
+# CIFAR10数据集包含 60000 张 32*32 的彩色图片，10个类别，每个类包含 6000 张。其中50000张图片作为训练集，10000张作为测试集。
 import torch
 import numpy as np
 
-# 检查是否可以利用GPU
+# 检查是否可以利用GPU，在训练的过程中使用GPU来加速
 train_on_gpu = torch.cuda.is_available()
 
 if not train_on_gpu:
@@ -20,22 +18,17 @@ if not train_on_gpu:
 else:
     print('CUDA is available!')
 
-# 加载数据
-# 数据下载可能会比较慢。请耐心等待。加载训练和测试数据，将训练数据分为训练集和验证集，然后为每个数据集创建DataLoader
+# 加载训练和测试数据，将训练数据分为训练集和验证集，然后为每个数据集创建DataLoader
 from torchvision import datasets
 import torchvision.transforms as transforms
 from torch.utils.data.sampler import SubsetRandomSampler
 
-# number of subprocesses to use for data loading
+# 加载数据子进程的数量
 num_workers = 0
 # 每批加载16张图片
 batch_size = 16
-# percentage of training set to use as validation
-# 验证集
+# 验证集占的比例
 valid_size = 0.2
-
-# 将数据转换为torch.FloatTensor，并标准化。
-# 下载数据集并对图片进行调整, 因为torchvision数据集的输出是PILImage格式, 数据域在[0, 1]. 我们将其转换为标准数据域[-1, 1]的张量格式
 
 # 定义归一化方法
 transform = transforms.Compose([
@@ -56,19 +49,18 @@ test_data = datasets.CIFAR10('data',
                              download=True,
                              transform=transform)
 
-# obtain training indices that will be used for validation
+# 得到验证集的下标，划分训练集与验证集
 num_train = len(train_data)
 indices = list(range(num_train))
 np.random.shuffle(indices)
 split = int(np.floor(valid_size * num_train))
 train_idx, valid_idx = indices[split:], indices[:split]
 
-# define samplers for obtaining training and validation batches
+# 定义采样器以获取训练和验证批次，随机选取
 train_sampler = SubsetRandomSampler(train_idx)
 valid_sampler = SubsetRandomSampler(valid_idx)
 
-# prepare data loaders (combine dataset and sampler)
-# 定义数据集的加载方法， train_data为训练集， batch_size为单词训练的样本数，sampler表示样本选择（此为随机），num_workers表示加载的线程数
+# 定义数据集的加载方法， train_data为训练集， batch_size为单词训练的样本数，sampler表示采样器（此为随机），num_workers表示加载的线程数
 train_loader = torch.utils.data.DataLoader(train_data,
                                            batch_size=batch_size,
                                            sampler=train_sampler,
@@ -90,18 +82,14 @@ classes = [
 # 查看训练集中的一批样本
 import matplotlib.pyplot as plt
 
-# %matplotlib inline use in Ipython
 
-
-# helper function to un-normalize and display an image
 # 构建展示图片的函数
 def imshow(img):
-    img = img / 2 + 0.5  # unnormalize
+    img = img / 2 + 0.5  # unnormalize 异常化？不懂
     plt.imshow(np.transpose(img, (1, 2, 0)))  # convert from Tensor image
 
 
 # 获取一批样本
-# 从数据迭代器中读取一张图片
 dataiter = iter(train_loader)
 images, labels = dataiter.next()
 images = images.numpy()  # convert images to numpy for display
@@ -125,7 +113,8 @@ class Net(nn.Module):
 
     def __init__(self):
         super(Net, self).__init__()
-        # 第一层卷积神经网络, 输入通道维度=3, 输出通道维度=6, 卷积核大小3*3, 填充为1 (32*32*3的图像)
+        # 第一层卷积神经网络, 输入通道维度=3, 输出通道维度=16, 卷积核大小3*3, 填充为1 (32*32*3的图像)
+        # 此处的卷积层输出是经过一定计算得到的，参见原文：https://cloud.tencent.com/developer/article/1631939
         self.conv1 = nn.Conv2d(3, 16, 3, padding=1)
         # 卷积层(16*16*16)
         self.conv2 = nn.Conv2d(16, 32, 3, padding=1)
@@ -135,7 +124,7 @@ class Net(nn.Module):
         # 最大池化层
         self.pool = nn.MaxPool2d(2, 2)
 
-        # 定义三层全连接网络
+        # 定义全连接网络
         # linear layer (64 * 4 * 4 -> 500)
         self.fc1 = nn.Linear(64 * 4 * 4, 500)
         # linear layer (500 -> 10)
@@ -147,21 +136,19 @@ class Net(nn.Module):
     # 定义数据流向
     def forward(self, x):
         # 在(2, 2)的池化窗口下执行最大池化操作
-        # add sequence of convolutional and max pooling layers
+        # 先进卷积层，再relu函数，再池化
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = self.pool(F.relu(self.conv3(x)))
 
-        # flatten image input
         # 调整数据维度，‘-1’表示自动计算维度
-        # 64*4*4矩阵展平成一维的再传入全连接层(x.view(-1,50*75))
+        # 64*4*4矩阵展平成一维的再传入全连接层
         x = x.view(-1, 64 * 4 * 4)
 
         # add dropout layer
         x = self.dropout(x)
 
         # add 1st hidden layer, with relu activation function
-        # 数据经过激活函数
         x = F.relu(self.fc1(x))
 
         # add dropout layer
@@ -172,23 +159,17 @@ class Net(nn.Module):
         return x
 
 
-# create a complete CNN
-# 新建一个网络model
+# CNN 模型实例化并打印结果
 model = Net()
 print(model)
 
-# 查看模型中所有的可训练参数
-# params = list(model.parameters())
-# print(len(params))
-# print(params[0].size())
-
-# 使用GPU
+# 使用GPU，将模型导入
 if train_on_gpu:
     model.cuda()
 
-# 选择损失函数与优化函数
 # 导入torch中优化器相关的包
 import torch.optim as optim
+# 选择损失函数与优化函数
 # 使用交叉熵损失函数
 criterion = nn.CrossEntropyLoss()
 # 使用随机梯度下降，学习率lr=0.01
@@ -196,15 +177,14 @@ optimizer = optim.SGD(model.parameters(), lr=0.01)
 
 # 根据训练数据训练卷积神经网络模型
 #  计算损失值, 将网络参数的梯度进行反向传播, 以一定的规则更新网络的权重, 需要遍历数据迭代器, 然后将数据输入网络并进行优化。
-# 注意：训练集和验证集的损失是如何随着时间的推移而减少的；如果验证损失不断增加，则表明可能过拟合现象。（实际上，在下面的例子中，如果n_epochs设置为40，可以发现存在过拟合现象！）
 # 训练模型的次数
 n_epochs = 30
 
-valid_loss_min = np.Inf  # track change in validation loss
+valid_loss_min = np.Inf  # 记录损失的变化？
 
 for epoch in range(1, n_epochs + 1):
 
-    # keep track of training and validation loss
+    # 记录损失
     train_loss = 0.0
     valid_loss = 0.0
 
@@ -217,21 +197,17 @@ for epoch in range(1, n_epochs + 1):
         if train_on_gpu:
             # 获得数据与标签
             data, target = data.cuda(), target.cuda()
-        # clear the gradients of all optimized variables
-        # optimizer.zero_grad()	# 清理上一次循环的梯度
+        # 清理上一次循环的梯度
         optimizer.zero_grad()
-        # forward pass: compute predicted outputs by passing inputs to the model
         # 得到网络的输出
         output = model(data)
-        # calculate the batch loss
+        # 计算损失值
         loss = criterion(output, target)
-        # backward pass: compute gradient of the loss with respect to model parameters
         # 反向传播
         loss.backward()
-        # perform a single optimization step (parameter update)
         # 更新参数
         optimizer.step()
-        # update training loss
+        # 记录训练损失值
         train_loss += loss.item() * data.size(0)
 
     ######################
@@ -242,11 +218,8 @@ for epoch in range(1, n_epochs + 1):
         # move tensors to GPU if CUDA is available
         if train_on_gpu:
             data, target = data.cuda(), target.cuda()
-        # forward pass: compute predicted outputs by passing inputs to the model
         output = model(data)
-        # calculate the batch loss
         loss = criterion(output, target)
-        # update average validation loss
         valid_loss += loss.item() * data.size(0)
 
     # 计算平均损失
@@ -271,42 +244,37 @@ for epoch in range(1, n_epochs + 1):
 # 加载模型
 model.load_state_dict(torch.load('model_cifar.pt'))
 
-# 测试训练好的网络
-# 在测试数据上测试你的训练模型！一个“好”的结果将是CNN得到大约70%，这些测试图像的准确性。
-# track test loss
+# 在测试数据上测试你的训练模型！一个“好”的结果将是CNN得到大约70%.
 test_loss = 0.0
 class_correct = list(0. for i in range(10))
 class_total = list(0. for i in range(10))
 
 model.eval()
-# iterate over test data
 for data, target in test_loader:
     # move tensors to GPU if CUDA is available
     if train_on_gpu:
         data, target = data.cuda(), target.cuda()
-    # forward pass: compute predicted outputs by passing inputs to the model
     output = model(data)
-    # calculate the batch loss
     loss = criterion(output, target)
-    # update test loss
     test_loss += loss.item() * data.size(0)
-    # convert output probabilities to predicted class
+    # 将输出概率转换为预测类别
     _, pred = torch.max(output, 1)
-    # compare predictions to true label
+    # 预测与真实做比较
     correct_tensor = pred.eq(target.data.view_as(pred))
     correct = np.squeeze(
         correct_tensor.numpy()) if not train_on_gpu else np.squeeze(
             correct_tensor.cpu().numpy())
-    # calculate test accuracy for each object class
+    # 计算每个类的精确度
     for i in range(batch_size):
         label = target.data[i]
         class_correct[label] += correct[i].item()
         class_total[label] += 1
 
-# average test loss
+# 平均测试损失
 test_loss = test_loss / len(test_loader.dataset)
 print('Test Loss: {:.6f}\n'.format(test_loss))
 
+# 每个类的精确度
 for i in range(10):
     if class_total[i] > 0:
         print('Test Accuracy of %5s: %2d%% (%2d/%2d)' %
@@ -321,7 +289,6 @@ print('\nTest Accuracy (Overall): %2d%% (%2d/%2d)' %
        np.sum(class_correct), np.sum(class_total)))
 
 # 显示测试样本的结果
-# obtain one batch of test images
 dataiter = iter(test_loader)
 images, labels = dataiter.next()
 images.numpy()
@@ -332,7 +299,7 @@ if train_on_gpu:
 
 # get sample outputs
 output = model(images)
-# convert output probabilities to predicted class
+# 将输出概率转换为预测类别
 _, preds_tensor = torch.max(output, 1)
 preds = np.squeeze(preds_tensor.numpy()) if not train_on_gpu else np.squeeze(
     preds_tensor.cpu().numpy())
