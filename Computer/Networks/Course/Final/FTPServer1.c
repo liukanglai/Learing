@@ -11,14 +11,14 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-// for directory
+// for opendir
 #include <dirent.h>
 
-#define read_len 256
-char command[read_len];
+#define read_len 1024
+// send read 共用
+char read_buf[read_len];
 
 void command_ls(int *);
-void command_cd(int *, char *);
 void command_pwd(int *, char *);
 void command_get(int *, char *);
 void command_put(int *, char *);
@@ -82,40 +82,41 @@ int main(void) {
                  "Server!\n"));
 
     while (1) {
-      bzero(command, strlen(command));
       printf("server(%s:%d)> ", ip, client_port);
 
-      if (read(client_socket, command, read_len) < 0) {
-        printf("Read Error!\n");
+      bzero(read_buf, strlen(read_buf));
+      if (read(client_socket, read_buf, read_len) < 0) {
+        // 由套接字接收数据时，套接字把接收的数据放在套接字缓冲区，再由用户程序把它们复制到用户缓冲区，然后由read函数读取
+        printf("Read Command Error!\n");
         continue;
       }
+      printf("received [%s]\n", read_buf);
 
-      printf("received [%s]\n", command);
-
-      if (strncmp(command, "quit", 4) == 0) {
+      if (strncmp(read_buf, "quit", 4) == 0) {
         close(client_socket);
         break;
-      } else if ((strncmp(command, "ls", 2) == 0) |
-                 (strncmp(command, "dir", 3) == 0)) {
+      } else if ((strncmp(read_buf, "ls", 2) == 0) |
+                 (strncmp(read_buf, "dir", 3) == 0)) {
         command_ls(&client_socket);
+        printf("hh\n");
         continue;
-      } else if (strncmp(command, "pwd", 3) == 0) {
-        command_pwd(&client_socket, command);
+      } else if (strncmp(read_buf, "pwd", 3) == 0) {
+        /*command_pwd(client_socket, read_buf + 4);*/
         continue;
-      } else if (strncmp(command, "cd", 2) == 0) {
-        command_cd(&client_socket, command + 3);
+      } else if (strncmp(read_buf, "cd", 2) == 0) {
+        /*command_cd(client_socket, read_buf + 4);*/
         continue;
-      } else if ((strncmp(command, "get", 3) == 0) |
-                 (strncmp(command, "put", 3) == 0)) {
-        /*command_get(client_socket, command + 4);*/
+      } else if ((strncmp(read_buf, "get", 3) == 0) |
+                 (strncmp(read_buf, "put", 3) == 0)) {
+        /*command_get(client_socket, read_buf + 4);*/
         write(client_socket, "Please input POST or PASV first!\n",
               strlen("Please input POST or PASV first!\n"));
         continue;
-      } else if (strncmp(command, "POST", 4) == 0) {
-        /*command_put(&client_socket, command + 4);*/
+      } else if (strncmp(read_buf, "POST", 4) == 0) {
+        /*command_put(client_socket, read_buf + 4);*/
         continue;
-      } else if (strncmp(command, "PASV", 4) == 0) {
-        /*command_put(&client_socket, command + 4);*/
+      } else if (strncmp(read_buf, "PASV", 4) == 0) {
+        /*command_put(client_socket, read_buf + 4);*/
         continue;
       } else {
         printf("Command Error!\n");
@@ -139,13 +140,13 @@ void command_ls(int *socket) {
   while ((myitem = readdir(mydir)) !=
          NULL) //用来读取目录,返回是dirent结构体指针
   {
-    if (sprintf(command, myitem->d_name, read_len) < 0) //把文件名写入缓冲区
+    if (sprintf(read_buf, myitem->d_name, read_len) < 0) //把文件名写入缓冲区
     {
       printf("Sprintf Error!\n");
       exit(1);
     }
 
-    if (write(*socket, command, strlen(command)) <
+    if (write(*socket, read_buf, strlen(read_buf)) <
         0) //将commd缓冲区的内容发送会client
     {
       printf("Write Error!\n");
@@ -159,21 +160,25 @@ void command_ls(int *socket) {
   return;
 }
 
-void command_pwd(int *sockfd, char *buf) {
-  bzero(buf, strlen(buf));
-  getcwd(buf, 100);
-  write(*sockfd, buf, strlen(buf));
+/*
+void command_pwd(int sockfd, char *buf) {
+  char pwd[];
+  bzero(pwd, N);
+  getcwd(pwd, N);
+  write(sockfd, pwd, strlen(pwd));
+  return;
 }
+*/
 
-void command_cd(int *sockfd, char *buf) {
+void command_cd(int sockfd, char *buf) {
   if (chdir(buf) < 0) {
-    write(*sockfd, "Change Directory Error!\n",
+    write(sockfd, "Change Directory Error!\n",
           strlen("Change Directory Error!\n"));
   } else {
-    bzero(buf, strlen(buf));
-    getcwd(buf, 100);
-    write(*sockfd, buf, strlen(buf));
+    write(sockfd, "Change Directory Success!\n",
+          strlen("Change Directory Success!\n"));
   }
+  return;
 }
 
 int command_POST(int sockfd, char *buf) {
@@ -213,7 +218,7 @@ int command_POST(int sockfd, char *buf) {
   bzero(&client_addr, sizeof(client_addr));
   int client_len = sizeof(client_addr);
 
-  bzero(command, read_len); // 字符串的前字节置为0，包括'\0'
+  bzero(read_buf, read_len); // 字符串的前字节置为0，包括'\0'
   while (1) {
     printf("server>");
     // 服务器端接受来自客户端的连接，返回一个套接字，此套接字为新建的一个
@@ -226,8 +231,8 @@ int command_POST(int sockfd, char *buf) {
     } else {
       printf("Accept Success!\n");
       printf("Connect with %s PORT: %d\n",
-             inet_ntop(AF_INET, &client_addr.sin_addr, command,
-                       sizeof(command)), // 将网络字节序转换为点分十进制字符串
+             inet_ntop(AF_INET, &client_addr.sin_addr, read_buf,
+                       sizeof(read_buf)), // 将网络字节序转换为点分十进制字符串
              htons(client_addr.sin_port));
       write(client_socket,
             "220: Service ready for new user.!\nWelcome to my FTP Server!\n",
@@ -236,32 +241,32 @@ int command_POST(int sockfd, char *buf) {
       printf("server>");
     }
 
-    if (read(client_socket, command, read_len) < 0) {
+    if (read(client_socket, read_buf, read_len) < 0) {
       // 由套接字接收数据时，套接字把接收的数据放在套接字缓冲区，再由用户程序把它们复制到用户缓冲区，然后由read函数读取
       // write函数同理
       printf("Read Command Error!\n");
       continue;
     }
-    printf("received [ %s ]\n", command);
+    printf("received [ %s ]\n", read_buf);
 
-    if (strncmp(command, "quit", 4) == 0) {
+    if (strncmp(read_buf, "quit", 4) == 0) {
       close(client_socket);
       exit(0);
-    } else if ((strncmp(command, "ls", 2) == 0) |
-               (strncmp(command, "dir", 3) == 0)) {
+    } else if ((strncmp(read_buf, "ls", 2) == 0) |
+               (strncmp(read_buf, "dir", 3) == 0)) {
       /*command_ls(client_socket);*/
       continue;
-    } else if (strncmp(command, "pwd", 3) == 0) {
+    } else if (strncmp(read_buf, "pwd", 3) == 0) {
       /*command_pwd(client_socket, read_buf + 4);*/
       continue;
-    } else if (strncmp(command, "cd", 2) == 0) {
+    } else if (strncmp(read_buf, "cd", 2) == 0) {
       /*command_cd(client_socket, read_buf + 4);*/
       continue;
-    } else if ((strncmp(command, "get", 3) == 0) |
-               (strncmp(command, "put", 3) == 0)) {
+    } else if ((strncmp(read_buf, "get", 3) == 0) |
+               (strncmp(read_buf, "put", 3) == 0)) {
       continue;
-    } else if ((strncmp(command, "POST", 4) == 0) |
-               (strncmp(command, "PASV", 4) == 0)) {
+    } else if ((strncmp(read_buf, "POST", 4) == 0) |
+               (strncmp(read_buf, "PASV", 4) == 0)) {
       write(client_socket, "Already in PASV mode!\n",
             strlen("Already in PASV mode!\n"));
       continue;
@@ -308,7 +313,7 @@ int command_PASV(int sockfd, char *buf) {
   bzero(&client_addr, sizeof(client_addr));
   int client_len = sizeof(client_addr);
 
-  bzero(command, read_len); // 字符串的前字节置为0，包括'\0'
+  bzero(read_buf, read_len); // 字符串的前字节置为0，包括'\0'
   while (1) {
     printf("server>");
     // 服务器端接受来自客户端的连接，返回一个套接字，此套接字为新建的一个
@@ -321,8 +326,8 @@ int command_PASV(int sockfd, char *buf) {
     } else {
       printf("Accept Success!\n");
       printf("Connect with %s PORT: %d\n",
-             inet_ntop(AF_INET, &client_addr.sin_addr, command,
-                       sizeof(command)), // 将网络字节序转换为点分十进制字符串
+             inet_ntop(AF_INET, &client_addr.sin_addr, read_buf,
+                       sizeof(read_buf)), // 将网络字节序转换为点分十进制字符串
              htons(client_addr.sin_port));
       write(client_socket,
             "220: Service ready for new user.!\nWelcome to my FTP Server!\n",
@@ -331,32 +336,32 @@ int command_PASV(int sockfd, char *buf) {
       printf("server>");
     }
 
-    if (read(client_socket, command, read_len) < 0) {
+    if (read(client_socket, read_buf, read_len) < 0) {
       // 由套接字接收数据时，套接字把接收的数据放在套接字缓冲区，再由用户程序把它们复制到用户缓冲区，然后由read函数读取
       // write函数同理
       printf("Read Command Error!\n");
       continue;
     }
-    printf("received [ %s ]\n", command);
+    printf("received [ %s ]\n", read_buf);
 
-    if (strncmp(command, "quit", 4) == 0) {
+    if (strncmp(read_buf, "quit", 4) == 0) {
       close(client_socket);
       exit(0);
-    } else if ((strncmp(command, "ls", 2) == 0) |
-               (strncmp(command, "dir", 3) == 0)) {
+    } else if ((strncmp(read_buf, "ls", 2) == 0) |
+               (strncmp(read_buf, "dir", 3) == 0)) {
       /*command_ls(client_socket);*/
       continue;
-    } else if (strncmp(command, "pwd", 3) == 0) {
+    } else if (strncmp(read_buf, "pwd", 3) == 0) {
       /*command_pwd(client_socket, read_buf + 4);*/
       continue;
-    } else if (strncmp(command, "cd", 2) == 0) {
+    } else if (strncmp(read_buf, "cd", 2) == 0) {
       /*command_cd(client_socket, read_buf + 4);*/
       continue;
-    } else if ((strncmp(command, "get", 3) == 0) |
-               (strncmp(command, "put", 3) == 0)) {
+    } else if ((strncmp(read_buf, "get", 3) == 0) |
+               (strncmp(read_buf, "put", 3) == 0)) {
       continue;
-    } else if ((strncmp(command, "POST", 4) == 0) |
-               (strncmp(command, "PASV", 4) == 0)) {
+    } else if ((strncmp(read_buf, "POST", 4) == 0) |
+               (strncmp(read_buf, "PASV", 4) == 0)) {
       write(client_socket, "Already in PASV mode!\n",
             strlen("Already in PASV mode!\n"));
       continue;

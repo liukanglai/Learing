@@ -41,7 +41,9 @@
  * 而是客户端需要建立一个新的连接来与服务器进行数据传输。
  */
 
-#define read_len 256
+#define read_len 1024
+char read_buf[read_len];
+/*char send_buf[read_len];*/
 char command[read_len];
 
 void command_help();
@@ -76,7 +78,7 @@ int main(void) {
   server_addr.sin_addr.s_addr = inet_addr(server_ip);
   printf("Please input the port you intend to connect: ");
   scanf("%d", &server_port);
-  // 换行符
+  // 如果读取的字符串中有换行符，则会被截断
   getchar();
   // The htons() function converts the unsigned short integer hostshort from
   // host byte order to network byte order. 转换成网络字节
@@ -88,23 +90,27 @@ int main(void) {
     printf("Connect Error!\n");
     return -1;
   }
-  bzero(command, read_len);
   /* 客户端接收服务器端的一些欢迎信息 */
-  read(control_sock, command, read_len);
-  printf("%s", command);
+  while (read(control_sock, read_buf, read_len) > 0) {
+    printf("%s", read_buf);
+  }
 
   // stop here?
   while (1) {
     printf("ftp> ");
-    bzero(command, strlen(command));
-    // fgets函数从stdin流中读取 read_len - 1 个字符放入command中
-    if (fgets(command, read_len, stdin) == NULL) {
-      printf("Input Error!\n");
-      break;
-    }
+    /*bzero(command, strlen(command));*/
+    /*bzero(read_buf, strlen(read_buf));*/
+    // bzero(command, read_len);
+    // fgets函数从stdin流中读取 read_len-1 个字符放入command中
+    /*if (fgets(command, read_len, stdin) == NULL) {*/
+    /*printf("Input Error!\n");*/
+    /*break;*/
+    /*}*/
+    scanf("%s", command);
+    getchar();
 
-    command[strlen(command) - 1] =
-        '\0'; // fgets函数读取的最后一个字符为换行符，此处将其替换为'\0'
+    /*command[strlen(command) - 1] =*/
+    /*'\0'; // fgets函数读取的最后一个字符为换行符，此处将其替换为'\0'*/
 
     printf("Input Command is [%s]\n", command);
 
@@ -124,9 +130,11 @@ int main(void) {
                (strncmp(command, "dir", 3) == 0)) {
       if (write(control_sock, command, strlen(command)) < 0) {
         perror("write");
+        continue;
       }
-      while (read(control_sock, command, read_len) > 0) { //返回值为读取的字节数
-        printf(" %s ", command);
+      while (read(control_sock, read_buf, read_len) >
+             0) { //返回值为读取的字节数
+        printf(" %s ", read_buf);
       }
       printf("\n");
       continue;
@@ -134,10 +142,9 @@ int main(void) {
       if (write(control_sock, command, strlen(command)) < 0) {
         perror("write");
         continue;
+      } else {
+        printf("The path of the remote directory is: %s\n", read_buf);
       }
-      bzero(command, strlen(command));
-      read(control_sock, command, read_len);
-      printf("The path of the remote directory is: %s\n", command);
       continue;
     } else if (strncmp(command, "cd", 2) == 0) {
       if (write(control_sock, command, strlen(command)) < 0) {
@@ -146,9 +153,7 @@ int main(void) {
         continue;
       } else {
         printf("Remote directory successfully changed\n");
-        bzero(command, strlen(command));
-        read(control_sock, command, read_len);
-        printf("Now the path of the remote directory is: %s\n", command);
+        printf("Now the path of the remote directory is: %s\n", read_buf);
       }
       continue;
     } else if (strncmp(command, "get", 3) == 0) {
