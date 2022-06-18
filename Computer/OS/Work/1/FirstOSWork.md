@@ -9,8 +9,8 @@
 - 环境变量中无 PWD
 
 - module 的加载：
-![insmod](1in.png)
-![rmmod](1rm.png)
+  ![insmod](1in.png)
+  ![rmmod](1rm.png)
 
 # 2. Kernel Data Structures
 
@@ -30,7 +30,7 @@
 - 关于读入的函数，参考 `http://www.csl.mtu.edu/cs4411.ck/www/NOTES/process/fork/shell.c`
 - 写的真的好，不过改了 gets() 为 fgets()，一个回车引出好多问题，果然细节重要
 - 加了后台 '&' 的实现，注意到对 args 赋 NULL，才会结束执行，而不是内容为空
-- 存历史的时候开了10个数组，注意满和未满的情况，还有开始与结束的下标处理
+- 存历史的时候开了 10 个数组，注意满和未满的情况，还有开始与结束的下标处理
 - 写代码时遇到好多问题，现在回过头来看，也没多少可写，果然还是得“跳出来”
 
 ![shell](shell.png)
