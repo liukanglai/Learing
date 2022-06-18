@@ -117,6 +117,15 @@ int ftp(int *client_socket, struct sockaddr_in *client_addr) {
     } else if (strncmp(command, "cd", 2) == 0) {
       /* 客户端接收服务器的响应码和信息，正常为 ”250 Command okay.” */
       command_cd(client_socket, command + 3);
+    } else if (strncmp(command, "rm", 2) == 0) {
+      char *filename = command + 3;
+      if (remove(filename) == 0) {
+        write(*client_socket, "250: Command okay.\n",
+              strlen("250: Command okay.\n"));
+      } else {
+        write(*client_socket, "550: File not found.\n",
+              strlen("550: File not found.\n"));
+      }
     } else if (strncmp(command, "pwd", 3) == 0) {
       command_pwd(client_socket, command);
     } else if (strncmp(command, "PORT", 4) == 0) {
@@ -317,48 +326,42 @@ int command_port(int *sockfd, char *command, char *ip) {
     printf("Create Socket Error!\n");
     return -1;
   }
-  int data_port;
+
+  char *p = command + 5;
+  int port = atoi(p);
+
+  // 客户的数据端
   struct sockaddr_in data_addr;
-  int data_len = sizeof(data_addr);
-  bzero(&data_addr, data_len);
   data_addr.sin_family = AF_INET;
-  data_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+  data_addr.sin_port = htons(port);
+  data_addr.sin_addr.s_addr = inet_addr(ip);
 
-  // 记录客户端的 ip 地址
-  int client_socket;
-  struct sockaddr_in client_addr;
-  bzero(&client_addr, sizeof(client_addr));
-  int client_len = sizeof(client_addr);
-
-  printf("server>");
-  if ((client_socket =
-           accept(data_socket, (struct sockaddr *)&data_addr, &data_len)) < 0) {
-    printf("Accept Error!\n");
+  if (connect(data_socket, (struct sockaddr *)&data_addr, sizeof(data_addr)) <
+      0) {
+    printf("Data Connect Error!\n");
     return -1;
-  } else {
-    printf("Accept Success!\n");
-    printf("server>");
-
-    bzero(command, strlen(command));
-    if (read(*sockfd, command, read_len) < 0) {
-      printf("Read Command Error!\n");
-    }
-    printf("received [%s]\n", command);
-
-    if (strncmp(command, "get", 3) == 0) {
-      /*command_get(&data_socket);*/
-      command_get(&client_socket);
-    } else if (strncmp(command, "put", 3) == 0) {
-      /*command_put(&data_socket);*/
-      command_put(&client_socket);
-    } else if ((strncmp(command, "ls", 2) == 0) |
-               (strncmp(command, "dir", 3) == 0)) {
-      /*command_ls(&data_socket);*/
-      command_ls(&client_socket);
-    } else
-      printf("Command Error!\n");
   }
-  close(data_socket);
+  printf("server>");
+
+  bzero(command, strlen(command));
+  if (read(*sockfd, command, read_len) < 0) {
+    printf("Read Command Error!\n");
+  }
+  printf("received [%s]\n", command);
+
+  if (strncmp(command, "get", 3) == 0) {
+    /*command_get(&data_socket);*/
+    command_get(&data_socket);
+  } else if (strncmp(command, "put", 3) == 0) {
+    /*command_put(&data_socket);*/
+    command_put(&data_socket);
+  } else if ((strncmp(command, "ls", 2) == 0) |
+             (strncmp(command, "dir", 3) == 0)) {
+    /*command_ls(&data_socket);*/
+    command_ls(&data_socket);
+  } else
+    printf("Command Error!\n");
+
   return 0;
 }
 

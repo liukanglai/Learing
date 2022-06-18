@@ -51,7 +51,7 @@
 char command[read_len];
 
 void command_help();
-void command_port(int *, char *, char *);
+void command_port(int *, char *);
 void command_pasv(int *, char *);
 void command_ls(int *, int *, char *);
 void command_get(int *, int *, char *);
@@ -186,6 +186,12 @@ int main(void) {
       read(control_sock, command, read_len);
       printf("The path of the remote directory is: %s\n", command);
       continue;
+    } else if (strncmp(command, "rm", 2) == 0) {
+      write(control_sock, command, strlen(command));
+      bzero(command, strlen(command));
+      read(control_sock, command, read_len);
+      printf("%s", command);
+      continue;
     } else if (strncmp(command, "cd", 2) == 0) {
       if (write(control_sock, command, strlen(command)) < 0) {
         perror("write");
@@ -220,7 +226,7 @@ int main(void) {
         printf("Input Command is [%s]\n", command);
 
         if (strncmp(command, "PORT", 4) == 0) {
-          command_port(&control_sock, order, server_ip);
+          command_port(&control_sock, order);
         } else if (strncmp(command, "PASV", 4) == 0) {
           command_pasv(&control_sock, order);
         } else {
@@ -344,27 +350,26 @@ void command_pasv(int *control_sock, char *order) {
   }
 }
 
-void command_port(int *control_sock, char *order, char *ip) {
+void command_port(int *control_socket, char *order) {
   // 用主动模式从 FTP 服务器下载文件
-  int data_sock = socket(AF_INET, SOCK_STREAM, 0);
-  if (data_sock < 0) {
+  int data_socket = socket(AF_INET, SOCK_STREAM, 0);
+  if (data_socket < 0) {
     printf("socket error\n");
     exit(1);
   }
   int data_port;
 
   struct sockaddr_in data_addr;
-  int data_addr_len = sizeof(data_addr);
+  int data_len = sizeof(data_addr);
   bzero(&data_addr, sizeof(data_addr));
   data_addr.sin_family = AF_INET;
   data_addr.sin_addr.s_addr = htonl(INADDR_ANY);
   data_addr.sin_port = 0;
-  if (bind(data_sock, (struct sockaddr *)&data_addr, sizeof(data_addr)) < 0) {
+  if (bind(data_socket, (struct sockaddr *)&data_addr, sizeof(data_addr)) < 0) {
     printf("bind error\n");
     exit(1);
   }
-  if (getsockname(data_sock, (struct sockaddr *)&data_addr, &data_addr_len) <
-      0) {
+  if (getsockname(data_socket, (struct sockaddr *)&data_addr, &data_len) < 0) {
     printf("getsockname error\n");
     exit(1);
   }
@@ -375,29 +380,46 @@ void command_port(int *control_sock, char *order, char *ip) {
   /*sprintf(command, "PORT %d,%d,%d,%d,%d,%d", ip[0], ip[1], ip[2], ip[3],*/
   /*port[0], port[1]);*/
   sprintf(command, "PORT %d", data_port);
-  write(*control_sock, command, strlen(command));
+  write(*control_socket, command, strlen(command));
   /* 客户端接收服务器的响应码和信息，正常为 ”200 Command okay.” */
+  /*
   bzero(command, sizeof(command));
-  read(*control_sock, command, read_len);
+  read(*control_socket, command, read_len);
   printf("%s\n", command);
   if (strstr(command, "200") == NULL) {
     printf("PORT error\n");
     exit(1);
   }
+  */
 
-  struct sockaddr_in name;
-  name.sin_family = AF_INET;
-  name.sin_addr.s_addr = htons(INADDR_ANY);
+  if (listen(data_socket, 1) < 0) {
+    printf("Data_socket listen error\n");
+    exit(1);
+  }
 
-  /*struct sockaddr_in client_name;*/
-  /*length = sizeof(client_name);*/
-  //客户端开始监听端口p1*256+p2
-  /*listen(data_sock, 64);*/
-  // 命令 ”PORT \r\n”
-  /*sprintf(send_buf, "PORT 1287,0,0,1,%d,%d\r\n", p1, p2);*/
-  /*write(*control_sock, send_buf, strlen(send_buf));*/
-  // ftp客户端接受服务器端的连接请求
-  // data_sock = accept(server_sock, (struct sockaddr *)&client_name, &length);
+  // 记录客户端的 ip 地址
+  int client_socket;
+  struct sockaddr_in client_addr;
+  bzero(&client_addr, sizeof(client_addr));
+  int client_len = sizeof(client_addr);
+
+  printf("do data server>");
+  if ((client_socket =
+           accept(data_socket, (struct sockaddr *)&data_addr, &data_len)) < 0) {
+    printf("Data_socket Accept Error!\n");
+  } else {
+    printf("Accept Success!\n");
+    /*printf("do data server>");*/
+
+    if ((strncmp(order, "ls", 2) == 0) | (strncmp(order, "dir", 3) == 0)) {
+      command_ls(control_socket, &client_socket, order);
+    } else if (strncmp(order, "get", 3) == 0) {
+      command_get(control_socket, &client_socket, order);
+    } else if (strncmp(order, "put", 3) == 0) {
+      command_put(control_socket, &client_socket, order);
+    }
+    close(data_socket);
+  }
 }
 
 /*
@@ -429,7 +451,8 @@ void command_ls(int *control_sock, int *data_sock, char *order) {
   printf("The remote directory listing is as follows:\n");
   system("cat temp.txt");
 
-  /*while (read(*data_sock, command, read_len) > 0) { // 返回值为读取的字节数*/
+  /*while (read(*data_sock, command, read_len) > 0) { //
+   * 返回值为读取的字节数*/
   /*printf(" %s ", command);*/
   /*}*/
   /*printf("\n");*/
@@ -458,8 +481,8 @@ void command_get(int *control_sock, int *data_sock, char *order) {
   // stop
   while ((nbytes = read(*data_sock, command, read_len)) > 0) {
     //
-write函数将buffer中的内容读取出来写入fd所指向的文件，返回值为实际写入的字节数 if
-(write(fd, command, nbytes) < 0) { printf("Write Error!At commd_get 2");
+write函数将buffer中的内容读取出来写入fd所指向的文件，返回值为实际写入的字节数
+if (write(fd, command, nbytes) < 0) { printf("Write Error!At commd_get 2");
     }
   }
   close(fd);
@@ -567,8 +590,11 @@ void command_put(int *control_sock, int *data_sock, char *order) {
   int status;
   stat(filename, &obj);
   int size = obj.st_size;
+  // 发送文件大小
   send(*data_sock, &size, sizeof(int), 0);
+  // 发送文件
   sendfile(*data_sock, filehandle, NULL, size);
+  // 发送结果
   recv(*data_sock, &status, sizeof(int), 0);
   if (status)
     printf("File stored successfully\n");

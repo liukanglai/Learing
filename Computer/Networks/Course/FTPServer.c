@@ -117,6 +117,15 @@ int ftp(int *client_socket, struct sockaddr_in *client_addr) {
     } else if (strncmp(command, "cd", 2) == 0) {
       /* 客户端接收服务器的响应码和信息，正常为 ”250 Command okay.” */
       command_cd(client_socket, command + 3);
+    } else if (strncmp(command, "rm", 2) == 0) {
+      char *filename = command + 3;
+      if (remove(filename) == 0) {
+        write(*client_socket, "250: Command okay.\n",
+              strlen("250: Command okay.\n"));
+      } else {
+        write(*client_socket, "550: File not found.\n",
+              strlen("550: File not found.\n"));
+      }
     } else if (strncmp(command, "pwd", 3) == 0) {
       command_pwd(client_socket, command);
     } else if (strncmp(command, "PORT", 4) == 0) {
@@ -251,12 +260,6 @@ int command_pasv(int *control_socket, char *command) {
   strcat(command, ",");
   printf("ip: %s\n", ip);
 
-  /*sprintf(ip, "%d.%d.%d.%d", ip_addr[0], ip_addr[1], ip_addr[2],
-   * ip_addr[3]);*/
-  /*getlocalip(ip);*/
-  /*write(*control_socket, ip, strlen(ip));*/
-  /*write(*control_socket, ",", 1);*/
-  /*strcpy(command, "227 Entering Passive Mode (0,0,0,0,");*/
   char port[10];
   bzero(port, strlen(port));
   sprintf(port, "%d", data_port);
@@ -317,85 +320,42 @@ int command_port(int *sockfd, char *command, char *ip) {
     printf("Create Socket Error!\n");
     return -1;
   }
-  int data_port;
+
+  char *p = command + 5;
+  int port = atoi(p);
+
+  // 客户的数据端
   struct sockaddr_in data_addr;
-  int data_len = sizeof(data_addr);
-  bzero(&data_addr, data_len);
   data_addr.sin_family = AF_INET;
-  data_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+  data_addr.sin_port = htons(port);
+  data_addr.sin_addr.s_addr = inet_addr(ip);
 
-  // 记录客户端的 ip 地址
-  int client_socket;
-  struct sockaddr_in client_addr;
-  bzero(&client_addr, sizeof(client_addr));
-  int client_len = sizeof(client_addr);
-
-  printf("server>");
-  if ((client_socket =
-           accept(data_socket, (struct sockaddr *)&data_addr, &data_len)) < 0) {
-    printf("Accept Error!\n");
+  if (connect(data_socket, (struct sockaddr *)&data_addr, sizeof(data_addr)) <
+      0) {
+    printf("Data Connect Error!\n");
     return -1;
-  } else {
-    printf("Accept Success!\n");
-    printf("server>");
-
-    bzero(command, strlen(command));
-    if (read(*sockfd, command, read_len) < 0) {
-      printf("Read Command Error!\n");
-    }
-    printf("received [%s]\n", command);
-
-    if (strncmp(command, "get", 3) == 0) {
-      /*command_get(&data_socket);*/
-      command_get(&client_socket);
-    } else if (strncmp(command, "put", 3) == 0) {
-      /*command_put(&data_socket);*/
-      command_put(&client_socket);
-    } else if ((strncmp(command, "ls", 2) == 0) |
-               (strncmp(command, "dir", 3) == 0)) {
-      /*command_ls(&data_socket);*/
-      command_ls(&client_socket);
-    } else
-      printf("Command Error!\n");
   }
-  close(data_socket);
+  printf("server>");
+
+  bzero(command, strlen(command));
+  if (read(*sockfd, command, read_len) < 0) {
+    printf("Read Command Error!\n");
+  }
+  printf("received [%s]\n", command);
+
+  if (strncmp(command, "get", 3) == 0) {
+    command_get(&data_socket);
+  } else if (strncmp(command, "put", 3) == 0) {
+    command_put(&data_socket);
+  } else if ((strncmp(command, "ls", 2) == 0) |
+             (strncmp(command, "dir", 3) == 0)) {
+    command_ls(&data_socket);
+  } else
+    printf("Command Error!\n");
+
   return 0;
 }
 
-/*
-void command_ls(int *socket) {
-  DIR *mydir = NULL;
-  struct dirent *myitem = NULL;
-  // opendir为用来打开参数name 指定的目录, 并返回DIR*形态的目录流
-  // mydir中存有相关目录的信息
-  if ((mydir = opendir(".")) == NULL) {
-    printf("OpenDir Error!\n");
-    exit(1);
-  }
-
-  while ((myitem = readdir(mydir)) !=
-         NULL) //用来读取目录,返回是dirent结构体指针
-  {
-    bzero(command, strlen(command));
-    if (sprintf(command, myitem->d_name, read_len) < 0) //把文件名写入缓冲区
-    {
-      printf("Sprintf Error!\n");
-      exit(1);
-    }
-
-    if (write(*socket, command, strlen(command)) <
-        0) //将commd缓冲区的内容发送会client
-    {
-      printf("Write Error!\n");
-      exit(1);
-    }
-  }
-
-  closedir(mydir); //关闭目录流
-  close(*socket);  //关闭套接字
-  printf("ls success!\n");
-}
-*/
 void command_ls(int *socket) {
   system("ls >temps.txt");
   struct stat obj;
@@ -409,41 +369,6 @@ void command_ls(int *socket) {
   close(*socket); // 关闭套接字
   printf("ls success!\n");
 }
-
-/*
-void command_get(int *socket) {
-  char *filename = command + 4;
-  int fd, nbytes;
-
-  printf("get filename : [%s]\n", filename);
-  if ((fd = open(filename, O_RDONLY)) < 0)
-//以只读的方式打开client要下载的文件
-  {
-    printf("Open file Error!\n");
-    return;
-  }
-
-  bzero(command, strlen(command));
-  while ((nbytes = read(fd, command, read_len)) == 0) { // 重要！！！
-    if (write(*socket, command, strlen(command)) < 0) {
-      printf("Write Error!\n");
-      exit(1);
-    }
-    // write(*socket, "File is empty!\n",
-    // strlen("File is empty!\n")); // PIPE wrong???
-  }
-  while ((nbytes = read(fd, command, read_len)) > 0) {
-    if (write(*socket, command, nbytes) < 0) {
-      printf("Write Error! At commd_get 3!\n");
-      close(fd);
-      exit(1);
-    }
-  }
-
-  close(fd);
-  close(*socket);
-}
-*/
 
 void command_get(int *socket) {
   char *filename = command + 4;
@@ -466,39 +391,6 @@ void command_get(int *socket) {
   close(*socket);
 }
 
-/*
-void command_put(int *socket) {
-  char *filename = command + 4;
-  int fd, nbytes;
-
-  printf("get filename : [ %s ]\n", filename);
-  if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644)) <
-      0) //以只写的方式打开文件，若文件存在则清空，若文件不存在则新建文件
-  {
-    printf("Open file Error!\n");
-    return;
-  }
-
-  bzero(command, strlen(command));
-  while ((nbytes = read(*socket, command, read_len)) == 0) { // ???
-    if (write(fd, command, nbytes) < 0) {
-      printf("Write Error! At commd_put 1!\n");
-      close(fd);
-      exit(1);
-    }
-  }
-  while ((nbytes = read(*socket, command, read_len)) > 0) {
-    if (write(fd, command, nbytes) < 0) {
-      printf("Write Error! At commd_put 1!\n");
-      close(fd);
-      exit(1);
-    }
-  }
-  close(fd);
-  close(*socket);
-}
-*/
-
 void command_put(int *socket) {
   char *filename = command + 4;
   printf("put filename : [%s]\n", filename);
@@ -507,8 +399,7 @@ void command_put(int *socket) {
   int size;
   char *f;
 
-  /*sscanf(buf + strlen(command), "%s", filename);*/
-
+  // 文件大小
   recv(*socket, &size, sizeof(int), 0);
   int i = 1;
   while (1) {
@@ -520,6 +411,7 @@ void command_put(int *socket) {
   }
   f = malloc(size);
   recv(*socket, f, size, 0);
+  // send result
   c = write(filehandle, f, size);
   close(filehandle);
   send(*socket, &c, sizeof(int), 0);
