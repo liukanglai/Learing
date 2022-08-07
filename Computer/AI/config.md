@@ -12,12 +12,11 @@
 
 - 安装参见：https://wiki.archlinux.org/title/GPGPU#CUDA
 
-- GPU（图像处理器，Graphics Processing Unit）和 CPU（中央处理器，Central Processing Unit）在设计上的主要差异在于 GPU 有更多的运算单元（如图中绿色的 ALU），而 Control 和 Cache 单元不如 CPU 多，这是因为 GPU 在进行并行计算的时候每个运算单元都是执行相同的程序，而不需要太多的控制。Cache 单元是用来做数据缓存的，CPU 可以通过 Cache 来减少存取主内存的次数，也就是减少内存延迟（memory latency）。GPU 中 Cache 很小或者没有，因为 GPU 可以通过并行计算的方式来减少内存延迟。因此 CPU 的 Cahce 设计主要是实现低延迟，Control 主要是通用性，复杂的逻辑控制单元可以保证 CPU 高效分发任务和指令。所以 CPU 擅长逻辑控制，是串行计算，而 GPU 擅长高强度计算，是并行计算。打个比方，GPU 就像成千上万的苦力，每个人干的都是类似的苦力活，相互之间没有依赖，都是独立的，简单的人多力量大；CPU 就像包工头，虽然也能干苦力的活，但是人少，所以一般负责任务分配，人员调度等工作。
-
 - 可以看出 GPU 加速是通过大量线程并行实现的，因此对于不能高度并行化的工作而言，GPU 就没什么效果了。而 CPU 则是串行操作，需要很强的通用性，主要起到统管和分配任务的作用。
 
 - CUDA 的官方文档（参考资料 1）是这么介绍 CUDA 的：a general purpose parallel computing platform and programming model that leverages the parallel compute engine in NVIDIA GPUs to solve many complex computational problems in a more efficient way than on a CPU.
-  换句话说 CUDA 是 NVIDIA 推出的用于自家 GPU 的并行计算框架，也就是说 CUDA 只能在 NVIDIA 的 GPU 上运行，而且只有当要解决的计算问题是可以大量并行计算的时候才能发挥 CUDA 的作用。
+
+- 换句话说 CUDA 是 NVIDIA 推出的用于自家 GPU 的并行计算框架，也就是说 CUDA 只能在 NVIDIA 的 GPU 上运行，而且只有当要解决的计算问题是可以大量并行计算的时候才能发挥 CUDA 的作用。
 
 - 在 CUDA 的架构下，一个程序分为两个部份：host 端和 device 端。Host 端是指在 CPU 上执行的部份，而 device 端则是在显示芯片上执行的部份。Device 端的程序又称为 “kernel”。通常 host 端程序会将数据准备好后，复制到显卡的内存中，再由显示芯片执行 device 端程序，完成后再由 host 端程序将结果从显卡的内存中取回。
 

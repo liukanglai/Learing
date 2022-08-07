@@ -1,6 +1,7 @@
 #
 
 - yay -S octopi #包管理器前端界面
+- Imagemask
 
 # rime
 
