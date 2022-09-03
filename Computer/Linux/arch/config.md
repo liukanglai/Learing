@@ -39,7 +39,8 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ## 桌面
 
 - sudo pacman -S plasma-meta konsole yakuake dolphin
-- 可选：kde-applications (kde-base) plasma-wayland-session
+- for wayland: plasma-wayland-session egl-wayland(nvidia)
+- 可选：kde-applications
 
 - systemctl enable sddm
 - systemctl start sddm
@@ -77,7 +78,7 @@ ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖
 sudo pacman -S unarchiver then: unar xxx.zip
 packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)可用, 需重启
 gwenview deepin-screenshot flameshot cheese vlc
-tlp okular(/calibre) neofetch Foliate
+tlp okular(/calibre) neofetch Foliate (sudo systemctl start tlp.service)
 vim neovim kate bind
 git libconfig wget curl npm exfat-utils cmake ctags nodejs
 net-tools(ifconfig) kdeconnect
