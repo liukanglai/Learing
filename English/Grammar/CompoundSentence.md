@@ -4,30 +4,44 @@
 
 - 用连词连接的两个句子
 
+● Eg:  although I love you, you love dog
+
 # 常见的并列连词
 
 1. 平行关系：and not only...but also...
+   ● 1、平行关系：and, not only ... but also, both ... and, either ... or, neither ... nor
 
    - 其他逻辑词（加 and 或,）：
    - similarly equally likewise at the same time in the meanwhile
+     ● 逻辑关系词（ad./prep 短语）：similarly , equally , likewise, at the same time, in the meanwhile, (simultaneously)
 
 2. 转折关系：but yet while whereas
 
    - however nevertheless on the contrary by contrast
    - conversely unexpectedly unfortunately
+     ● 2、转折关系：but, yet, while, whereas
+     ● 逻辑关系词（ad./prep 短语）：however, nevertheless, nonetheless, conversely, unexpectedly, on the contrary, unfortunately, by contrast
 
 3. 选择：or whether...or...
 
    - alternatively
+     ● 5、选择关系：or, whether ... or
+     ● 逻辑关系词（ad./prep 短语）：alternatively
+
+> 【or】或者/否则
 
 4. 因果：for so
 
    - therefore thus consequently as a result
+     ● 4、因果关系：for, so
+     ● 逻辑关系词（ad./prep 短语）：thus, therefore, as a result, consequently
 
 5. 递进：then
 
    - besides futhermore moreover additionally
    - subsequently in addition
+     ● 3、顺承关系：then(非连词)
+     ● 逻辑关系词（ad./prep 短语）：besides, furthermore, moreover, additionally, subsequently, in addition
 
 > 连词的前面，有无逗号皆可，而其他的逻辑关系词的前面，要么用句号，要么加连词 and
 
@@ -48,41 +62,6 @@
 2. 完形填空
 
 - 只需要读懂逻辑关系词前后两句话的意思就 ok
-
-3. 长难句分析
-
-##【二】并列句
-
-1. （一）什么是并列句？在两个句子中加个连词
-   ● Eg:  although I love you, you love dog
-   ● （二）常见的连词
-   ● 1、平行关系：and, not only ... but also, both ... and, either ... or, neither ... nor
-   ● 逻辑关系词（ad./prep 短语）：similarly , equally , likewise, at the same time, in the meanwhile, (simultaneously)
-   ● 2、转折关系：but, yet, while, whereas
-   ● 逻辑关系词（ad./prep 短语）：however, nevertheless, nonetheless, conversely, unexpectedly, on the contrary, unfortunately, by contrast
-   ● 3、顺承关系：then(非连词)
-   ● 逻辑关系词（ad./prep 短语）：besides, furthermore, moreover, additionally, subsequently, in addition
-   ● 4、因果关系：for, so
-   ● 逻辑关系词（ad./prep 短语）：thus, therefore, as a result, consequently
-   ● 5、选择关系：or, whether ... or
-   ● 逻辑关系词（ad./prep 短语）：alternatively
-
-> 【补充】连词和其他逻辑关系词区别在于：连词的前面有没有逗号均可，其他逻辑关系词的前面一定是句号，或者加连词 and，（and 无意义）
->
-> 【or】或者/否则
-
-2. 并列句在写作中的使用
-
-- 写作中只要上下句之间有逻辑关系就一定要有逻辑关系词（逻辑关系词：ad./conj./prep 短语）
-
-● Eg:这个男人很有钱，我决定嫁给他
-● The man is rich , soI will marry him
-● Eg:爱情已经不在了，他还在留恋过去
-● Romance hasevaporated but she still keeps the past in mind
-● Romance has evaporated.By contrast , she still keeps past in mind
-● Eg:有朋自远方来，不亦乐乎
-● There seem a host of companies coming from a long distance, and consequently, I feel exceedingly delighted.
-● 看 seem 的主语是 seem 后面的词，一个朋友来用 seems，很多朋友用 seem
 
 3. 长难句分析 ; 并列句的省略
 
