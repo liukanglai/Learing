@@ -39,13 +39,29 @@ set sm "显示括号配对情况。打开这个选项后，当输入后括号(�
 
 " autocmd BUfRead * normal zR " open a file, open all fold.
 
-"set foldenable
-" 使用 foldexpr 指定的方式折叠代码
-"set foldmethod=expr
+"zf zo zc zd zr zm zR zM zn zi zN
+set foldenable
+"设置折叠模式
+"set foldcolumn=4
+"光标遇到折叠，折叠就打开
+set foldopen=all
+"移开折叠时自动关闭折叠
+set foldclose=all
 " 使用 treesitter 根据语言语法折叠代码
-"set foldexpr=nvim_treesitter#foldexpr()
+set foldexpr=nvim_treesitter#foldexpr()
 " 默认从第一级开始，大家可以去掉看有什么效果
 "set foldlevel=1
+
+"依缩进折叠
+"   manual  手工定义折叠
+"   indent  更多的缩进表示更高级别的折叠
+"   expr    用表达式来定义折叠
+"   syntax  用语法高亮来定义折叠
+"   diff    对没有更改的文本进行折叠
+"   marker  对文中的标志折叠
+"set foldmethod=syntax
+"启动时不要自动折叠代码
+"set foldlevel=100
 
 " set split
 set splitright
@@ -53,9 +69,11 @@ set splitbelow
 set noshowmode
 set showcmd " last command
 set wildmenu "增强模式中的命令行自动完成操作"
+
 " use together to search
 set ignorecase
 set smartcase
+
 syntax on
 set autoread
 set report=0 "通过使用: commands命令，告诉我们文件的哪一行被改变过"

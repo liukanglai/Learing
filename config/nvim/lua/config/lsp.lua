@@ -29,7 +29,8 @@ local custom_attach = function(client, bufnr)
             local opts = {
                 focusable = false,
                 close_events = {
-                    "BufLeave", "CursorMoved", "InsertEnter", "FocusLost"
+                    -- "BufLeave", "CursorMoved", "InsertEnter", "FocusLost"
+                    "BufLeave", "CursorMoved", "InsertEnter"
                 },
                 border = 'rounded',
                 source = 'always', -- show source in diagnostic popup window
@@ -40,15 +41,15 @@ local custom_attach = function(client, bufnr)
     })
 
     -- Set some key bindings conditional on server capabilities
-    if client.resolved_capabilities.document_formatting then
-        vim.keymap.set("n", "<space>ff", vim.lsp.buf.formatting_sync, opts)
+    if client.server_capabilities.document_formatting then
+        vim.keymap.set("n", "<space>lq", vim.lsp.buf.formatting_sync, opts)
     end
-    if client.resolved_capabilities.document_range_formatting then
-        vim.keymap.set("x", "<space>ff", vim.lsp.buf.range_formatting, opts)
+    if client.server_capabilities.document_range_formatting then
+        vim.keymap.set("x", "<space>lq", vim.lsp.buf.range_formatting, opts)
     end
 
     -- The blow command will highlight the current variable and its usages in the buffer.
-    if client.resolved_capabilities.document_highlight then
+    if client.server_capabilities.document_highlight then
         vim.cmd([[
       hi! link LspReferenceRead Visual
       hi! link LspReferenceText Visual
@@ -68,7 +69,7 @@ local custom_attach = function(client, bufnr)
 end
 
 local capabilities = lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local lspconfig = require("lspconfig")
@@ -79,7 +80,7 @@ vim.fn.sign_define("DiagnosticSignError",
 vim.fn.sign_define("DiagnosticSignWarn",
                    {text = "!", texthl = "DiagnosticSignWarn"})
 -- vim.fn.sign_define("DiagnosticSignWarn", {text = "", texthl = "DiagnosticSignWarn"})
-vim.fn.sign_define("DiagnosticSignInformation",
+vim.fn.sign_define("DianosticSignInformation",
                    {text = "", texthl = "DiagnosticSignInfo"})
 vim.fn.sign_define("DiagnosticSignHint",
                    {text = "", texthl = "DiagnosticSignHint"})
@@ -105,21 +106,28 @@ lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover,
 -- lint
 
 require('lint').linters_by_ft = {
-    javascript = {"eslint"},
-    typescript = {"eslint"},
+    -- javascript = {"eslint"},
+    -- typescript = {"eslint"},
     html = {"tidy"},
     -- markdown = {'vale'},
-    markdown = {'markdownlint'},
+    -- markdown = {'markdownlint'},
     python = {'pylint'},
-    vim = {'vint'},
-    cpp = {'clangtidy'},
-    c = {'clangtidy'}
+    -- java = {'checkstyle'},
+    -- vim = {'vint'},
+    cpp = {'clangtidy', 'cppcheck', 'cpplint'},
+    c = {'cppcheck', 'clangtidy', 'cpplint'}
+    -- cpp = {'clangtidy'},
+    -- c = {'clangtidy'}
+    -- css = {'stylelint'}
     -- go = {"golangcilint"}
 }
 -- vim.cmd([[au BufWritePost <buffer> lua require('lint').try_lint()]])
 vim.cmd([[
 au BufEnter * lua require('lint').try_lint()
 au BufWritePost * lua require('lint').try_lint()
+"au TextChanged * lua require('lint').try_lint()
+"au InsertLeave * lua require('lint').try_lint()
+"au FileChangedShellPost * lua require('lint').try_lint()
 ]])
 
 -- installer
@@ -206,3 +214,6 @@ require("lsp_signature").setup({
     -- 正在输入的参数将如何突出显示
     hi_parameter = "LspSignatureActiveParameter"
 })
+
+-- code_action
+-- lua/code_action_utils.lua

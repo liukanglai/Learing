@@ -60,12 +60,12 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- use {
-    -- 'nvim-telescope/telescope.nvim',
-    -- requires = {{'nvim-lua/plenary.nvim'}}
-    -- }
-    ---- search emoji and other symbols
-    -- use 'nvim-telescope/telescope-symbols.nvim'
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {{'nvim-lua/plenary.nvim'}}
+    }
+    -- search emoji and other symbols
+    use 'nvim-telescope/telescope-symbols.nvim'
 
     --  register
 
@@ -93,7 +93,12 @@ return require('packer').startup(function(use)
     -- Automatic insertion and deletion of a pair of characters
     use({"Raimondi/delimitMate", event = "InsertEnter"})
     -- Show match number for search
-    use {'kevinhwang91/nvim-hlslens', branch = 'dev', event = "VimEnter"}
+    use {
+        'kevinhwang91/nvim-hlslens',
+        branch = 'dev',
+        event = "VimEnter",
+        config = function() require('hlslens').setup() end
+    }
 
     -- type!!!
 
@@ -110,6 +115,7 @@ return require('packer').startup(function(use)
 
     -- use 'dense-analysis/ale'
     use 'mfussenegger/nvim-lint'
+    use 'neomake/neomake'
 
     -- auto-completion engine
     use {"hrsh7th/nvim-cmp", config = [[require('config.cmp')]]}
@@ -133,6 +139,9 @@ return require('packer').startup(function(use)
     use {"octaltree/cmp-look", after = 'nvim-cmp'} -- 用于完成英语单词
     -- use {"hrsh7th/cmp-calc", after = 'nvim-cmp'} -- 输入数学算式（如1+1=）自动计算
     use {"f3fora/cmp-spell", after = 'nvim-cmp'} -- nvim-cmp 的拼写源基于 vim 的拼写建议
+
+    -- AI code
+    use {"github/copilot.vim"} -- run :Copilot setup
 
     -- 插入模式获得函数签名
 
@@ -217,5 +226,16 @@ return require('packer').startup(function(use)
 
     use({"lervag/vimtex", ft = {"tex"}})
     -- Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+    --
+
+    -- git
+    use {
+        'lewis6991/gitsigns.nvim',
+        -- tag = 'release' -- To use the latest release
+        config = function() require('gitsigns').setup() end
+    }
+
+    -- web
+    use {'shime/vim-livedown'}
 
 end)

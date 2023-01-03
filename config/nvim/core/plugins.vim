@@ -5,6 +5,8 @@ augroup fmt
   " autocmd BufWritePost | Neoformat
 augroup END
 
+let g:neoformat_enabled_python = ['yapf']
+
 " latex
 let g:livepreview_engine = 'xelatex'
 let g:livepreview_previewer = 'okular'
@@ -106,3 +108,22 @@ let g:nvim_tree_icons = {
 "highlight NvimTreeFolderIcon guibg=blue
 autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 
+" neomake
+"call neomake#configure#automake('nrwi', 500)
+
+" livedown
+" should markdown preview get shown automatically upon opening markdown buffer
+let g:livedown_autorun = 0
+
+" should the browser window pop-up upon previewing
+let g:livedown_open = 1
+
+" the port on which Livedown server will run
+let g:livedown_port = 1337
+
+" the browser to use, can also be firefox, chrome or other, depending on your executable
+let g:livedown_browser = "google-chrome"
+
+" Copilot
+imap <silent><script><expr> <C-l> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true

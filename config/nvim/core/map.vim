@@ -23,27 +23,32 @@ noremap k gk
 "map <LEADER>ff za
 
 " Tab management
-noremap tt :e
+noremap tt :e 
 noremap tm :bp<CR>
 noremap tn :bn<CR>
 noremap tq :bd<CR>
 
 noremap <LEADER>n :NERDTree<CR>
-noremap <LEADER>t :Tagbar<CR>
+"noremap <LEADER>t :Tagbar<CR>
 noremap <LEADER>ml :LLPStartPreview<CR>
 noremap <LEADER>mm :MarkdownPreview<CR>
 map <LEADER>mt :TableModeToggle<CR>
 "nnoremap <LEADER>u :UndotreeToggle<CR>
-nnoremap <leader>ff :NvimTreeToggle<CR>
-nnoremap <leader>fr :NvimTreeRefresh<CR>
-nnoremap <leader>fn :NvimTreeFindFile<CR>
+nnoremap <leader>tf :NvimTreeToggle<CR>
+nnoremap <leader>tr :NvimTreeRefresh<CR>
+nnoremap <leader>tn :NvimTreeFindFile<CR>
 
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " === Window management
-"noremap <LEADER>wk <C-w>k
-"noremap <LEADER>wj <C-w>j
-"noremap <LEADER>wh <C-w>h
-"noremap <LEADER>wl <C-w>l
+noremap <LEADER>wk <C-w>k
+noremap <LEADER>wj <C-w>j
+noremap <LEADER>wh <C-w>h
+noremap <LEADER>wl <C-w>l
 
 
 " split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
@@ -52,6 +57,15 @@ noremap <LEADER>wv :set splitright<CR>:vsplit<CR>
 
 "" Press space twice to jump to the next '<++>' and edit it
 "noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
+
+" 返回当前时间
+func! GetTimeInfo()
+    "return strftime('%Y-%m-%d %A %H:%M:%S')
+    return strftime('%Y-%m-%d %H:%M:%S')
+endfunction
+
+" 插入模式按 Ctrl + D(ate) 插入当前时间
+imap <C-d> <C-r>=GetTimeInfo()<cr>
 
 "" Compile function
 noremap <LEADER>rr :call CompileRunGcc()<CR>
