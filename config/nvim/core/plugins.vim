@@ -7,6 +7,18 @@ augroup END
 
 let g:neoformat_enabled_python = ['yapf']
 
+"let g:neoformat_cpp_clangformat = {
+      "\ 'exe': 'clang-format',
+      "\ 'args': ['--style="{IndentWidth: 4}"']
+      "\ }
+"let g:neoformat_c_clangformat = {
+      "\ 'exe': 'clang-format',
+      "\ 'args': ['--style="{IndentWidth: 4}"']
+      "\ }
+
+let g:neoformat_enabled_cpp = ['clangformat']
+let g:neoformat_enabled_c = ['clangformat']
+
 " latex
 let g:livepreview_engine = 'xelatex'
 let g:livepreview_previewer = 'okular'

@@ -115,9 +115,9 @@ require('lint').linters_by_ft = {
     -- java = {'checkstyle'},
     -- vim = {'vint'},
     cpp = {'clangtidy', 'cppcheck', 'cpplint'},
-    c = {'cppcheck', 'clangtidy', 'cpplint'}
+    -- c = {'cppcheck', 'clangtidy', 'cpplint'}
     -- cpp = {'clangtidy'},
-    -- c = {'clangtidy'}
+    c = {'clangtidy'}
     -- css = {'stylelint'}
     -- go = {"golangcilint"}
 }

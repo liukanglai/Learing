@@ -2,7 +2,7 @@
 let &t_ut=''
 set autochdir
 
-set encoding=utf-8
+"set encoding=utf-8
 
 exec "nohlsearch"
 

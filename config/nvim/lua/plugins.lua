@@ -111,6 +111,8 @@ return require('packer').startup(function(use)
     -- " <leader><leader>+
     use 'easymotion/vim-easymotion'
 
+    use 'iamcco/ds-pinyin-lsp'
+
     -- code !!!
 
     -- use 'dense-analysis/ale'
@@ -141,7 +143,7 @@ return require('packer').startup(function(use)
     use {"f3fora/cmp-spell", after = 'nvim-cmp'} -- nvim-cmp 的拼写源基于 vim 的拼写建议
 
     -- AI code
-    use {"github/copilot.vim"} -- run :Copilot setup
+    -- use {"github/copilot.vim"} -- run :Copilot setup
 
     -- 插入模式获得函数签名
 
