@@ -73,7 +73,7 @@ makepkg -si
 ```
 yay -S google-chrome
 ntfs-3g #识别NTFS格式的硬盘
-ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖
+fzf peazip ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip #安装ark可选依赖
 需要注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题
 sudo pacman -S unarchiver then: unar xxx.zip
 packagekit-qt5 packagekit appstream-qt appstream #确保Discover(软件中心)可用, 需重启

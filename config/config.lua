@@ -228,8 +228,6 @@ linters.setup {
   { command = "cppcheck", filetype = { "c", "cpp" }, },
   { command = "checkstyle", filetype = { "java" }, },
   { command = "pylint", filetype = { "python" }, },
-  -- { command = "flake8", filetypes = { "python" } },
-  -- { command = "golangcilint", filetypes = { "go" }, },
   { command = "eslint", filetypes = { "typescript", "javascript" }, },
   { command = "stylelint", filetype = { "css" }, },
   { command = "tidy", filetypes = { "html" }, },
