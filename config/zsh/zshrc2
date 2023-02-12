@@ -1,0 +1,46 @@
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# TMUX
+if which tmux >/dev/null 2>&1; then
+    #if not inside a tmux session, and if no session is started, start a new session
+     test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
+
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/autojump/autojump.zsh
+
+bindkey '\' autosuggest-accept
+# export EDITOR='vim'
+export EDITOR='vim'
+export XDG_RUNTIME_DIR=/run/user/$UID
+#export XDG_RUNTIME_DIR=/usr/local/share
+#export XDG_RUNTIME_DIR=~/.local/share
+#export PATH=~/.npm-global/bin:$PATH
+
+cd ~
+alias vim=lvim
+alias vc='cd ~/Learing/Code/C'
+alias vcp='cd ~/Learing/Code/Cpp'
+alias vj='cd ~/Learing/Code/Java'
+alias vp='cd ~/Learing/Code/Python'
+alias vjs='cd ~/Learing/Code/JavaScript'
+alias vl='cd ~/Learing/Code/Lua'
+alias vw='cd ~/Learing/Code/web-projects/test-site'
+alias vs='cd ~/Learing/Code/Scheme'
+alias vn='cd ~/.config/lvim'
+
+export http_proxy="http://127.0.0.1:8899"
+export https_proxy="http://127.0.0.1:8899"
+export all_proxy="socks5://127.0.0.1:8899"
+
+# java for jdtls
+export WORKSPACE=$HOME/Learing/Code/Java/Jdtls # Defaults to $HOME/workspace
+#export PATH=$PATH:/place/with/the/file
+export PATH="$HOME/.local/bin:$PATH"
+
+TERM_ITALICS=true
+
+eval "$(starship init zsh)"

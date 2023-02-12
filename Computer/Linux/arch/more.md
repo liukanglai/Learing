@@ -3,7 +3,7 @@
 - yay -S octopi #包管理器前端界面
 - Imagemask
 
-# rime
+## rime
 
 - ~/.local/share/fcitx5/rime/build/default.yaml: put simple first(in schema_list)
 - use new file(no deffect default.yaml), in build fold, create default.custom.yaml:
@@ -14,7 +14,7 @@
 
 - yay -S ttf-apple-emoji
 
-# 软件
+## 软件
 
 - code clion idea qtcreater
 - sublime-text-dev 代码编辑器
@@ -32,8 +32,6 @@
 - qbittorrent 好用的 BT 下载工具
 
 - google-chrome/chromium (Chromium 的用户资料在~/.config/chromium/Default)
-
-- baidunetdisk-electron (yay)
 
 - woeusb
 - openssh 远程连接工具
@@ -106,9 +104,9 @@ cool tips:
 
 - yay -S deskreen(投屏)
 
-# ulauncher utools stacer
+## ulauncher utools stacer
 
-# vmbox
+## vmbox
 
 - // sudo pacman -S linux-headers
 
@@ -124,7 +122,7 @@ cool tips:
 
 - 选择不同分辨率
 
-# hibernate
+## hibernate
 
 - cat /sys/power/image_size: swap size
 - sudo filefrag -v /swapfile | sed -n '4p' | awk '{print $4+0}' : get resume_offset
@@ -132,13 +130,13 @@ cool tips:
 - sudo vim /etc/mkinitcpio.conf: HOOKS=( base udev **resume** autodetect modconf block filesystems keyboard fsck ) -- add resume
 - sudo mkinitcpio -p linux
 
-# space
+## space
 
 - mkdir /home/space
 - mount /dev/... /home/space
 - vim /etc/fstab: `/dev/... /home/space ext4 defaults 1 1`
 
-# Easyconnect
+## Easyconnect
 
 - `https://www.wannaexpresso.com/2020/06/07/easy-connect-manjaro/`
 

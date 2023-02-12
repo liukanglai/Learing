@@ -1,10 +1,65 @@
-# sql
+# mysql
+
+## install
+
+1. mariadb
+
+- mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+- systemctl start mariadb.service
+
+> etc/my.cnf.d/mysql-clients.cnf, and add auto-rehash under mysql
+
+## run
+
+- sudo mysql -u root -p
+  > Note: The default password is empty. Press Enter to log in.
+
+```mysql
+MariaDB> CREATE USER 'monty'@'localhost' IDENTIFIED BY 'some_pass';
+MariaDB> GRANT ALL PRIVILEGES ON mydb.* TO 'monty'@'localhost';
+MariaDB> quit
+```
+
+- FLUSH PRIVILEGES; quit
+
+## constraint
+
+        # change/delete constraint: alter
+        primary key
+        not null
+        unique
+        foreign key name references
+        auto_increment
+
+        create user 'name'@'localhost' identified by 'password';
+        drop user 'name'@'localhost'
+
+        host：指定在哪个主机上登陆，本地用户可用localhost，让该用户可以从任意远程主机登陆，%
+        password：密码可以为空，可以不需要密码登陆
+
+        grant all on mydb.* (*.*) to 'monty'@'localhost';
+        grant privileges on databasename.tablename to 'username'@'host' with grant option;
+
+        all, select, update, delete
+
+        set password for 'username'@'localhost' = password('...');
+        set password = password('...'); -- current user
+
+        revoke privileges on database.table from 'username'@'localhost'
+
+- 假如你在给用户'pig'@'%'授权的时候是这样的（或类似的）：
+- GRANT SELECT ON test.user TO 'pig'@'%'，REVOKE SELECT ON _._ FROM 'pig'@'%';
+- 命令并不能撤销该用户对 test 数据库中 user 表的 SELECT 操作
+- 如果授权使用的是 GRANT SELECT ON _._ TO 'pig'@'%';
+- 则 REVOKE SELECT ON test.user FROM 'pig'@'%';
+- 命令也不能撤销该用户对 test 数据库中 user 表的 Select 权限。
+- 具体信息可以用命令 SHOW GRANTS FOR 'pig'@'%'; 查看。
+
+## sql
 
 > DDL DML DQL DCL
 
-1.
-
-- ;: end
+- 用 ; 表示一句结束
 - ingore case
 - comment: -- #; `/* */`
 
@@ -73,7 +128,7 @@
         if null(name, Name);
         as;
 
-##
+## j
 
         >,<,>=,<=,=,<>
         BETWEEN...AND
@@ -84,7 +139,7 @@
         or or ||
         not or !
 
-##
+## k
 
         order by name (asc);
         order by name desc;
@@ -98,40 +153,3 @@
         group by name;
 
         limit 1;
-
-# constraint
-
-        # change/delete constraint: alter
-        primary key
-        not null
-        unique
-        foreign key name references
-        auto_increment
-
-#
-
-        create user 'name'@'localhost' identified by 'password';
-        drop user 'name'@'localhost'
-
-        host：指定在哪个主机上登陆，本地用户可用localhost，让该用户可以从任意远程主机登陆，%
-        password：密码可以为空，可以不需要密码登陆
-
-        grant all on mydb.* (*.*) to 'monty'@'localhost';
-        grant privileges on databasename.tablename to 'username'@'host' with grant option;
-
-        all, select, update, delete
-
-        set password for 'username'@'localhost' = password('...');
-        set password = password('...'); -- current user
-
-        revoke privileges on database.table from 'username'@'localhost'
-
-
-        假如你在给用户'pig'@'%'授权的时候是这样的（或类似的）：GRANT SELECT ON test.user TO 'pig'@'%'，REVOKE SELECT ON *.* FROM 'pig'@'%'; 命令并不能撤销该用户对test数据库中user表的SELECT 操作
-        如果授权使用的是GRANT SELECT ON *.* TO 'pig'@'%';则REVOKE SELECT ON test.user FROM 'pig'@'%';命令也不能撤销该用户对test数据库中user表的Select权限。
-
-        具体信息可以用命令SHOW GRANTS FOR 'pig'@'%'; 查看。
-
-# privileges
-
--

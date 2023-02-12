@@ -10,12 +10,14 @@
 
 1. git init
 
-2. config.toml
-    - git submodule add `https://github.com/olOwOlo/hugo-theme-even themes/even`
-	- cp themes/even/config.toml ./
+2. theme
+
+   - git submodule add `https://github.com/olOwOlo/hugo-theme-even themes/even`
+   - cp themes/even/exampleSite/config.toml ./
 
 3. content
-	- hugo new posts/my-first-post.md (in even, need post)
+
+   - hugo new posts/my-first-post.md (in even, need post)
 
 4. hugo serve -D(-D make draft push)
 
@@ -25,7 +27,10 @@
 
 ## github pages
 
-```
+1. create a new repository: liukanglai.github.io
+2. create a new file: index.html
+
+```bash
 echo "# liukanglai.github.io" >> README.md
 git add .
 git commit -m "first commit"
@@ -40,7 +45,7 @@ git push -u origin main
 
 - git pull
 
-- 需要修改config.toml里的baseURL的参数，确保改成username.github.io
+- 需要修改 config.toml 里的 baseURL 的参数，确保改成 username.github.io
 - baseURL = "http://nightan42643.github.io"
 
 > the draft will not publish
