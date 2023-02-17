@@ -37,6 +37,7 @@ options root=PARTUUID=deba4ba7-0c8f-c64e-a60e-e34e5bb87ab3 rw
 1. install
 
 ```text
+xorg xf86-input-libinput
 linux-headers man
 yakuake fzf ark p7zip zip gzip tar unzip unrar unarchiver lzop lrzip
 # 注意的是解压 windows 下的压缩包，可能会乱码，安装 ark 的可选依赖之一 unarchiver，使用 unar 可以避免这个问题
