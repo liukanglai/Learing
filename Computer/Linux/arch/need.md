@@ -93,7 +93,7 @@ vim neovim kate bind
 - MasonInstall cpplint markdownlint pylint vint codespell shellcheck luacheck cspell
 - stylua prettier shfmt
 - proselint
-- yay -S cppcheck luarocks (eslint) google-java-format checkstyle checkmake
+- yay -S cppcheck luarocks eslint google-java-format checkstyle(难搞) checkmake
 
 - scheme: `https://github.com/ufo5260987423/scheme-langserver`
 
