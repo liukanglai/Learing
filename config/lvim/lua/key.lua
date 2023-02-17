@@ -3,6 +3,7 @@
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<leader>0"] = "$" --leaderq???
+lvim.keys.normal_mode["dl"] = "d$" --leaderq???
 lvim.keys.normal_mode["ga"] = "%"
 
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
