@@ -77,10 +77,9 @@ vim neovim kate bind
 
 1. lunarvim
 
-- sudo pacman -Syu xclip
-
 - cargo: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
-- yay -S lazygit ripgrep sqlite fd yarn lldb go unzip zoxide (pip install pynvim)
+- yay -S lazygit ripgrep sqlite fd yarn lldb go unzip zoxide xclip
+- (pip install pynvim)
 - install: `LV_BRANCH='release-1.2/neovim-0.8' bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/fc6873809934917b470bff1b072171879899a36b/utils/installer/install.sh)`
 
 - comment: first v, then gb gcc, gcA, gco, gcO
