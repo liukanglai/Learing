@@ -6,7 +6,7 @@
 int main(void) {
   char buf[] = {'a'};
   printf("%s\n", buf);
-  printf("%d\n", strlen(buf));
+  printf("%d\n", (int)strlen(buf)); // sj
   char buf1[] = "abcd";
   printf("%s\n", buf1);
   return 0;
