@@ -91,7 +91,7 @@ vim neovim kate bind
 - markdown latex
 
 - MasonInstall cpplint markdownlint pylint vint codespell shellcheck luacheck cspell
-- stylua prettier shfmt black
+- stylua prettier shfmt black codelldb
 - proselint
 - yay -S cppcheck luarocks eslint google-java-format checkstyle(难搞) checkmake stylelint
 
